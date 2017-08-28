@@ -181,14 +181,14 @@
       <!--\\\\\\\ contentpanel start\\\\\\-->
       <div class="pull-left breadcrumb_admin clear_both">
         <div class="pull-left page_title theme_color">
-          <h1>Pisos</h1>
-          <h2 class="">Registrar Pisos</h2>
+          <h1>Paredes</h1>
+          <h2 class="">Registrar Paredes</h2>
         </div>
         <div class="pull-right">
           <ol class="breadcrumb">
             <li><a href="#">Inicio</a></li>
-            <li><a href="#">Pisos</a></li>
-            <li class="active">Registar pisos</li>
+            <li><a href="#">Paredes</a></li>
+            <li class="active">Registar paredes</li>
           </ol>
         </div>
       </div>
