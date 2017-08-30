@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -133,7 +134,7 @@
          <ul>
    <li class="left_nav_active theme_border"><a href="javascript:void(0);"><i class="fa fa-th-large"></i> Inicio <span class="left_nav_pointer"></span> <span class="plus"><i class="fa fa-plus"></i></span> </a></li>
 
-          <li><a href="#"><i class="fa fa-th-large"></i> Caracterización <span class="plus"><i class="fa fa-plus"></i></span> </a>
+          <li><a href="#"><i class="fa fa-th-large"></i> CaracterizaciÃ³n <span class="plus"><i class="fa fa-plus"></i></span> </a>
             <ul class="opened" style="display:block">
               <li> <a href="index.html"> <span>&nbsp;</span> <i class="fa fa-circle theme_color"></i> <b class="theme_color">Persona</b> </a> </li>
               <li> <a href="settings.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Integrantes Familia</b> </a> </li>
@@ -141,7 +142,7 @@
               <li> <a href="themes.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Relaciones Afectivas</b> </a> </li>
               <li> <a href="widgets.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Socio afectiva</b> </a> </li>
               <li> <a href="animations.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Condicion social</b> </a> </li>
-              <li> <a href="layouts.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Acompañante</b> </a> </li>
+              <li> <a href="layouts.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>AcompaÃ±ante</b> </a> </li>
               <li> <a href="themes.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo de Transporte</b> </a> </li>
               <li> <a href="widgets.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tiempo libre</b> </a> </li>
               <li> <a href="animations.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo familiar</b> </a> </li>
@@ -162,7 +163,7 @@
           </li>
           <li> <a href="#"> <i class="fa fa-medkit"></i> Salud <span class="plus"><i class="fa fa-plus"></i></span></a>
             <ul>
-              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Régimen Salud</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>RÃ©gimen Salud</b> </a> </li>
             </ul>
           </li>
           <li> <a href="javascript:void(0);"> <i class="fa fa-users icon"></i>Integrantes Familiar<span class="plus"><i class="fa fa-plus"></i></span> </a>
@@ -204,8 +205,8 @@
             <div class="porlets-content">
               <form action="#" parsley-validate novalidate>
                 <div class="form-group">
-                  <label>Código</label>
-                  <input type="text" name="nick" parsley-trigger="change" placeholder="Código" class="form-control">
+                  <label>CÃ³digo</label>
+                  <input type="text" name="nick" parsley-trigger="change" placeholder="CÃ³digo" class="form-control">
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
