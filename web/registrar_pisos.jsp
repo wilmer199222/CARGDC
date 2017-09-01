@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ULTIMO Admin Dashboard Template</title>
+<title>Fundacion</title>
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -32,7 +32,7 @@
     <!--\\\\\\\ header Start \\\\\\-->
     <div class="brand">
       <!--\\\\\\\ brand Start \\\\\\-->
-      <div class="logo" style="display:block"><span class="theme_color">ULTIMO</span> Admin</div>
+      <div class="logo" style="display:block"><span class="theme_color">Fundacion</span> GDC</div>
       <div class="small_logo" style="display:none"><img src="images/s-logo.png" width="50" height="47" alt="s-logo" /> <img src="images/r-logo.png" width="122" height="20" alt="r-logo" /></div>
     </div>
     <!--\\\\\\\ brand end \\\\\\-->
@@ -47,12 +47,12 @@
           </ul>
         </div>
       </div>
-      <a href="javascript:void(0);" class="add_user" data-toggle="modal" data-target="#myModal"> <i class="fa fa-plus-square"></i> <span> New Task</span> </a>
+      <a href="javascript:void(0);" class="add_user" data-toggle="modal" data-target="#myModal"> <i class="fa fa-plus-square"></i> <span> Nueva Tarea</span> </a>
       <div class="top_right_bar">
         <div class="top_right">
           <div class="top_right_menu">
             <ul>
-              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Tasks <span class="badge badge">8</span> </a>
+              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Tarea <span class="badge badge">8</span> </a>
                 <ul class="drop_down_task dropdown-menu">
                   <div class="top_pointer"></div>
                   <li>
@@ -94,7 +94,7 @@
               
                 </ul>
               </li>
-              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> notification <span class="badge badge color_2">6</span> </a>
+              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Notificacion <span class="badge badge color_2">6</span> </a>
                 <div class="notification_drop_down dropdown-menu">
                   <div class="top_pointer"></div>
                   <div class="box"> <a href="inbox.html"> <span class="block primery_6"> <i class="fa fa-envelope-o"></i> </span> <span class="block_text">Mailbox</span> </a> </div>
@@ -128,55 +128,66 @@
     <div class="left_nav">
       <!--\\\\\\\left_nav start \\\\\\-->
       <div class="search_bar"> <i class="fa fa-search"></i>
-        <input name="" type="text" class="search" placeholder="Search Dashboard..." />
+        <input name="" type="text" class="search" placeholder="Search..." />
       </div>
-      <div class="left_nav_slidebar">
-         <ul>
-   <li class="left_nav_active theme_border"><a href="javascript:void(0);"><i class="fa fa-th-large"></i> Inicio <span class="left_nav_pointer"></span> <span class="plus"><i class="fa fa-plus"></i></span> </a></li>
-
-          <li><a href="#"><i class="fa fa-th-large"></i> Caracterización <span class="plus"><i class="fa fa-plus"></i></span> </a>
-            <ul class="opened" style="display:block">
-              <li> <a href="index.html"> <span>&nbsp;</span> <i class="fa fa-circle theme_color"></i> <b class="theme_color">Persona</b> </a> </li>
-              <li> <a href="settings.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Integrantes Familia</b> </a> </li>
-              <li> <a href="layouts.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Aspecto de Vivienda</b> </a> </li>
-              <li> <a href="themes.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Relaciones Afectivas</b> </a> </li>
-              <li> <a href="widgets.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Socio afectiva</b> </a> </li>
-              <li> <a href="animations.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Condicion social</b> </a> </li>
-              <li> <a href="layouts.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Acompañante</b> </a> </li>
-              <li> <a href="themes.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo de Transporte</b> </a> </li>
-              <li> <a href="widgets.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tiempo libre</b> </a> </li>
-              <li> <a href="animations.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo familiar</b> </a> </li>
-              <li> <a href="animations.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Salud</b> </a> </li>
+      <div class="left_nav_slidebar">    
+        <ul>
+            <li>
+             <a href="index.jsp">
+             <i class="fa fa-home"></i> <span>Inicio</span>         
+             </a>
+        </li>
+            
+           <li> <a href="#"> <i class="fa fa-th-large"></i>Caracterizacion <span class="plus"><i class="fa fa-plus"></i></span></a>
+            <ul>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Persona</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Integrantes Familia</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Aspecto de Vivienda</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Relaciones Afectivas</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Socio Afectiva</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Condicion Social</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Acompañante</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Transporte</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Transporte</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tiempo Libre</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Familiar</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Salud</b> </a> </li>
             </ul>
           </li>
-          <li> <a href="javascript:void(0);"> <i class="fa fa-align-left"></i>Aspecto De Vivienda<span class="plus"><i class="fa fa-plus"></i></span></a>
-            <ul class="treeview-menu">
-             <li><a href="listarParedes.jsp"><span>&nbsp;</span><i class="fa fa-circle"></i></i> Paredes</a></li>
-            <li><a href="pisos.jsp"><span>&nbsp;</span><i class="fa fa-circle"></i></i> Pisos</a></li>
-            <li><a href="#"><span>&nbsp;</span><i class="fa fa-circle"></i></i> Techos</a></li>
-            <li><a href="#"><span>&nbsp;</span><i class="fa fa-circle"></i></i> Servicios sanitarios</a></li>
-            <li><a href="animales.jsp"><span>&nbsp;</span><i class="fa fa-circle"></i></i> Animales</a></li>
-            <li><a href="#"><span>&nbsp;</span><i class="fa fa-circle"></i></i> Tipo Vivienda</a></li>
-            <li><a href="#"><span>&nbsp;</span><i class="fa fa-circle"></i></i> Tenencia Vivienda </a></li>
-            <li><a href="#"><span>&nbsp;</span><i class="fa fa-circle"></i></i>Servicios Publicos</a></li>
-          </ul>
+         
+          <li> <a href="#"> <i class="fa fa-align-left"></i> Aspecto Vivienda<span class="plus"><i class="fa fa-plus"></i></span></a>
+            <ul>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Paredes</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Pisos</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Techos</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Servicios Sanitarios</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Animales</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Vivienda</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tenencia Vivienda</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Servicios Publicos</b> </a> </li>
+            </ul>
           </li>
+         
           <li> <a href="#"> <i class="fa fa-medkit"></i> Salud <span class="plus"><i class="fa fa-plus"></i></span></a>
             <ul>
-              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Régimen Salud</b> </a> </li>
+              <li> <a href="#"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Régimen Salud</b> </a> </li>
             </ul>
           </li>
-          <li> <a href="javascript:void(0);"> <i class="fa fa-users icon"></i>Integrantes Familiar<span class="plus"><i class="fa fa-plus"></i></span> </a>
+            
+          <li> <a href="#"> <i class="fa fa-users icon"></i>Integrantes Familiar<span class="plus"><i class="fa fa-plus"></i></span> </a>
             <ul>
-              <li> <a href="todo.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Nivel Formacion</b> </a> </li> 
+              <li> <a href="#"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Nivel Formacion</b> </a> </li> 
             </ul>
           </li>
-          <li> <a href="javascript:void(0);"> <i class="fa fa-envelope"></i> Persona <span class="plus"><i class="fa fa-plus"></i></span> </a>
+            
+          <li> <a href="#"> <i class="fa fa-male"></i> Persona <span class="plus"><i class="fa fa-plus"></i></span> </a>
             <ul>
-              <li> <a href="inbox.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Documento</b> </a> </li>
+              <li> <a href="#"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Documento</b> </a> </li>
             </ul>
           </li>
+            
         </ul>
+       </div>
       </div>
     </div>
     <!--\\\\\\\left_nav end \\\\\\-->
@@ -185,13 +196,12 @@
       <div class="pull-left breadcrumb_admin clear_both">
         <div class="pull-left page_title theme_color">
           <h1>Pisos</h1>
-          <h2 class="">Ver Pisos</h2>
+          <h2 class="">Registrar Pisos</h2>
         </div>
         <div class="pull-right">
           <ol class="breadcrumb">
-            <li><a href="#">Inicio</a></li>
             <li><a href="#">Pisos</a></li>
-            <li class="active">Ver Pisos</li>
+            <li class="active">Registar pisos</li>
           </ol>
         </div>
       </div>
@@ -217,9 +227,9 @@
                   <input type="text" name="email"  placeholder="Estado" class="form-control">
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
-                
+                <button class="btn btn-primary" type="submit">Registrar</button>
+           
                 </div>
-            <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='listarParedes.jsp'">Atras</button></div>
               </form>
             </div><!--/porlets-content-->
           <!--/block-web--> 

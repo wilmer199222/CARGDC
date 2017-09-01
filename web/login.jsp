@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ULTIMO Admin Dashboard Template</title>
+<title>Fundacion</title>
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -19,27 +19,27 @@
   
   <div class="login_page">
   <div class="login_content">
-  <div class="panel-heading border login_heading">sign in now</div>	
+  <div class="panel-heading border login_heading">Iniciar Cesión</div>	
  <form role="form" class="form-horizontal">
       <div class="form-group">
         
         <div class="col-sm-10">
-          <input type="email" placeholder="Email" id="inputEmail3" class="form-control">
+          <input type="text" placeholder="Correo" id="inputEmail3" class="form-control">
         </div>
       </div>
       <div class="form-group">
         
         <div class="col-sm-10">
-          <input type="password" placeholder="Password" id="inputPassword3" class="form-control">
+          <input type="password" placeholder="Contraseña" id="inputPassword3" class="form-control">
         </div>
       </div>
       <div class="form-group">
         <div class=" col-sm-10">
           <div class="checkbox checkbox_margin">
             <label class="lable_margin">
-              <input type="checkbox"><p class="pull-left"> Remember me</p></label>
+              <input type="checkbox"><p class="pull-left"> Recuerdame</p></label>
               <a href="index.html">
-              <button class="btn btn-default pull-right" type="submit">Sign in</button>
+              <button class="btn btn-default pull-right" type="submit">Ingresar</button>
               </a></div>
         </div>
       </div>

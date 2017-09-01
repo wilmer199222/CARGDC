@@ -1,16 +1,29 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ULTIMO Admin Dashboard Template</title>
+<title>Fundacion</title>
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="css/animate.css" rel="stylesheet" type="text/css" />
 <link href="css/admin.css" rel="stylesheet" type="text/css" />
-<link href="plugins/data-tables/DT_bootstrap.css" rel="stylesheet">
-<link href="plugins/advanced-datatable/css/demo_table.css" rel="stylesheet">
-<link href="plugins/advanced-datatable/css/demo_page.css" rel="stylesheet">
+<link href="plugins/toggle-switch/toggles.css" rel="stylesheet" type="text/css" />
+<link href="plugins/checkbox/icheck.css" rel="stylesheet" type="text/css" />
+<link href="plugins/checkbox/minimal/blue.css" rel="stylesheet" type="text/css" />
+<link href="plugins/checkbox/minimal/green.css" rel="stylesheet" type="text/css" />
+<link href="plugins/checkbox/minimal/grey.css" rel="stylesheet" type="text/css" />
+<link href="plugins/checkbox/minimal/orange.css" rel="stylesheet" type="text/css" />
+<link href="plugins/checkbox/minimal/pink.css" rel="stylesheet" type="text/css" />
+<link href="plugins/checkbox/minimal/purple.css" rel="stylesheet" type="text/css" />
+<link href="plugins/bootstrap-fileupload/bootstrap-fileupload.min.css" rel="stylesheet">
+<link href="plugins/dropzone/dropzone.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="plugins/bootstrap-datepicker/css/datepicker.css" />
+<link rel="stylesheet" type="text/css" href="plugins/bootstrap-timepicker/compiled/timepicker.css" />
+<link rel="stylesheet" type="text/css" href="plugins/bootstrap-colorpicker/css/colorpicker.css" />
+
+
 </head>
 <body class="light_theme  fixed_header left_nav_fixed">
 <div class="wrapper">
@@ -19,7 +32,7 @@
     <!--\\\\\\\ header Start \\\\\\-->
     <div class="brand">
       <!--\\\\\\\ brand Start \\\\\\-->
-      <div class="logo" style="display:block"><span class="theme_color">ULTIMO</span> Admin</div>
+      <div class="logo" style="display:block"><span class="theme_color">Fundacion</span> GDC</div>
       <div class="small_logo" style="display:none"><img src="images/s-logo.png" width="50" height="47" alt="s-logo" /> <img src="images/r-logo.png" width="122" height="20" alt="r-logo" /></div>
     </div>
     <!--\\\\\\\ brand end \\\\\\-->
@@ -34,12 +47,12 @@
           </ul>
         </div>
       </div>
-      <a href="javascript:void(0);" class="add_user" data-toggle="modal" data-target="#myModal"> <i class="fa fa-plus-square"></i> <span> New Task</span> </a>
+      <a href="javascript:void(0);" class="add_user" data-toggle="modal" data-target="#myModal"> <i class="fa fa-plus-square"></i> <span> Nueva Tarea</span> </a>
       <div class="top_right_bar">
         <div class="top_right">
           <div class="top_right_menu">
             <ul>
-              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Tasks <span class="badge badge">8</span> </a>
+              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Tarea <span class="badge badge">8</span> </a>
                 <ul class="drop_down_task dropdown-menu">
                   <div class="top_pointer"></div>
                   <li>
@@ -81,7 +94,7 @@
               
                 </ul>
               </li>
-              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> notification <span class="badge badge color_2">6</span> </a>
+              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Notificacion <span class="badge badge color_2">6</span> </a>
                 <div class="notification_drop_down dropdown-menu">
                   <div class="top_pointer"></div>
                   <div class="box"> <a href="inbox.html"> <span class="block primery_6"> <i class="fa fa-envelope-o"></i> </span> <span class="block_text">Mailbox</span> </a> </div>
@@ -115,90 +128,66 @@
     <div class="left_nav">
       <!--\\\\\\\left_nav start \\\\\\-->
       <div class="search_bar"> <i class="fa fa-search"></i>
-        <input name="" type="text" class="search" placeholder="Search Dashboard..." />
+        <input name="" type="text" class="search" placeholder="Search..." />
       </div>
-      <div class="left_nav_slidebar">
+      <div class="left_nav_slidebar">    
         <ul>
-          <li><a href="javascript:void(0);"><i class="fa fa-home"></i> DASHBOARD <span class="left_nav_pointer"></span> <span class="plus"><i class="fa fa-plus"></i></span> </a>
+            <li>
+             <a href="index.jsp">
+             <i class="fa fa-home"></i> <span>Inicio</span>         
+             </a>
+        </li>
+            
+           <li> <a href="#"> <i class="fa fa-th-large"></i>Caracterizacion <span class="plus"><i class="fa fa-plus"></i></span></a>
             <ul>
-              <li> <a href="index.html" class="left_nav_sub_active"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Dashboard</b> </a> </li>
-              <li> <a href="settings.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Settings</b> </a> </li>
-              <li> <a href="layouts.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Layouts</b> </a> </li>
-              <li> <a href="themes.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Themes</b> </a> </li>
-              <li> <a href="widgets.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Widgets</b> </a> </li>
-              <li> <a href="animations.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Animations</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Persona</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Integrantes Familia</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Aspecto de Vivienda</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Relaciones Afectivas</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Socio Afectiva</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Condicion Social</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Acompañante</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Transporte</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Transporte</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tiempo Libre</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Familiar</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Salud</b> </a> </li>
             </ul>
           </li>
-          <li> <a href="javascript:void(0);"> <i class="fa fa-edit"></i> UI KIT <span class="plus"><i class="fa fa-plus"></i></span></a>
+         
+          <li> <a href="#"> <i class="fa fa-align-left"></i> Aspecto Vivienda<span class="plus"><i class="fa fa-plus"></i></span></a>
             <ul>
-              <li> <a href="typography.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Typography</b> </a> </li>
-              <li> <a href="buttons.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Buttons</b> </a> </li>
-              <li> <a href="icons.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Icons</b> </a> </li>
-              <li> <a href="grid.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Grid</b> </a> </li>
-              <li> <a href="alert.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Alert & Notification</b> </a> </li>
-              <li> <a href="tabs.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tabs & Accordion</b> </a> </li>
-              <li> <a href="tree.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tree View</b> </a> </li>
-              <li> <a href="list.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>List Group</b> </a> </li>
-              <li> <a href="portlets.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Portlets</b> </a> </li>
-              <li> <a href="general.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>General</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Paredes</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Pisos</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Techos</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Servicios Sanitarios</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Animales</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Vivienda</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tenencia Vivienda</b> </a> </li>
+              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Servicios Publicos</b> </a> </li>
             </ul>
           </li>
-          <li> <a href="javascript:void(0);"> <i class="fa fa-tasks"></i> Forms <span class="plus"><i class="fa fa-plus"></i></span></a>
+         
+          <li> <a href="#"> <i class="fa fa-medkit"></i> Salud <span class="plus"><i class="fa fa-plus"></i></span></a>
             <ul>
-              <li> <a href="components.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Components</b> </a> </li>
-              <li> <a href="registrar_paredes.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Validation</b> </a> </li>
-              <li> <a href="multi-upload.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Multi-upload</b> </a> </li>
-              <li> <a href="other-forms.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Others</b> </a> </li>
+              <li> <a href="#"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Régimen Salud</b> </a> </li>
             </ul>
           </li>
-          <li> <a href="javascript:void(0);"> <i class="fa fa-users icon"></i> APPS <span class="plus"><i class="fa fa-plus"></i></span> </a>
+            
+          <li> <a href="#"> <i class="fa fa-users icon"></i>Integrantes Familiar<span class="plus"><i class="fa fa-plus"></i></span> </a>
             <ul>
-              <li> <a href="todo.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>To-Do</b> </a> </li>
-              <li> <a href="task.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Task</b> </a> </li>
-              <li> <a href="notes.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Notes</b> </a> </li>
-              <li> <a href="media.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Media Manager</b> </a> </li>
-              <li> <a href="calendar.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Calendar</b> </a> </li>
-              <li> <a href="ticket.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Ticket Support</b> </a> </li>
-              <li> <a href="invoice.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Invoice</b> </a> </li>
+              <li> <a href="#"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Nivel Formacion</b> </a> </li> 
             </ul>
           </li>
-          <li> <a href="javascript:void(0);"> <i class="fa fa-envelope"></i> EMAIL <span class="plus"><i class="fa fa-plus"></i></span> </a>
+            
+          <li> <a href="#"> <i class="fa fa-male"></i> Persona <span class="plus"><i class="fa fa-plus"></i></span> </a>
             <ul>
-              <li> <a href="inbox.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Inbox</b> </a> </li>
-              <li> <a href="compose.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Compose</b> </a> </li>
-              <li> <a href="readmail.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Read Mail</b> </a> </li>
+              <li> <a href="#"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Documento</b> </a> </li>
             </ul>
           </li>
-          <li> <a href="javascript:void(0);"> <i class="fa fa-folder-open-o"></i> PAGES <span class="plus"><i class="fa fa-plus"></i></span> </a>
-            <ul>
-              <li> <a href="login.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Login</b> </a> </li>
-              <li> <a href="registration.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Registration</b> </a> </li>
-              <li> <a href="lockscreen.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Lock Screen</b> </a> </li>
-              <li> <a href="blankpage.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Blank Page</b> </a> </li>
-              <li> <a href="404error.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>404 Error</b> </a> </li>
-              <li> <a href="500error.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>500 Error</b> </a> </li>
-              <li> <a href="search.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Search</b> </a> </li>
-              <li> <a href="about.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>About</b> </a> </li>
-              <li> <a href="contact.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Contact</b> </a> </li>
-            </ul>
-          </li>
-          <li class="left_nav_active theme_border"> <a href="javascript:void(0);"> <i class="fa fa-th"></i> TABLES <span class="plus"><i class="fa fa-plus"></i></span> </a>
-            <ul class="opened"  style="display:block">
-              <li> <a href="statictable.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Static Table</b> </a> </li>
-              <li> <a href="datatable.html"> <span>&nbsp;</span> <i class="fa fa-circle theme_color"></i> <b class="theme_color">Data Table</b> </a> </li>
-            </ul>
-          </li>
-          <li> <a href="javascript:void(0);"> <i class="fa fa-glass"></i> EXTRA <span class="plus"><i class="fa fa-plus"></i></span></a>
-            <ul>
-              <li> <a href="timeline.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Timeline</b> </a> </li>
-              <li> <a href="profile.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Profile</b> </a> </li>
-              <li> <a href="contactlist.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Contact List</b> </a> </li>
-              <li> <a href="maps.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Maps</b> </a> </li>
-              <li> <a href="gallery.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Gallery</b> </a> </li>
-              <li> <a href="help.html"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Help</b> </a> </li>
-            </ul>
-          </li>
+            
         </ul>
+       </div>
       </div>
     </div>
     <!--\\\\\\\left_nav end \\\\\\-->
@@ -206,134 +195,47 @@
       <!--\\\\\\\ contentpanel start\\\\\\-->
       <div class="pull-left breadcrumb_admin clear_both">
         <div class="pull-left page_title theme_color">
-          <h1>Data Table</h1>
-          <h2 class="">Subtitle goes here...</h2>
+          <h1>Paredes</h1>
+          <h2 class="">Registrar Paredes</h2>
         </div>
         <div class="pull-right">
           <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">TABLES</a></li>
-            <li class="active">Data Table</li>
+            <li><a href="#">Paredes</a></li>
+            <li class="active">Registar paredes</li>
           </ol>
         </div>
       </div>
-      <div class="container clear_both padding_fix">
-        <!--\\\\\\\ container  start \\\\\\-->
-      
-      
-      
- 
-      
-      
-      
-       <div class="row">
-        <div class="col-md-12">
-          <div class="block-web">
-            <div class="header">
-              <div class="actions"> <a class="minimize" href="#"><i class="fa fa-chevron-down"></i></a> <a class="refresh" href="#"><i class="fa fa-repeat"></i></a> <a class="close-down" href="#"><i class="fa fa-times"></i></a> </div>
-              <h3 class="content-header">Editable Table</h3>
-            </div>
-         <div class="porlets-content">
-          <div class="adv-table editable-table ">
-                          <div class="clearfix">
-                              <div class="btn-group">
-                              <button id="editable-sample_new" class="btn btn-primary">Add New <i class="fa fa-plus"></i></button>
-                              </div>
-                              
-                          </div>
-                          <div class="margin-top-10"></div>
-                          <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                              <thead>
-                              <tr>
-                                  <th>Código</th>
-                                  <th>Nombre</th>
-                                  <th>Estado</th>
-                                  <th>Listar</th>
-                                  <th>Edit</th>
-                                  <th>Delete</th>
-                              </tr>
-                              </thead>
-                              <tbody>
-                              <tr class="">
-                                  <td>John Doe</td>
-                                  <td>Stephan Myburgh</td>
-                                  <td>12345</td>
-                                  <td class="center">super user</td>
-                                  <td><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr>
-                              <tr class="">
-                                  <td>Admin</td>
-                                  <td>Tom Cooper</td>
-                                  <td>216</td>
-                                  <td class="center">new user</td>
-                                  <td><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr>
-                              <tr class="">
-                                  <td>Admin</td>
-                                  <td> Shakib Al Hasan</td>
-                                  <td>432</td>
-                                  <td class="center">super user</td>
-                                  <td><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr>
-                              <tr class="">
-                                  <td>Admin</td>
-                                  <td>WebPro</td>
-                                  <td>856</td>
-                                  <td class="center">elite user</td>
-                                  <td><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr>
-                              <tr class="">
-                                  <td>Admin</td>
-                                  <td> WebPro</td>
-                                  <td>675</td>
-                                  <td class="center">new user</td>
-                                  <td><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr>
-                              <tr class="">
-                                  <td>Admin</td>
-                                  <td>Alex Hales</td>
-                                  <td>423</td>
-                                  <td class="center">new user</td>
-                                  <td><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr>
-                              
-                              </tbody>
-                          </table>
-                      </div>
- 
-            </div><!--/porlets-content-->  
-          </div><!--/block-web--> 
-        </div><!--/col-md-12--> 
-      </div><!--/row-->
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+     
+      <div class="container clear_both padding_fix"> 
+      <div class="row">
+  <div class="col-md-3"></div>   
+      <div class="row">
+        <div class="col-md-6">           
+          <div class="block-web">          
+            <div class="porlets-content">
+              <form action="#" parsley-validate novalidate>
+                <div class="form-group">
+                  <label>Código</label>
+                  <input type="text" name="nick" parsley-trigger="change" placeholder="Código" class="form-control">
+                </div><!--/form-group-->
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input type="text" name="email" parsley-trigger="change"  placeholder="Nombre" class="form-control">
+                </div><!--/form-group-->  
+                  <div class="form-group">
+                  <label>Estado</label>
+                  <input type="text" name="email"  placeholder="Estado" class="form-control">
+                </div><!--/form-group-->
+                </div><!--/checkbox-->
+                <button class="btn btn-primary" type="submit">Registrar</button>
+           
+                </div>
+              </form>
+            </div><!--/porlets-content-->
+          <!--/block-web--> 
+        </div><!--/col-md-6-->
+       
+
       </div>
       <!--\\\\\\\ container  end \\\\\\-->
     </div>
@@ -351,6 +253,21 @@
         <h4 class="modal-title" id="myModalLabel">Compose New Task</h4>
       </div>
       <div class="modal-body"> content </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Compose New Task</h4>
+      </div>
+      <div class="modal-body"> sgxdfgxfg </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
@@ -453,17 +370,68 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/common-script.js"></script>
 <script src="js/jquery.slimscroll.min.js"></script>
-<script src="plugins/data-tables/jquery.dataTables.js"></script>
-<script src="plugins/data-tables/DT_bootstrap.js"></script>
-<script src="plugins/data-tables/dynamic_table_init.js"></script>
-<script src="plugins/edit-table/edit-table.js"></script>
+<script type="text/javascript"  src="plugins/toggle-switch/toggles.min.js"></script> 
+<script src="plugins/checkbox/zepto.js"></script>
+<script src="plugins/checkbox/icheck.js"></script>
+<script src="js/icheck-init.js"></script>
+<script type="text/javascript" src="plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script> 
+<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script> 
+<script type="text/javascript" src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script> 
+<script type="text/javascript" src="plugins/bootstrap-timepicker/js/bootstrap-timepicker.js"></script> 
+<script type="text/javascript" src="js/form-components.js"></script> 
+<script type="text/javascript"  src="plugins/input-mask/jquery.inputmask.min.js"></script> 
+<script type="text/javascript"  src="plugins/input-mask/demo-mask.js"></script> 
+<script type="text/javascript"  src="plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script> 
+<script type="text/javascript"  src="plugins/dropzone/dropzone.min.js"></script> 
+<script type="text/javascript" src="plugins/ckeditor/ckeditor.js"></script>
+
+
+
+<script src="plugins/validation/parsley.min.js"></script>
+
 <script>
-          jQuery(document).ready(function() {
-              EditableTable.init();
-          });
- </script>
- 
- <script src="js/jPushMenu.js"></script> 
+
+
+/*==Porlets Actions==*/
+    $('.minimize').click(function(e){
+      var h = $(this).parents(".header");
+      var c = h.next('.porlets-content');
+      var p = h.parent();
+      
+      c.slideToggle();
+      
+      p.toggleClass('closed');
+      
+      e.preventDefault();
+    });
+    
+    $('.refresh').click(function(e){
+      var h = $(this).parents(".header");
+      var p = h.parent();
+      var loading = $('&lt;div class="loading"&gt;&lt;i class="fa fa-refresh fa-spin"&gt;&lt;/i&gt;&lt;/div&gt;');
+      
+      loading.appendTo(p);
+      loading.fadeIn();
+      setTimeout(function() {
+        loading.fadeOut();
+      }, 1000);
+      
+      e.preventDefault();
+    });
+    
+    $('.close-down').click(function(e){
+      var h = $(this).parents(".header");
+      var p = h.parent();
+      
+      p.fadeOut(function(){
+        $(this).remove();
+      });
+      e.preventDefault();
+    });
+
+</script>
+
+<script src="js/jPushMenu.js"></script> 
 <script src="js/side-chats.js"></script>
 
 </body>
