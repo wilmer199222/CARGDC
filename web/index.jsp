@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Fundacion</title>
+<title>FundaGDC</title>
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
 <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
@@ -40,9 +40,9 @@
                     <input type="checkbox" name="remember">
                     Remember me </label>
                 </div></li>
-				<li> <a href="help.html"><i class="fa fa-question-circle"></i> Help</a> </li>
-				<li> <a href="settings.html"><i class="fa fa-cog"></i> Setting </a></li>
-				<li> <a href="login.html"><i class="fa fa-power-off"></i> Logout</a> </li>
+				<li> <a href="#"><i class="fa fa-question-circle"></i> Ayuda</a> </li>
+				<li> <a href="#"><i class="fa fa-cog"></i> Configuración </a></li>
+				<li> <a href="#"><i class="fa fa-power-off"></i> Salir</a> </li>
 		  </ul>
 			</li>
           </ul>
