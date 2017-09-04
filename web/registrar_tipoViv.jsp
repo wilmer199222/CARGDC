@@ -194,13 +194,13 @@
       <!--\\\\\\\ contentpanel start\\\\\\-->
       <div class="pull-left breadcrumb_admin clear_both">
         <div class="pull-left page_title theme_color">
-          <h1>Techos</h1>
-          <h2 class="">Registrar Techos</h2>
+          <h1>Tipo Vivienda</h1>
+          <h2 class="">Registrar Tipo Vivienda</h2>
         </div>
         <div class="pull-right">
           <ol class="breadcrumb">
-            <li><a href="#">Techos</a></li>
-            <li class="active">Registar Techos</li>
+            <li><a href="#">Tipo Vivienda</a></li>
+            <li class="active">Registar Tipo Vivienda</li>
           </ol>
         </div>
       </div>
@@ -227,7 +227,7 @@
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
                 <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>
-                <button type="button" class="btn btn-primary" onclick="window.location.href='listarTechos.jsp'">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='listarTipoViv.jsp'">Cancelar</button>
            
                 </div>
               </form>

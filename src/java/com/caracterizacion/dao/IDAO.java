@@ -14,7 +14,7 @@ public interface IDAO {
 
     public String eliminar(Object obj) throws SQLException;
 
-    public String modificar(Object obj);
+    public String modificar(Object obj) throws SQLException;
 
     public List<?> listar() throws SQLException;
 

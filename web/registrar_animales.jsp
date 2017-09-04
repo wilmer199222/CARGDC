@@ -215,15 +215,15 @@
               <form action="#" parsley-validate novalidate>
                 <div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="nick" parsley-trigger="change" placeholder="Código" class="form-control">
+                  <input type="text" name="codigo" parsley-trigger="change" placeholder="Código" class="form-control">
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="email" parsley-trigger="change"  placeholder="Nombre" class="form-control">
+                  <input type="text" name="nombre" parsley-trigger="change"  placeholder="Nombre" class="form-control">
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="email"  placeholder="Estado" class="form-control">
+                  <input type="text" name="estado"  placeholder="Estado" class="form-control">
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
                 <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>
