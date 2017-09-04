@@ -131,7 +131,7 @@
         <input name="" type="text" class="search" placeholder="Search..." />
       </div>
       <div class="left_nav_slidebar">    
-         <ul>
+        <ul>
             <li>
              <a href="index.jsp">
              <i class="fa fa-home"></i> <span>Inicio</span>         
@@ -194,18 +194,19 @@
       <!--\\\\\\\ contentpanel start\\\\\\-->
       <div class="pull-left breadcrumb_admin clear_both">
         <div class="pull-left page_title theme_color">
-          <h1>Pisos</h1>
-          <h2 class="">Registrar Pisos</h2>
+          <h1>Integrante Familia</h1>
+          <h2 class="">Registrar Integrante Familia</h2>
         </div>
         <div class="pull-right">
           <ol class="breadcrumb">
-            <li><a href="#">Pisos</a></li>
-            <li class="active">Registar pisos</li>
+            <li><a href="#">Integrante Familia</a></li>
+            <li class="active">Registar Integrante Familia</li>
           </ol>
         </div>
       </div>
      
       <div class="container clear_both padding_fix"> 
+          
       <div class="row">
   <div class="col-md-3"></div>   
       <div class="row">
@@ -213,22 +214,32 @@
           <div class="block-web">          
             <div class="porlets-content">
               <form action="#" parsley-validate novalidate>
-                <div class="form-group">
+                  
+            <div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="codigo" parsley-trigger="change" placeholder="Código" class="form-control">
+                  <input type="text" name="Codigo" parsley-trigger="change" placeholder="Código" class="form-control">
                 </div><!--/form-group-->
                 <div class="form-group">
-                  <label>Nombre</label>
-                  <input type="text" name="nombre" parsley-trigger="change"  placeholder="Nombre" class="form-control">
+                  <label>Nombres</label>
+                  <input type="text" name="Nombres" parsley-trigger="change"  placeholder="Nombres" class="form-control">
                 </div><!--/form-group-->  
                   <div class="form-group">
-                  <label>Estado</label>
-                  <input type="text" name="estado"  placeholder="Estado" class="form-control">
+                  <label>Apellidos</label>
+                  <input type="text" name="Apellidos"  placeholder="Apellidos" class="form-control">
                 </div><!--/form-group-->
+                 <div class="form-group">
+                  <label>Edad</label>
+                  <input type="int" name="DocIdentidad"  placeholder="Edad" class="form-control">
+                </div><!--/form-group-->
+                  <div class="form-group">
+                  <label>Parentesco</label>
+                  <input type="text" name="DocIdentidad"  placeholder="Parentesco" class="form-control">
+                </div><!--/form-group-->                          
                 </div><!--/checkbox-->
-         <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>
+                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>
                 
-                <button type="button" class="btn btn-primary" onclick="window.location.href='listarPisos.jsp'">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='listarIntFam.jsp'">Cancelar</button>
+           
                 </div>
               </form>
             </div><!--/porlets-content-->

@@ -81,7 +81,7 @@
                   <li> <span class="new"> <a href="task.html" class="pull_left">Create New</a> <a href="task.html" class="pull-right">View All</a> </span> </li>
                 </ul>
               </li>
-              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Mail <span class="badge badge color_1">4</span> </a>
+              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Correo <span class="badge badge color_1">4</span> </a>
                 <ul class="drop_down_task dropdown-menu">
                   <div class="top_pointer"></div>
                   <li>
@@ -123,7 +123,7 @@
     <!--\\\\\\\ header top bar end \\\\\\-->
   </div>
   <!--\\\\\\\ header end \\\\\\-->
-  <div class="inner">
+   <div class="inner">
     <!--\\\\\\\ inner start \\\\\\-->
     <div class="left_nav">
       <!--\\\\\\\left_nav start \\\\\\-->
@@ -131,7 +131,7 @@
         <input name="" type="text" class="search" placeholder="Search..." />
       </div>
       <div class="left_nav_slidebar">    
-         <ul>
+        <ul>
             <li>
              <a href="index.jsp">
              <i class="fa fa-home"></i> <span>Inicio</span>         
@@ -194,13 +194,13 @@
       <!--\\\\\\\ contentpanel start\\\\\\-->
       <div class="pull-left breadcrumb_admin clear_both">
         <div class="pull-left page_title theme_color">
-          <h1>Pisos</h1>
-          <h2 class="">Registrar Pisos</h2>
+          <h1>Servicios Sanitarios</h1>
+          <h2 class="">Modificar Servicios Sanitarios</h2>
         </div>
         <div class="pull-right">
           <ol class="breadcrumb">
-            <li><a href="#">Pisos</a></li>
-            <li class="active">Registar pisos</li>
+            <li><a href="#">Servicios Sanitarios</a></li>
+            <li class="active">Modificar Servicios Sanitarios</li>
           </ol>
         </div>
       </div>
@@ -215,20 +215,20 @@
               <form action="#" parsley-validate novalidate>
                 <div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="codigo" parsley-trigger="change" placeholder="Código" class="form-control">
+                  <input type="text" name="nick" parsley-trigger="change" placeholder="Código" class="form-control">
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="nombre" parsley-trigger="change"  placeholder="Nombre" class="form-control">
+                  <input type="text" name="email" parsley-trigger="change"  placeholder="Nombre" class="form-control">
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="estado"  placeholder="Estado" class="form-control">
+                  <input type="text" name="email"  placeholder="Estado" class="form-control">
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
-         <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>
-                
-                <button type="button" class="btn btn-primary" onclick="window.location.href='listarPisos.jsp'">Cancelar</button>
+               <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Actualizar</button></div>               
+                <button type="button" class="btn btn-primary" onclick="window.location.href='listarSerSan.jsp'">Cancelar</button>
+           
                 </div>
               </form>
             </div><!--/porlets-content-->

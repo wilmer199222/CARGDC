@@ -131,7 +131,7 @@
         <input name="" type="text" class="search" placeholder="Search..." />
       </div>
       <div class="left_nav_slidebar">    
-         <ul>
+        <ul>
             <li>
              <a href="index.jsp">
              <i class="fa fa-home"></i> <span>Inicio</span>         
@@ -194,18 +194,19 @@
       <!--\\\\\\\ contentpanel start\\\\\\-->
       <div class="pull-left breadcrumb_admin clear_both">
         <div class="pull-left page_title theme_color">
-          <h1>Pisos</h1>
-          <h2 class="">Registrar Pisos</h2>
+          <h1>Servicios Sanitarios</h1>
+          <h2 class="">Registrar Servicios Sanitarios</h2>
         </div>
         <div class="pull-right">
           <ol class="breadcrumb">
-            <li><a href="#">Pisos</a></li>
-            <li class="active">Registar pisos</li>
+            <li><a href="#">Servicios Sanitarios</a></li>
+            <li class="active">Registar Servicios Sanitarios</li>
           </ol>
         </div>
       </div>
      
       <div class="container clear_both padding_fix"> 
+          
       <div class="row">
   <div class="col-md-3"></div>   
       <div class="row">
@@ -213,22 +214,25 @@
           <div class="block-web">          
             <div class="porlets-content">
               <form action="#" parsley-validate novalidate>
+           
+               
                 <div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="codigo" parsley-trigger="change" placeholder="Código" class="form-control">
+                  <input type="text" name="nick" parsley-trigger="change" placeholder="Código" class="form-control">
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="nombre" parsley-trigger="change"  placeholder="Nombre" class="form-control">
+                  <input type="text" name="email" parsley-trigger="change"  placeholder="Nombre" class="form-control">
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="estado"  placeholder="Estado" class="form-control">
+                  <input type="text" name="email"  placeholder="Estado" class="form-control">
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
-         <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>
+                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>
                 
-                <button type="button" class="btn btn-primary" onclick="window.location.href='listarPisos.jsp'">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='listarSerSan.jsp'">Cancelar</button>
+           
                 </div>
               </form>
             </div><!--/porlets-content-->

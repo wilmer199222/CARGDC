@@ -226,8 +226,8 @@
                   <input type="text" name="email"  placeholder="Estado" class="form-control">
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
-                <button  href="listarParedes.jsp" class="btn btn-primary" type="submit">Actualizar</button>
-           
+                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Actualizar</button></div>               
+                <button type="button" class="btn btn-primary" onclick="window.location.href='listarParedes.jsp'">Cancelar</button>
                 </div>
               </form>
             </div><!--/porlets-content-->

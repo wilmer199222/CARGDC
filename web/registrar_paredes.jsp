@@ -206,6 +206,7 @@
       </div>
      
       <div class="container clear_both padding_fix"> 
+          
       <div class="row">
   <div class="col-md-3"></div>   
       <div class="row">
@@ -213,6 +214,8 @@
           <div class="block-web">          
             <div class="porlets-content">
               <form action="#" parsley-validate novalidate>
+           
+               
                 <div class="form-group">
                   <label>Código</label>
                   <input type="text" name="nick" parsley-trigger="change" placeholder="Código" class="form-control">
@@ -226,7 +229,9 @@
                   <input type="text" name="email"  placeholder="Estado" class="form-control">
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
-                <button class="btn btn-primary" type="submit">Registrar</button>
+                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>
+                
+                <button type="button" class="btn btn-primary" onclick="window.location.href='listarParedes.jsp'">Cancelar</button>
            
                 </div>
               </form>
