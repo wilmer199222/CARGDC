@@ -194,7 +194,7 @@
       <!--\\\\\\\ contentpanel start\\\\\\-->
       <div class="pull-left breadcrumb_admin clear_both">
         <div class="pull-left page_title theme_color">
-          <h1>Pisos</h1>
+          <h1>Techos</h1>
           <h2 class="">Registrar Techos</h2>
         </div>
         <div class="pull-right">

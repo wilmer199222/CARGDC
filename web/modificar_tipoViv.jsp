@@ -81,7 +81,7 @@
                   <li> <span class="new"> <a href="task.html" class="pull_left">Create New</a> <a href="task.html" class="pull-right">View All</a> </span> </li>
                 </ul>
               </li>
-              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown">Correo <span class="badge badge color_1">4</span> </a>
+              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Correo <span class="badge badge color_1">4</span> </a>
                 <ul class="drop_down_task dropdown-menu">
                   <div class="top_pointer"></div>
                   <li>
@@ -194,13 +194,13 @@
       <!--\\\\\\\ contentpanel start\\\\\\-->
       <div class="pull-left breadcrumb_admin clear_both">
         <div class="pull-left page_title theme_color">
-          <h1>Techos</h1>
-          <h2 class="">Listar Techos</h2>
+          <h1>Animales</h1>
+          <h2 class="">Modificar Animales</h2>
         </div>
         <div class="pull-right">
           <ol class="breadcrumb">
-            <li><a href="#">Techos</a></li>
-            <li class="active">Listar Techos</li>
+            <li><a href="#">Animales</a></li>
+            <li class="active">Modificar Animales</li>
           </ol>
         </div>
       </div>
@@ -211,68 +211,27 @@
       <div class="row">
         <div class="col-md-6">           
           <div class="block-web">          
-            <div class="panel-heading">
-              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_techos.jsp'">Nuevo</button></div>
-                
-                <form class="form-inline">
-             
-                  <label class="sr-only" for="inlineFormCustomSelect">Parametro</label>
-                        <select class="form-control" id="inlineFormCustomSelect">
-                          <option selected>- Seleccione -</option>
-                          <option value="1">Código</option>
-                          <option value="2">Nombre</option>
-                          <option value="3">Estado</option> 
-                        </select>
-                        <input type="text" class="form-control" id="inputBuscar" >
-                        <button type="submit" class="btn btn-primary">Buscar</button>
-               
+            <div class="porlets-content">
+              <form action="#" parsley-validate novalidate>
+                <div class="form-group">
+                  <label>Código</label>
+                  <input type="text" name="codigo" parsley-trigger="change" placeholder="Código" class="form-control">
+                </div><!--/form-group-->
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input type="text" name="nombre" parsley-trigger="change"  placeholder="Nombre" class="form-control">
+                </div><!--/form-group-->  
+                  <div class="form-group">
+                  <label>Estado</label>
+                  <input type="text" name="estado"  placeholder="Estado" class="form-control">
+                </div><!--/form-group-->
+                </div><!--/checkbox-->
+                <div class="col-xs-6 col-sm-3"><button  href="listarTipoViv.jsp" class="btn btn-primary" type="submit">Actualizar</button></div>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='listarTipoViv.jsp'">Cancelar</button>
+           
+                </div>
               </form>
-                
             </div><!--/porlets-content-->
-            <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>Código</th>
-                  <th>Nombre</th>
-                  <th>Estado</th> 
-                  <th>Operaciones</th>                   
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Zinc</td>
-                  <td>Activo</td>
-                  <td><div class="row">
-                        <div class="col-1 col-md-1">
-                            
-                             <form action="" method="get">
-                                <a href="ver_techos.jsp" onclick="" name="Ver">
-                                <span class="glyphicon glyphicon-file"></span>
-                                </a>
-                             <input type="hidden" name="btnVer" value="Ver"/>
-                             <input type="hidden" name="codigo" value="">
-                            </form> 
-                        </div>
-                        <div class="col-1 col-md-1">
-                            <form action="pruebasv" method="get">
-                                <a href="javascript:;" onclick="" name="Eliminar">
-                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                </a>
-                                <input type="hidden" name="btnEliminar" value="eliminar"/>
-                                <input type="hidden" name="cod" value="">
-                            </form>                  
-                        </div>
-                        <div class="col-1 col-md-1">
-                            <a href="modificar_techos.jsp" data-toggle="tooltip" data-placement="top" title="Modificar">
-                                <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-                            </a>
-                        </div>
-                   </div></td> 
-                </tr>
-       
-                </tbody>          
-              </table> 
           <!--/block-web--> 
         </div><!--/col-md-6-->
        

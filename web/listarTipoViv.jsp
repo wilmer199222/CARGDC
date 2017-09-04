@@ -194,13 +194,13 @@
       <!--\\\\\\\ contentpanel start\\\\\\-->
       <div class="pull-left breadcrumb_admin clear_both">
         <div class="pull-left page_title theme_color">
-          <h1>Techos</h1>
-          <h2 class="">Listar Techos</h2>
+          <h1>Tipo Vivienda</h1>
+          <h2 class="">Listar Tipo Vivienda</h2>
         </div>
         <div class="pull-right">
           <ol class="breadcrumb">
-            <li><a href="#">Techos</a></li>
-            <li class="active">Listar Techos</li>
+            <li><a href="#">Tipo Vivienda</a></li>
+            <li class="active">Listar Tipo Vivienda</li>
           </ol>
         </div>
       </div>
@@ -212,7 +212,7 @@
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="panel-heading">
-              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_techos.jsp'">Nuevo</button></div>
+              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_animales.jsp'">Nuevo</button></div>
                 
                 <form class="form-inline">
              
@@ -241,13 +241,13 @@
                 <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Zinc</td>
+                  <td>Casa</td>
                   <td>Activo</td>
                   <td><div class="row">
                         <div class="col-1 col-md-1">
                             
                              <form action="" method="get">
-                                <a href="ver_techos.jsp" onclick="" name="Ver">
+                                <a href="ver_tipoViv.jsp" onclick="" name="Ver">
                                 <span class="glyphicon glyphicon-file"></span>
                                 </a>
                              <input type="hidden" name="btnVer" value="Ver"/>
@@ -264,7 +264,7 @@
                             </form>                  
                         </div>
                         <div class="col-1 col-md-1">
-                            <a href="modificar_techos.jsp" data-toggle="tooltip" data-placement="top" title="Modificar">
+                            <a href="modificar_tipoViv.jsp" data-toggle="tooltip" data-placement="top" title="Modificar">
                                 <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                             </a>
                         </div>
