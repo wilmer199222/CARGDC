@@ -1,29 +1,18 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Fundacion</title>
+<title>FundaGDC</title>
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
 <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="css/animate.css" rel="stylesheet" type="text/css" />
 <link href="css/admin.css" rel="stylesheet" type="text/css" />
-<link href="plugins/toggle-switch/toggles.css" rel="stylesheet" type="text/css" />
-<link href="plugins/checkbox/icheck.css" rel="stylesheet" type="text/css" />
-<link href="plugins/checkbox/minimal/blue.css" rel="stylesheet" type="text/css" />
-<link href="plugins/checkbox/minimal/green.css" rel="stylesheet" type="text/css" />
-<link href="plugins/checkbox/minimal/grey.css" rel="stylesheet" type="text/css" />
-<link href="plugins/checkbox/minimal/orange.css" rel="stylesheet" type="text/css" />
-<link href="plugins/checkbox/minimal/pink.css" rel="stylesheet" type="text/css" />
-<link href="plugins/checkbox/minimal/purple.css" rel="stylesheet" type="text/css" />
-<link href="plugins/bootstrap-fileupload/bootstrap-fileupload.min.css" rel="stylesheet">
-<link href="plugins/dropzone/dropzone.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="plugins/bootstrap-datepicker/css/datepicker.css" />
-<link rel="stylesheet" type="text/css" href="plugins/bootstrap-timepicker/compiled/timepicker.css" />
-<link rel="stylesheet" type="text/css" href="plugins/bootstrap-colorpicker/css/colorpicker.css" />
-
-
+<link href="css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href="plugins/kalendar/kalendar.css" rel="stylesheet">
+<link rel="stylesheet" href="plugins/scroll/nanoscroller.css">
+<link href="plugins/morris/morris.css" rel="stylesheet" />
 </head>
 <body class="light_theme  fixed_header left_nav_fixed">
 <div class="wrapper">
@@ -42,8 +31,20 @@
       <div class="top_left">
         <div class="top_left_menu">
           <ul>
-            <li> <a href="javascript:void(0);"> <i class="fa fa-repeat"></i> </a> </li>
-            <li> <a href="javascript:void(0);"> <i class="fa fa-th-large"></i> </a> </li>
+            <li> <a href="javascript:void(0);"><i class="fa fa-repeat"></i></a> </li>
+            <li class="dropdown"> <a data-toggle="dropdown" href="javascript:void(0);"> <i class="fa fa-th-large"></i> </a>
+			<ul class="drop_down_task dropdown-menu" style="margin-top:39px">
+				<div class="top_left_pointer"></div>
+				<li><div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="remember">
+                    Remember me </label>
+                </div></li>
+				<li> <a href="#"><i class="fa fa-question-circle"></i> Ayuda</a> </li>
+				<li> <a href="#"><i class="fa fa-cog"></i> Configuraci�n </a></li>
+				<li> <a href="#"><i class="fa fa-power-off"></i> Salir</a> </li>
+		  </ul>
+			</li>
           </ul>
         </div>
       </div>
@@ -52,7 +53,7 @@
         <div class="top_right">
           <div class="top_right_menu">
             <ul>
-              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Tarea <span class="badge badge">8</span> </a>
+              <li class="dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"> Tareas <span class="badge badge">8</span> </a>
                 <ul class="drop_down_task dropdown-menu">
                   <div class="top_pointer"></div>
                   <li>
@@ -108,7 +109,7 @@
             </ul>
           </div>
         </div>
-        <div class="user_admin dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"><img src="images/user.png" /><span class="user_adminname">John Doe</span> <b class="caret"></b> </a>
+        <div class="user_admin dropdown"> <a href="javascript:void(0);" data-toggle="dropdown"><img src="images/user.png" /><span class="user_adminname"></span> <b class="caret"></b> </a>
           <ul class="dropdown-menu">
             <div class="top_pointer"></div>
             <li> <a href="profile.html"><i class="fa fa-user"></i> Profile</a> </li>
@@ -117,13 +118,15 @@
             <li> <a href="login.html"><i class="fa fa-power-off"></i> Logout</a> </li>
           </ul>
         </div>
+
         <a href="javascript:;" class="toggle-menu menu-right push-body jPushMenuBtn rightbar-switch"><i class="fa fa-comment chat"></i></a>
+        
       </div>
     </div>
     <!--\\\\\\\ header top bar end \\\\\\-->
   </div>
   <!--\\\\\\\ header end \\\\\\-->
-   <div class="inner">
+  <div class="inner">
     <!--\\\\\\\ inner start \\\\\\-->
     <div class="left_nav">
       <!--\\\\\\\left_nav start \\\\\\-->
@@ -131,7 +134,7 @@
         <input name="" type="text" class="search" placeholder="Search..." />
       </div>
       <div class="left_nav_slidebar">    
-         <ul>
+        <ul>
             <li>
              <a href="index.jsp">
              <i class="fa fa-home"></i> <span>Inicio</span>         
@@ -146,7 +149,7 @@
               <li> <a href="listarRelAfe.jsp"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Relaciones Afectivas</b> </a> </li>
               <li> <a href="listarSocEfe.jsp"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Socio Afectiva</b> </a> </li>
               <li> <a href="listarConSoc.jsp"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Condicion Social</b> </a> </li>
-              <li> <a href="listarAcompañante.jsp"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Acompañante</b> </a> </li>
+              <li> <a href="listarAcompa�ante.jsp"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Acompa�ante</b> </a> </li>
               <li> <a href="listarTipoTrans.jsp"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Transporte</b> </a> </li>
               <li> <a href="listarTieLib.jsp"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tiempo Libre</b> </a> </li>
               <li> <a href="listarTipoFam.jsp"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Familiar</b> </a> </li>
@@ -192,50 +195,152 @@
     <!--\\\\\\\left_nav end \\\\\\-->
     <div class="contentpanel">
       <!--\\\\\\\ contentpanel start\\\\\\-->
-      <div class="pull-left breadcrumb_admin clear_both">
-        <div class="pull-left page_title theme_color">
-          <h1>Animales</h1>
-          <h2 class="">Modificar Animales</h2>
-        </div>
-        <div class="pull-right">
+      
+     <div class="container clear_both padding_fix">
+        <!--\\\\\\\ container  start \\\\\\-->
           <ol class="breadcrumb">
-            <li><a href="#">Animales</a></li>
-            <li class="active">Modificar Animales</li>
-          </ol>
-        </div>
-      </div>
-     
-      <div class="container clear_both padding_fix"> 
-      <div class="row">
-  <div class="col-md-3"></div>   
-      <div class="row">
-        <div class="col-md-6">           
-          <div class="block-web">          
-            <div class="porlets-content">
-              <form action="#" parsley-validate novalidate>
-                <div class="form-group">
-                  <label>Código</label>
-                  <input type="text" name="codigo" parsley-trigger="change" placeholder="Código" class="form-control">
-                </div><!--/form-group-->
-                <div class="form-group">
-                  <label>Nombre</label>
-                  <input type="text" name="nombre" parsley-trigger="change"  placeholder="Nombre" class="form-control">
-                </div><!--/form-group-->  
-                  <div class="form-group">
-                  <label>Estado</label>
-                  <input type="text" name="estado"  placeholder="estado" class="form-control">
-                </div><!--/form-group-->
-                </div><!--/checkbox-->
-                <div class="col-xs-6 col-sm-3"><button  href="listarTipoViv.jsp" class="btn btn-primary" type="submit">Actualizar</button></div>
-                <button type="button" class="btn btn-primary" onclick="window.location.href='listarTipoViv.jsp'">Cancelar</button>
-           
-                </div>
-              </form>
-            </div><!--/porlets-content-->
-          <!--/block-web--> 
-        </div><!--/col-md-6-->
-       
+ 
+              <div class="basic-wizard" id="progressWizard">
+                <ul class="nav nav-pills nav-justified">
+                  <li class="active"><a data-toggle="tab" href="#ptab1">INFORMACION GENERAL</a></li>
+                  <li class=""><a data-toggle="tab" href="#ptab2"><span>Step 2:</span> Product Info</a></li>
+                  <li class=""><a data-toggle="tab" href="#ptab3"><span>Step 3:</span> Payment</a></li>
+                </ul>
+                   <div class="row">
+                       <div class="col-md-6">
+                           <!--Primera Columna-->
+                           <div class="page-header">
+  <h1>1.<small> ASPECTOS REVELANTES DE LA VISITA</small></h1>
+   <div class="tab-content"> 
+  <div id="ptab1" class="tab-pane active"> 
+                    <form class="form">
+                      <div class="form-group">
+                        <label class="col-sm-8">NOMBRE</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" name="nombre">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-8">APELLIDO</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" name="apellido">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-8">SEXO</label>
+                        <div class="col-sm-8">
+                          <div class="rdio rdio-primary">
+                            <input type="radio" name="radio" value="m" id="male2" checked="checked">
+                            <label for="masculino2">Masculino</label>
+                          </div>
+                          <div class="rdio rdio-primary">
+                            <input type="radio" name="radio" id="female2" value="f">
+                            <label for="femenino2">Femenino</label>
+                          </div>
+                        </div>
+                      </div>
+                        <br></br>
+                      <div class="form-group">
+                        <label class="col-sm-8">EDAD</label>
+                        <div class="col-sm-2">
+                            <input type="number" class="form-control" name="edad">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+</div>
+                       </div>  
+                    
+                        <div class="col-md-6">
+                            <!--SEGUNDA FILA-->
+                <div class="tab-content"> 
+                  <div id="ptab2" class="tab-pane">
+                    <form class="form">
+                      <div class="form-group">
+                        <label class="col-sm-4">Product ID</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" name="product_id">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-4">Product Name</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" name="product_name">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-4">Category</label>
+                        <div class="col-sm-4">
+                          <select class="form-control">
+                            <option value="">Choose One</option>
+                            <option value="">3D Animation</option>
+                            <option value="">Web Design</option>
+                            <option value="">Software Engineering</option>
+                          </select>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div id="ptab3" class="tab-pane">
+                    <form class="form">
+                      <div class="form-group">
+                        <label class="col-sm-4">Card No</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" name="cardno">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-4">Expiration</label>
+                        <div class="col-sm-4">
+                          <select class="form-control">
+                            <option value="">Month</option>
+                            <option value="">January</option>
+                            <option value="">February</option>
+                            <option value="">March</option>
+                            <option value="">...</option>
+                          </select>
+                        </div>
+                        <div class="col-sm-4">
+                          <select class="form-control">
+                            <option value="">Year</option>
+                            <option value="">2013</option>
+                            <option value="">2014</option>
+                            <option value="">2015</option>
+                            <option value="">...</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-4">CSV</label>
+                        <div class="col-sm-4">
+                          <input type="text" class="form-control" name="csv">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div><!-- /tab-content -->
+                
+                <ul class="pager wizard">
+                  <li class="previous"><a href="javascript:void(0)">Previous</a></li>
+                  <li class="next"><a href="javascript:void(0)">Next</a></li>
+                </ul>
+              </div><!--/progressWizard-->
+            
 
+                    </div>     
+          </ol>
+       
+      
+     
+    
+    
+      
+      
+      
+        </div>
+        <!--row end--> 
+ 
+        
       </div>
       <!--\\\\\\\ container  end \\\\\\-->
     </div>
@@ -260,21 +365,8 @@
     </div>
   </div>
 </div>
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Compose New Task</h4>
-      </div>
-      <div class="modal-body"> sgxdfgxfg </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+
 <!-- sidebar chats -->
 <nav class="atm-spmenu atm-spmenu-vertical atm-spmenu-right side-chat">
 	<div class="header">
@@ -355,6 +447,74 @@
 
 
 
+<!-- sidebar chats -->
+<nav class="atm-spmenu atm-spmenu-vertical atm-spmenu-right side-chat">
+	<div class="header">
+    <input type="text" class="form-control chat-search" placeholder=" Search">
+  </div>
+  <div href="#" class="sub-header">
+    <div class="icon"><i class="fa fa-user"></i></div> <p>Online (4)</p>
+  </div>
+  <div class="content">
+    <p class="title">Family</p>
+    <ul class="nav nav-pills nav-stacked contacts">
+      <li class="online"><a href="#"><i class="fa fa-circle-o"></i> Steven Smith</a></li>
+      <li class="online"><a href="#"><i class="fa fa-circle-o"></i> John Doe</a></li>
+      <li class="online"><a href="#"><i class="fa fa-circle-o"></i> Michael Smith</a></li>
+      <li class="busy"><a href="#"><i class="fa fa-circle-o"></i> Chris Rogers</a></li>
+    </ul>
+    
+    <p class="title">Friends</p>
+    <ul class="nav nav-pills nav-stacked contacts">
+      <li class="online"><a href="#"><i class="fa fa-circle-o"></i> Vernon Philander</a></li>
+      <li class="outside"><a href="#"><i class="fa fa-circle-o"></i> Kyle Abbott</a></li>
+      <li><a href="#"><i class="fa fa-circle-o"></i> Dean Elgar</a></li>
+    </ul>   
+    
+    <p class="title">Work</p>
+    <ul class="nav nav-pills nav-stacked contacts">
+      <li><a href="#"><i class="fa fa-circle-o"></i> Dale Steyn</a></li>
+      <li><a href="#"><i class="fa fa-circle-o"></i> Morne Morkel</a></li>
+    </ul>
+    
+  </div>
+  <div id="chat-box">
+    <div class="header">
+      <span>Richard Avedon</span>
+      <a class="close"><i class="fa fa-times"></i></a>    </div>
+    <div class="messages nano nscroller has-scrollbar">
+      <div class="content" tabindex="0" style="right: -17px;">
+        <ul class="conversation">
+          <li class="odd">
+            <p>Hi John, how are you?</p>
+          </li>
+          <li class="text-right">
+            <p>Hello I am also fine</p>
+          </li>
+          <li class="odd">
+            <p>Tell me what about you?</p>
+          </li>
+          <li class="text-right">
+            <p>Sorry, I'm late... see you</p>
+          </li>
+          <li class="odd unread">
+            <p>OK, call me later...</p>
+          </li>
+        </ul>
+      </div>
+    <div class="pane" style="display: none;"><div class="slider" style="height: 20px; top: 0px;"></div></div></div>
+    <div class="chat-input">
+      <div class="input-group">
+        <input type="text" placeholder="Enter a message..." class="form-control">
+        <span class="input-group-btn">
+        <button class="btn btn-danger" type="button">Send</button>
+        </span>      </div>
+    </div>
+  </div>
+</nav>
+<!-- /sidebar chats -->   
+
+
 
 <div class="demo"><span id="demo-setting"><i class="fa fa-cog txt-color-blueDark"></i></span> <form><legend class="no-padding margin-bottom-10" style="color:#6e778c;">Layout Options</legend><section><label><input type="checkbox" class="checkbox style-0" id="smart-fixed-header" name="subscription"><span>Fixed Header</span></label><label><input type="checkbox" class="checkbox style-0" id="smart-fixed-navigation" name="terms"><span>Fixed Navigation</span></label><label><input type="checkbox" class="checkbox style-0" id="smart-rigth-navigation" name="terms"><span>Right Navigation</span></label><label><input type="checkbox" class="checkbox style-0" id="smart-boxed-layout" name="terms"><span>Boxed Layout</span></label><span id="smart-bgimages" style="display: none;"></span></section><section><h6 class="margin-top-10 semi-bold margin-bottom-5">Clear Localstorage</h6><a id="reset-smart-widget" class="btn btn-xs btn-block btn-primary" href="javascript:void(0);"><i class="fa fa-refresh"></i> Factory Reset</a></section> <h6 class="margin-top-10 semi-bold margin-bottom-5">Ultimo Skins</h6><section id="smart-styles"><a style="background-color:#23262F;" class="btn btn-block btn-xs txt-color-white margin-right-5" id="dark_theme" href="javascript:void(0);"><i id="skin-checked" class="fa fa-check fa-fw"></i> Dark Theme</a><a style="background:#E35154;" class="btn btn-block btn-xs txt-color-white" id="red_thm" href="javascript:void(0);">Red Theme</a><a style="background:#34B077;" class="btn btn-xs btn-block txt-color-darken margin-top-5" id="green_thm" href="javascript:void(0);">Green Theme</a><a style="background:#56A5DB" class="btn btn-xs btn-block txt-color-white margin-top-5" data-skinlogo="img/logo-pale.png" id="blue_thm" href="javascript:void(0);">Blue Theme</a><a style="background:#9C6BAD" class="btn btn-xs btn-block txt-color-white margin-top-5" id="magento_thm" href="javascript:void(0);">Magento Theme</a><a style="background:#FFFFFF" class="btn btn-xs btn-block txt-color-black margin-top-5" id="light_theme" href="javascript:void(0);">Light Theme</a></section></form> </div>
 
@@ -370,69 +530,37 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/common-script.js"></script>
 <script src="js/jquery.slimscroll.min.js"></script>
-<script type="text/javascript"  src="plugins/toggle-switch/toggles.min.js"></script> 
-<script src="plugins/checkbox/zepto.js"></script>
-<script src="plugins/checkbox/icheck.js"></script>
-<script src="js/icheck-init.js"></script>
-<script type="text/javascript" src="plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script> 
-<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script> 
-<script type="text/javascript" src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script> 
-<script type="text/javascript" src="plugins/bootstrap-timepicker/js/bootstrap-timepicker.js"></script> 
-<script type="text/javascript" src="js/form-components.js"></script> 
-<script type="text/javascript"  src="plugins/input-mask/jquery.inputmask.min.js"></script> 
-<script type="text/javascript"  src="plugins/input-mask/demo-mask.js"></script> 
-<script type="text/javascript"  src="plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script> 
-<script type="text/javascript"  src="plugins/dropzone/dropzone.min.js"></script> 
-<script type="text/javascript" src="plugins/ckeditor/ckeditor.js"></script>
+<script src="js/jquery.sparkline.js"></script>
+<script src="js/sparkline-chart.js"></script>
+<script src="js/graph.js"></script>
+<script src="js/edit-graph.js"></script>
+<script src="plugins/kalendar/kalendar.js" type="text/javascript"></script>
+<script src="plugins/kalendar/edit-kalendar.js" type="text/javascript"></script>
+
+<script src="plugins/sparkline/jquery.sparkline.js" type="text/javascript"></script>
+<script src="plugins/sparkline/jquery.customSelect.min.js" ></script> 
+<script src="plugins/sparkline/sparkline-chart.js"></script> 
+<script src="plugins/sparkline/easy-pie-chart.js"></script>
+<script src="plugins/morris/morris.min.js" type="text/javascript"></script> 
+<script src="plugins/morris/raphael-min.js" type="text/javascript"></script>  
+<script src="plugins/morris/morris-script.js"></script> 
 
 
 
-<script src="plugins/validation/parsley.min.js"></script>
-
-<script>
 
 
-/*==Porlets Actions==*/
-    $('.minimize').click(function(e){
-      var h = $(this).parents(".header");
-      var c = h.next('.porlets-content');
-      var p = h.parent();
-      
-      c.slideToggle();
-      
-      p.toggleClass('closed');
-      
-      e.preventDefault();
-    });
-    
-    $('.refresh').click(function(e){
-      var h = $(this).parents(".header");
-      var p = h.parent();
-      var loading = $('&lt;div class="loading"&gt;&lt;i class="fa fa-refresh fa-spin"&gt;&lt;/i&gt;&lt;/div&gt;');
-      
-      loading.appendTo(p);
-      loading.fadeIn();
-      setTimeout(function() {
-        loading.fadeOut();
-      }, 1000);
-      
-      e.preventDefault();
-    });
-    
-    $('.close-down').click(function(e){
-      var h = $(this).parents(".header");
-      var p = h.parent();
-      
-      p.fadeOut(function(){
-        $(this).remove();
-      });
-      e.preventDefault();
-    });
+<script src="plugins/demo-slider/demo-slider.js"></script>
+<script src="plugins/knob/jquery.knob.min.js"></script> 
 
-</script>
+
+
 
 <script src="js/jPushMenu.js"></script> 
 <script src="js/side-chats.js"></script>
+<script src="js/jquery.slimscroll.min.js"></script>
+<script src="plugins/scroll/jquery.nanoscroller.js"></script>
+
+
 
 </body>
 </html>
