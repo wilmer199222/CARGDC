@@ -198,62 +198,113 @@
       
      <div class="container clear_both padding_fix">
         <!--\\\\\\\ container  start \\\\\\-->
-          <ol class="breadcrumb">
- 
+        
+        <div class="container clear_both padding_fix"> 
+      <div class="row">
+  <div class="col-md-12"></div>
+          <div class="block-web">
+            <div class="header">
+              <h3 class="center"  >ASPECTOS REVELANTES DE LA VISITA</h3>
+            </div>
+            <div class="porlets-content">
               <div class="basic-wizard" id="progressWizard">
                 <ul class="nav nav-pills nav-justified">
-                  <li class="active"><a data-toggle="tab" href="#ptab1">INFORMACION GENERAL</a></li>
-                  <li class=""><a data-toggle="tab" href="#ptab2"><span>Step 2:</span> Product Info</a></li>
-                  <li class=""><a data-toggle="tab" href="#ptab3"><span>Step 3:</span> Payment</a></li>
+                  <li class="active"><a data-toggle="tab" href="#ptab1"><span>1:  </span> Información</a></li>
+                  <li><a data-toggle="tab" href="#ptab2"><span>Step 2:</span> Product Info</a></li>
+                  <li><a data-toggle="tab" href="#ptab3"><span>Step 3:</span> Payment</a></li>
                 </ul>
-                   <div class="row">
-                       <div class="col-md-6">
-                           <!--Primera Columna-->
-                           <div class="page-header">
-  <h1>1.<small> ASPECTOS REVELANTES DE LA VISITA</small></h1>
-   <div class="tab-content"> 
-  <div id="ptab1" class="tab-pane active"> 
+                <div class="tab-content">
+                  <div class="progress progress-striped">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" class="progress-bar" style="width: 33.3333%;"></div>
+                  </div>
+                  <div id="ptab1" class="tab-pane active">
+                      <h3 class="center"> INFORMACION DE ACUDIENTE</h3>
                     <form class="form">
                       <div class="form-group">
-                        <label class="col-sm-8">NOMBRE</label>
-                        <div class="col-sm-8">
+                        <label class="col-sm-2">Nombre:</label>
+                        <div class="col-sm-9">
                           <input type="text" class="form-control" name="nombre">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-sm-8">APELLIDO</label>
-                        <div class="col-sm-8">
+                        <label class="col-sm-2">Apellido:</label>
+                        <div class="col-sm-9">
                           <input type="text" class="form-control" name="apellido">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-sm-8">SEXO</label>
-                        <div class="col-sm-8">
+                        <label class="col-sm-2">Sexo:</label>
+                        <div class="col-sm-4">
                           <div class="rdio rdio-primary">
-                            <input type="radio" name="radio" value="m" id="male2" checked="checked">
-                            <label for="masculino2">Masculino</label>
+                            <input type="radio" name="radio" value="m" id="mal2" checked="checked">
+                            <label for="mal2">Masculino</label>
                           </div>
                           <div class="rdio rdio-primary">
-                            <input type="radio" name="radio" id="female2" value="f">
-                            <label for="femenino2">Femenino</label>
+                            <input type="radio" name="radio" id="fem2" value="f">
+                            <label for="fem2">Femenino</label>
                           </div>
                         </div>
                       </div>
-                        <br></br>
+                        <div class="form-group">
+                        <label class="col-sm-2">Edad:</label>
+                        <div class="col-sm-5">
+                          <input type="number" class="form-control" name="edad">
+                        </div>
+                      </div>
                       <div class="form-group">
-                        <label class="col-sm-8">EDAD</label>
-                        <div class="col-sm-2">
-                            <input type="number" class="form-control" name="edad">
+                        <label class="col-sm-12">Tipo Identificación:</label>
+                        <div class="col-sm-3">
+                        <select name="tipoIdentificacion">
+                            <option>--Seleccione--</option>
+                            <option>T.Identidad</option>
+                            <option>Cedula</option>
+                            <option>Pasaporte</option>   
+                        </select>
+                         </div>    
+                      </div>
+                        <div class="form-group">
+                        <label class="col-sm-2">Numero Cedula:</label>
+                        <div class="col-sm-6">
+                          <input type="number" class="form-control" name="cedula">
+                        </div>
+                      </div>  
+                        <div class="form-group">
+                        <label class="col-sm-2">Ciudad:</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="ciudad">
+                        </div>
+                      </div>
+                        <div class="form-group">
+                        <label class="col-sm-2">Municipio:</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="municipio">
+                        </div>
+                      </div>
+                        <div class="form-group">
+                        <label class="col-sm-2">Dirección de la vivienda:</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="direccion">
+                        </div>
+                      </div>
+                         <div class="form-group">
+                        <label class="col-sm-2">Telefono:</label>
+                        <div class="col-sm-8">
+                          <input type="number" class="form-control" name="telefono">
                         </div>
                       </div>
                     </form>
-                  </div>
-</div>
-                       </div>  
+                      
+                      <div class="col-md-12">
+                      <form class="form">
+                            
+                                <h3 class="center">ASPECTOS REVELANTES DE LA VISITA</h3>
+                                
+            </div>
+                      </form>
                     
-                        <div class="col-md-6">
-                            <!--SEGUNDA FILA-->
-                <div class="tab-content"> 
+                  </div>
+                      
+                    
                   <div id="ptab2" class="tab-pane">
                     <form class="form">
                       <div class="form-group">
@@ -321,14 +372,13 @@
                 </div><!-- /tab-content -->
                 
                 <ul class="pager wizard">
-                  <li class="previous"><a href="javascript:void(0)">Previous</a></li>
+                  <li class="previous disabled"><a href="javascript:void(0)">Previous</a></li>
                   <li class="next"><a href="javascript:void(0)">Next</a></li>
                 </ul>
               </div><!--/progressWizard-->
-            
-
-                    </div>     
-          </ol>
+            </div><!--/porlets-content--> 
+          </div><!--/block-web--> 
+        </div>
        
       
      
@@ -347,7 +397,7 @@
     <!--\\\\\\\ content panel end \\\\\\-->
   </div>
   <!--\\\\\\\ inner end\\\\\\-->
-</div>
+
 <!--\\\\\\\ wrapper end\\\\\\-->
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
