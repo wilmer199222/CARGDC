@@ -1,3 +1,7 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.caracterizacion.modelo.Pisos"%>
+<%@page import="java.util.List"%>
+<%@page import="com.caracterizacion.dao.PisosDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,6 +29,13 @@
 
 
 </head>
+<%
+    PisosDaoImpl dao = new PisosDaoImpl();
+    List<Pisos> listPisos = new ArrayList();
+    listPisos = dao.listar();
+
+    %>
+    
 <body class="light_theme  fixed_header left_nav_fixed">
 <div class="wrapper">
   <!--\\\\\\\ wrapper Start \\\\\\-->
@@ -212,21 +223,26 @@
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="porlets-content">
-              <form action="#" parsley-validate novalidate>
+                <%
+                Pisos piso = (Pisos) request.getAttribute("pisos");
+                %>  
+                
+                <form action="pisossv" method="get">
                 <div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="nick" parsley-trigger="change" placeholder="Código" class="form-control">
+                  <input type="text" name="idPiso" parsley-trigger="change" placeholder="Código" class="form-control" value='<%= piso.getIdPiso() %>'>
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="email" parsley-trigger="change"  placeholder="Nombre" class="form-control">
+                  <input type="text" name="nombre" parsley-trigger="change"  placeholder="Nombre" class="form-control" value='<%= piso.getNombre() %>'>
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="email"  placeholder="Estado" class="form-control">
+                  <input type="text" name="estado" parsley-trigger="change" placeholder="Estado" class="form-control" value='<%= piso.getEstado() %>'>
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
-               <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Actualizar</button></div>               
+                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit" name="btnActualizar" value="Actualizar">Actualizar</button></div>     
+                
                 <button type="button" class="btn btn-primary" onclick="window.location.href='listarPisos.jsp'">Cancelar</button>
            
                 </div>

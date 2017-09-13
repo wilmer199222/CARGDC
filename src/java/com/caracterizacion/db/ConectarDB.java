@@ -12,9 +12,9 @@ import java.util.logging.Logger;
  * @author ESTUDIANTES
  */
 public class ConectarDB {
-    private String driver = "";
-    private String url = "";
-    private String usuario = "";
+    private String driver = "com.mysql.jdbc.Driver";
+    private String url = "jdbc:mysql://localhost:3306/gdccar";
+    private String usuario = "root";
     private String password = "";
     
     Connection conex = null;

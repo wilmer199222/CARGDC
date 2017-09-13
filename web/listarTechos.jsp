@@ -1,3 +1,7 @@
+<%@page import="com.caracterizacion.modelo.Techo"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="com.caracterizacion.dao.TechoDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,6 +29,12 @@
 
 
 </head>
+<%
+    TechoDaoImpl dao = new TechoDaoImpl();
+    List<Techo> listTecho = new ArrayList();
+    
+    %>
+
 <body class="light_theme  fixed_header left_nav_fixed">
 <div class="wrapper">
   <!--\\\\\\\ wrapper Start \\\\\\-->
@@ -239,38 +249,51 @@
                 </tr>
                 </thead>
                 <tbody>
+                   <%
+                    listTecho = dao.listar();
+                    for(Techo t : listTecho){
+
+                        %>
                 <tr>
-                  <td>1</td>
-                  <td>Zinc</td>
-                  <td>Activo</td>
-                  <td><div class="row">
+                  <td><%= t.getIdTecho() %></td>
+                  <td><%= t.getNombre() %></td>
+                  <td><%= t.getEstado() %></td>
+                   <td>
+                    <div class="row">
                         <div class="col-1 col-md-1">
                             
-                             <form action="" method="get">
-                                <a href="ver_techos.jsp" onclick="" name="Ver">
-                                <span class="glyphicon glyphicon-file"></span>
+                             <form action="techosv" method="get">
+                                <a href="javascript:;" onclick="parentNode.submit();" name="btnVerDetalle">
+                                <span class="glyphicon glyphicon-eye-open"></span>
                                 </a>
-                             <input type="hidden" name="btnVer" value="Ver"/>
-                             <input type="hidden" name="codigo" value="">
+                             <input type="hidden" name="btnVerDetalle" value="ver"/>
+                             <input type="hidden" name="idTecho" value='<%= t.getIdTecho() %>'/>
                             </form> 
                         </div>
                         <div class="col-1 col-md-1">
-                            <form action="pruebasv" method="get">
-                                <a href="javascript:;" onclick="" name="Eliminar">
+                            
+                            <form action="techosv" method="get">
+                                <a href="javascript:;" onclick="parentNode.submit();" name="btnEliminar">
                                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                 </a>
                                 <input type="hidden" name="btnEliminar" value="eliminar"/>
-                                <input type="hidden" name="cod" value="">
+                                <input type="hidden" name="idTecho" value='<%= t.getIdTecho()%>'/>
                             </form>                  
                         </div>
                         <div class="col-1 col-md-1">
-                            <a href="modificar_techos.jsp" data-toggle="tooltip" data-placement="top" title="Modificar">
-                                <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-                            </a>
+                            
+                             <form action="techosv" method="get">
+                                <a href="javascript:;" onclick="parentNode.submit();" name="btnModificar">
+                                <span class="glyphicon glyphicon-check"></span>
+                                </a>
+                             <input type="hidden" name="btnModificar" value="modificar"/>
+                             <input type="hidden" name="idTecho" value='<%= t.getIdTecho()%>'/>
+                            </form> 
                         </div>
-                   </div></td> 
-                </tr>
-       
+                   </div>
+                  </td>
+                </tr>   
+                <% } %>            
                 </tbody>          
               </table> 
           <!--/block-web--> 

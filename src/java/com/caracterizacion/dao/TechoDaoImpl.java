@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.caracterizacion.dao;
 
 import com.caracterizacion.db.ConectarDB;
 import com.caracterizacion.modelo.Pisos;
+import com.caracterizacion.modelo.Techo;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,15 +14,15 @@ import java.util.List;
  *
  * @author Estudiante
  */
-public class PisosDaoImpl implements IDAO {
+public class TechoDaoImpl implements IDAO {
     
     ConectarDB con = new ConectarDB();
     PreparedStatement psmt = null;
     ResultSet rs = null;
     String respuesta = null;
-    Pisos piso;
+    Techo techo;
     
-    public PisosDaoImpl() {
+    public TechoDaoImpl() {
         con = new ConectarDB();
         con.setDriver("com.mysql.jdbc.Driver");
         con.setUrl("jdbc:mysql://localhost:3306/gdccar");
@@ -36,12 +33,12 @@ public class PisosDaoImpl implements IDAO {
 
     @Override
     public String insertar(Object obj) throws SQLException {
-        Pisos objPiso = (Pisos) obj;
+         Techo objTecho = (Techo) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO pisos VALUES (?,?,?)");
-            psmt.setInt(1, objPiso.getIdPiso());
-            psmt.setString(2, objPiso.getNombre());
-            psmt.setString(3, objPiso.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO techo VALUES (?,?,?)");
+            psmt.setInt(1, objTecho.getIdTecho());
+            psmt.setString(2, objTecho.getNombre());
+            psmt.setString(3, objTecho.getEstado()); 
             
             psmt.executeUpdate();
        
@@ -60,11 +57,11 @@ public class PisosDaoImpl implements IDAO {
 
     @Override
     public String eliminar(Object obj) throws SQLException {
-         Pisos objPiso = (Pisos) obj;
+          Techo objTecho = (Techo) obj;
          try {
-            psmt = con.conectar().prepareStatement("UPDATE pisos SET estado=? WHERE idPiso=?");
+            psmt = con.conectar().prepareStatement("UPDATE techo SET estado=? WHERE idTecho=?");
             psmt.setString(1, "Inactivo");
-            psmt.setInt(2, (objPiso.getIdPiso()));
+            psmt.setInt(2, (objTecho.getIdTecho()));
             
             psmt.executeUpdate();
             respuesta = "La eliminacion se realizo con exito";
@@ -82,13 +79,13 @@ public class PisosDaoImpl implements IDAO {
 
     @Override
     public String modificar(Object obj) throws SQLException {
-        Pisos objPiso = (Pisos) obj;
+         Techo objTecho = (Techo) obj;
         try {
-            psmt = con.conectar().prepareStatement("UPDATE pisos SET nombre=? AND estado=? WHERE idPiso=?");
+            psmt = con.conectar().prepareStatement("UPDATE techo SET nombre=? AND estado=? WHERE idTecho=?");
             
-            psmt.setInt(1, objPiso.getIdPiso());
-            psmt.setString(2, objPiso.getNombre());            
-            psmt.setString(3, objPiso.getEstado());
+            psmt.setInt(1, objTecho.getIdTecho());
+            psmt.setString(2, objTecho.getNombre());            
+            psmt.setString(3, objTecho.getEstado());
           
             psmt.executeUpdate();
             respuesta = "El registro se Actualizo con exito";
@@ -101,19 +98,18 @@ public class PisosDaoImpl implements IDAO {
             }
             con.desconectar();
           }
+        
         return respuesta;
-         
-         
     }
 
     @Override
-    public List<Pisos> listar() throws SQLException {
-          List<Pisos> listaPiso = new ArrayList<>();
+    public List<Techo> listar() throws SQLException {
+          List<Techo> listaTecho = new ArrayList<>();
           try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM pisos");
+            psmt = con.conectar().prepareStatement("SELECT * FROM techo");
             rs = psmt.executeQuery();
             while (rs.next()) {                
-                listaPiso.add(Pisos.load(rs));
+                listaTecho.add(Techo.load(rs));
             }
             
         } catch (Exception e){
@@ -128,17 +124,19 @@ public class PisosDaoImpl implements IDAO {
             
             con.desconectar();
         }
-       return listaPiso;
+       return listaTecho;
     }
+
     @Override
     public Object buscarPorID(String id) throws SQLException {
-         try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM pisos WHERE idPiso=?");
+        
+          try {
+            psmt = con.conectar().prepareStatement("SELECT * FROM techo WHERE idtecho=?");
             psmt.setString(1,id);
             rs = psmt.executeQuery();
             while (rs.next()) {                
                 
-                piso =  Pisos.load(rs);
+                techo =  Techo.load(rs);
             }
         } catch (SQLException e) {
             System.out.println("Error en la consulta: " + e);
@@ -153,8 +151,7 @@ public class PisosDaoImpl implements IDAO {
             con.desconectar();
         }
         
-       return piso;
-    
+       return techo;
     }
 
     @Override
@@ -179,9 +176,9 @@ public class PisosDaoImpl implements IDAO {
 
     @Override
     public String generarCodigo() throws SQLException {
-                 String codigo = null;
+        String codigo = null;
         try {
-            psmt=con.conectar().prepareStatement("SELECT COUNT(idPiso) FROM pisos");
+            psmt=con.conectar().prepareStatement("SELECT COUNT(idTecho) FROM techo");
             rs=psmt.executeQuery();
             while(rs.next()){
                 
@@ -210,7 +207,7 @@ public class PisosDaoImpl implements IDAO {
 
         }
          return codigo;
-   
+
     }
     
 }

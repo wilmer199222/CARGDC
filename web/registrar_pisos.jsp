@@ -1,3 +1,4 @@
+<%@page import="com.caracterizacion.dao.PisosDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,6 +26,10 @@
 
 
 </head>
+<%
+    PisosDaoImpl dao = new PisosDaoImpl();
+       
+    %>
 <body class="light_theme  fixed_header left_nav_fixed">
 <div class="wrapper">
   <!--\\\\\\\ wrapper Start \\\\\\-->
@@ -212,23 +217,23 @@
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="porlets-content">
-              <form action="#" parsley-validate novalidate>
+                <form action="pisossv" method="get">
                 <div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="codigo" parsley-trigger="change" placeholder="Código" class="form-control">
+                  <input type="number" name="idPiso" id="idPiso" parsley-trigger="change" placeholder="Código" class="form-control" >
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="nombre" parsley-trigger="change"  placeholder="Nombre" class="form-control">
+                  <input type="text" name="nombre" id="nombre" parsley-trigger="change" placeholder="Nombre" class="form-control">
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="estado"  placeholder="Estado" class="form-control">
+                  <input type="text" name="estado" id="estado" parsley-trigger="change" placeholder="Estado" class="form-control">
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
-         <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>
+                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" name="btnRegistrar" value="Registrar">Registrar</button></div>
                 
-                <button type="button" class="btn btn-primary" onclick="window.location.href='listarPisos.jsp'">Cancelar</button>
+                <button type="submit" class="btn btn-primary" onclick="window.location.href='listarPisos.jsp'">Cancelar</button>
                 </div>
               </form>
             </div><!--/porlets-content-->

@@ -1,3 +1,7 @@
+<%@page import="com.caracterizacion.modelo.Pisos"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="com.caracterizacion.dao.PisosDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,6 +29,11 @@
 
 
 </head>
+<%
+    PisosDaoImpl dao = new PisosDaoImpl();
+    List<Pisos> listPiso = new ArrayList();
+    
+    %>
 <body class="light_theme  fixed_header left_nav_fixed">
 <div class="wrapper">
   <!--\\\\\\\ wrapper Start \\\\\\-->
@@ -212,7 +221,7 @@
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="panel-heading">
-              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_pisos.html'">Nuevo</button></div>
+              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_pisos.jsp'">Nuevo</button></div>
                 
                 <form class="form-inline">
              
@@ -239,38 +248,51 @@
                 </tr>
                 </thead>
                 <tbody>
+                   <%
+                    listPiso = dao.listar();
+                    for(Pisos p : listPiso){
+
+                        %>
                 <tr>
-                  <td>1</td>
-                  <td>Cemento</td>
-                  <td>Activo</td>
-                  <td><div class="row">
+                  <td><%= p.getIdPiso() %></td>
+                  <td><%= p.getNombre() %></td>
+                  <td><%= p.getEstado() %></td>
+                    <td>
+                    <div class="row">
                         <div class="col-1 col-md-1">
                             
-                             <form action="" method="get">
-                                <a href="" onclick="" name="Modificar">
-                                <span class="glyphicon glyphicon-file"></span>
+                             <form action="pisossv" method="get">
+                                <a href="javascript:;" onclick="parentNode.submit();" name="btnVerDetalle">
+                                <span class="glyphicon glyphicon-eye-open"></span>
                                 </a>
-                             <input type="hidden" name="btnModificar" value="modificar"/>
-                             <input type="hidden" name="codigo" value="">
+                             <input type="hidden" name="btnVerDetalle" value="ver"/>
+                             <input type="hidden" name="idPiso" value='<%= p.getIdPiso() %>'/>
                             </form> 
                         </div>
                         <div class="col-1 col-md-1">
-                            <form action="pruebasv" method="get">
-                                <a href="javascript:;" onclick="" name="Eliminar">
+                            
+                            <form action="pisossv" method="get">
+                                <a href="javascript:;" onclick="parentNode.submit();" name="btnEliminar">
                                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                 </a>
                                 <input type="hidden" name="btnEliminar" value="eliminar"/>
-                                <input type="hidden" name="cod" value="">
+                                <input type="hidden" name="idPiso" value='<%= p.getIdPiso() %>'/>
                             </form>                  
                         </div>
                         <div class="col-1 col-md-1">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Modificar">
-                                <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-                            </a>
+                            
+                             <form action="pisossv" method="get">
+                                <a href="javascript:;" onclick="parentNode.submit();" name="btnModificar">
+                                <span class="glyphicon glyphicon-check"></span>
+                                </a>
+                             <input type="hidden" name="btnModificar" value="modificar"/>
+                             <input type="hidden" name="idPiso" value='<%= p.getIdPiso() %>'/>
+                            </form> 
                         </div>
-                   </div></td> 
+                   </div>
+                  </td>
                 </tr>
-       
+                <% } %>            
                 </tbody>          
               </table> 
           <!--/block-web--> 

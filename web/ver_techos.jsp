@@ -1,3 +1,7 @@
+<%@page import="com.caracterizacion.modelo.Techo"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="com.caracterizacion.dao.TechoDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,6 +29,12 @@
 
 
 </head>
+<%
+   TechoDaoImpl dao = new TechoDaoImpl();
+   List<Techo> listTecho = new ArrayList();
+   listTecho = dao.listar();
+   
+ %>
 <body class="light_theme  fixed_header left_nav_fixed">
 <div class="wrapper">
   <!--\\\\\\\ wrapper Start \\\\\\-->
@@ -212,19 +222,22 @@
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="porlets-content">
-              <form action="#" parsley-validate novalidate>
-                <div class="form-group">
+               <%
+                    Techo techo = (Techo) request.getAttribute("techo");
+                    %>
+              <form action="techosv" method="get">
+                  <fieldset disabled><div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="codigo" parsley-trigger="change" placeholder="Código" class="form-control">
+                  <input type="text" name="idTecho" parsley-trigger="change" placeholder="Código" class="form-control" value='<%= techo.getIdTecho() %>'>
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="nombre" parsley-trigger="change"  placeholder="Nombre" class="form-control">
+                  <input type="text" name="nombre" parsley-trigger="change"  placeholder="Nombre" class="form-control" value='<%= techo.getNombre() %>'>
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="estado"  placeholder="Estado" class="form-control">
-                </div><!--/form-group-->
+                  <input type="text" name="estado" parsley-trigger="change" placeholder="Estado" class="form-control" value='<%= techo.getEstado() %>'>
+                  </div></fieldset><!--/form-group-->
                 </div><!--/checkbox-->
                 
                 </div>
