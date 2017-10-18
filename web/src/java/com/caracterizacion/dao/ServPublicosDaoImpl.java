@@ -2,7 +2,8 @@
 package com.caracterizacion.dao;
 
 import com.caracterizacion.db.ConectarDB;
-import com.caracterizacion.modelo.Paredes;
+
+import com.caracterizacion.modelo.ServPublicos;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,36 +12,31 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ParedesDaoImpl implements IDAO{
+public class ServPublicosDaoImpl implements IDAO{
     ConectarDB con = new ConectarDB();
     PreparedStatement psmt = null;
     ResultSet rs = null;
     String respuesta = null;
-    Paredes pared;
-
-    public ParedesDaoImpl(){
-      con = new ConectarDB();
+    ServPublicos servpublic;
+    
+    public ServPublicosDaoImpl(){
+        con = new ConectarDB();
         con.setDriver("com.mysql.jdbc.Driver");
         con.setUrl("jdbc:mysql://localhost:3306/gdccar");
         con.setUsuario("root");
-        
         con.setPassword("");
-        
     }
-    
-                    
+
     @Override
     public String insertar(Object obj) throws SQLException {
-        Paredes objPared =  (Paredes) obj;
+        ServPublicos objServPublicos = (ServPublicos) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO paredes VALUES (null,?,?)");
-//            psmt.setInt(1, objPared.getIdParedes());
-            psmt.setString(1, objPared.getNombre());
-            psmt.setString(2, objPared.getEstado());
-
+            psmt = con.conectar().prepareStatement("INSERT INTO serviciospublicos VALUES (?,?,?)");
+            psmt.setInt(1, objServPublicos.getIdServiciosPublicos());
+            psmt.setString(2, objServPublicos.getNombre());
+            psmt.setString(3, objServPublicos.getEstado());
             psmt.executeUpdate();
             respuesta = "El registro se realizo con exito";
-            
         } catch (Exception e) {
             throw new SQLException("Error al registrar: " + e.toString());
         }finally{
@@ -57,33 +53,42 @@ public class ParedesDaoImpl implements IDAO{
 
     @Override
     public String eliminar(Object obj) throws SQLException {
-            Paredes objPared = (Paredes) obj;
+        ServPublicos objServPublicos = (ServPublicos) obj;
         try {
-            psmt = con.conectar().prepareStatement("UPDATE paredes SET estado=? WHERE idParedes=?");
+            psmt = con.conectar().prepareStatement("UPDATE serviciospublicos SET estado=? WHERE idServiciosPublicos=?");
             psmt.setString(1, "Inactivo");
-            psmt.setInt(2,(objPared.getIdParedes()));
+            psmt.setInt(2, objServPublicos.getIdServiciosPublicos());
             psmt.executeUpdate();
             respuesta = "El registro se realizo con exito";
         } catch (SQLException e) {
-            throw new SQLException("Error al registrar: " + e.toString()); 
+            throw  new SQLException("Error al registrar:" + e.toString());
+        } finally{
+            if(psmt!=null){
+                psmt.close();
+            }
+            
+            con.desconectar();
+            
         }
-          return respuesta;
+        return respuesta;
+        
+            
+        
     }
 
     @Override
-    public String modificar(Object obj)throws SQLException{
-        Paredes objPared =(Paredes) obj;
+    public String modificar(Object obj) throws SQLException {
+        ServPublicos objServPublicos = (ServPublicos) obj;
         try {
-            psmt = con.conectar().prepareStatement("UPDATE paredes SET nombre=? AND estado=? WHERE idParedes=?" );
-            psmt.setInt(1, objPared.getIdParedes());
-            psmt.setString(2, objPared.getNombre());
-            
-            psmt.setString(3, objPared.getEstado());
+            psmt = con.conectar().prepareStatement("UPDATE serviciospublicos SET nombre=? AND estado=? WHERE idServiciosPublicos=?");
+            psmt.setInt(1, objServPublicos.getIdServiciosPublicos());
+            psmt.setString(2, objServPublicos.getNombre());
+            psmt.setString(3, objServPublicos.getEstado());
             psmt.executeUpdate();
-            respuesta = "El registro se actualizo con exito";
-            }catch(Exception e){
-              throw new SQLException("Error al actualizar:"+e.toString());
-            }finally{
+            respuesta = "El registro se actaualixose actualizo con exito";
+           } catch (Exception e) {
+               throw new SQLException("Error al actualizar:" + e.toString());
+           }finally{
                 if(psmt!=null){
                 psmt.close();
             }
@@ -91,20 +96,16 @@ public class ParedesDaoImpl implements IDAO{
             
             }
             return respuesta;
-        
-                
-           
-        
     }
 
     @Override
-    public List<Paredes> listar() throws SQLException {
-    List<Paredes> listaPared = new ArrayList<>();
+    public List<ServPublicos> listar() throws SQLException {
+        List<ServPublicos> listServPublicos = new ArrayList<>();
         try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM paredes");
+            psmt = con.conectar().prepareStatement("SELECT * FROM serviciospublicos");
             rs = psmt.executeQuery();
             while (rs.next()) {                
-                listaPared.add(Paredes.load(rs));
+            listServPublicos.add(servpublic.load(rs));
             }
         } catch (Exception e) {
             System.out.println("Error en la consulta: " + e);
@@ -118,19 +119,18 @@ public class ParedesDaoImpl implements IDAO{
             
             con.desconectar();
     }
-         return listaPared;
+         return listServPublicos;
     }
 
     @Override
     public Object buscarPorID(String id) throws SQLException {
-        
         try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM paredes WHERE idParedes=?");
+            psmt = con.conectar().prepareStatement("SELECT * FROM serviciospublicos WHERE idServiciosPublicos=?");
             psmt.setString(1, id);
             rs = psmt.executeQuery();
             
             while (rs.next()) {
-                  pared =  Paredes.load(rs);
+                  servpublic = ServPublicos.load(rs);
             }
         } catch (Exception e) {
             System.out.println("Error en la consulta"+e.toString());
@@ -144,7 +144,7 @@ public class ParedesDaoImpl implements IDAO{
             
             con.desconectar();
         }
-            return pared;
+            return servpublic;
     }
 
     @Override
@@ -169,9 +169,9 @@ public class ParedesDaoImpl implements IDAO{
 
     @Override
     public String generarCodigo() throws SQLException {
-        String codigo = null;
+       String codigo = null;
         try {
-            psmt=con.conectar().prepareStatement("SELECT COUNT(idParedes) FROM paredes");
+            psmt=con.conectar().prepareStatement("SELECT COUNT(idServiciosPublicos) FROM serviciospublicos");
             rs=psmt.executeQuery();
             while(rs.next()){
                 //codigo = "P000" + rs.getString(1).length();
@@ -184,7 +184,7 @@ public class ParedesDaoImpl implements IDAO{
                         codigo = "P0" + rs.getString(1);
                         break;
                     case 3:
-                        codigo = "P" + rs.getString(1);
+                        codigo = "P0" + rs.getString(1);
                         break;
                    default: break;
                      
@@ -198,7 +198,8 @@ public class ParedesDaoImpl implements IDAO{
 
         }
          return codigo;
-        
     }
+  
+
     
 }

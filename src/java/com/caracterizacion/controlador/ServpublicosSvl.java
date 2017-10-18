@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package com.caracterizacion.controlador;
 
-import com.caracterizacion.dao.ParedesDaoImpl;
-import com.caracterizacion.modelo.Paredes;
+import com.caracterizacion.dao.ServPublicosDaoImpl;
+import com.caracterizacion.modelo.ServPublicos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -21,32 +22,32 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Estudiante
  */
-@WebServlet(name = "ParedesSvl", urlPatterns = {"/paredessv"})
-public class ParedesSvl extends HttpServlet {
+@WebServlet(name = "ServpublicosSvl", urlPatterns = {"/servpublicossv"})
+public class ServpublicosSvl extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            ParedesDaoImpl paredDao =  new ParedesDaoImpl();
-            Paredes paredes = new Paredes();
+            ServPublicosDaoImpl servpublicosDao =  new ServPublicosDaoImpl();
+            ServPublicos servPublicos = new ServPublicos();
             
             String respuesta = null;
             RequestDispatcher rd = null;
             try {
                 if(request.getParameter("btnRegistrar")!=null){
-                    paredes.setIdParedes(Integer.parseInt(request.getParameter("idParedes")));
-                    paredes.setNombre(request.getParameter("nombre"));
-                    paredes.setEstado(request.getParameter("estado"));
+                    servPublicos.setIdServiciosPublicos(Integer.parseInt(request.getParameter("idServiciosPublicos")));
+                    servPublicos.setNombre(request.getParameter("nombre"));
+                    servPublicos.setEstado(request.getParameter("estado"));
                     //paredes.setEstado("Activo");
-                    respuesta =  paredDao.insertar(paredes);
+                    respuesta =  servpublicosDao.insertar(servPublicos);
                     request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarParedes.jsp");
+                    rd = request.getRequestDispatcher("listarServiciosPublicos.jsp");
                  }else if(request.getParameter("btnEliminar")!=null){
-                    paredes.setIdParedes(Integer.parseInt(request.getParameter("idParedes")));
-                    paredDao.eliminar(paredes);
+                    servPublicos.setIdServiciosPublicos(Integer.parseInt(request.getParameter("idServiciosPublicos")));
+                    servpublicosDao.eliminar(servPublicos);
                     //request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarParedes.jsp");
+                    rd = request.getRequestDispatcher("listarServiciosPublicos.jsp");
                     
                     
                     
@@ -56,16 +57,16 @@ public class ParedesSvl extends HttpServlet {
                     
                 }else if(request.getParameter("btnVerDetalle")!=null){
                     
-                      paredes = (Paredes) paredDao.buscarPorID(request.getParameter("idParedes"));
+                      servPublicos = (ServPublicos) servpublicosDao.buscarPorID(request.getParameter("idServiciosPublicos"));
 
-                    request.setAttribute("paredes", paredes);
-                    rd = request.getRequestDispatcher("ver_paredes.jsp");
+                    request.setAttribute("servPublicos", servPublicos);
+                    rd = request.getRequestDispatcher("ver_serviciospublicos.jsp");
                  }else if(request.getParameter("btnVerDetalle")!=null){
                     
-                    paredes = (Paredes) paredDao.buscarPorID(request.getParameter("idParedes"));
+                    servPublicos = (ServPublicos) servpublicosDao.buscarPorID(request.getParameter("idServiciosPublicos"));
                     
-                    request.setAttribute("paredes", paredes);
-                    rd = request.getRequestDispatcher("ver_paredes.jsp");
+                    request.setAttribute("servPublicos", servPublicos);
+                    rd = request.getRequestDispatcher("ver_serviciospublicos.jsp");
                     
                    
                     
@@ -75,22 +76,21 @@ public class ParedesSvl extends HttpServlet {
                     
                 }else if(request.getParameter("btnModificar")!=null){
                     
-                 paredes = (Paredes) paredDao.buscarPorID(request.getParameter("idParedes"));
+                 servPublicos = (ServPublicos) servpublicosDao.buscarPorID(request.getParameter("idServiciosPublicos"));
                  
-                 request.setAttribute("paredes", paredes);    
-                 rd = request.getRequestDispatcher("modificar_paredes.jsp");
+                 request.setAttribute("servPublicos", servPublicos);    
+                 rd = request.getRequestDispatcher("modificar_serviciospublicos.jsp");
                  
                  
                  
                 }else if (request.getParameter("btnActualizar")!=null) {
-                    
-                    paredes.setIdParedes(Integer.parseInt(request.getParameter("idParedes")));
-                    paredes.setNombre(request.getParameter("nombre"));
-                    paredes.setEstado(request.getParameter("estado"));
+                    servPublicos.setIdServiciosPublicos(Integer.parseInt(request.getParameter("idServiciosPublicos")));
+                    servPublicos.setNombre(request.getParameter("nombre"));
+                    servPublicos.setEstado(request.getParameter("estado"));
                   //paredes.setEstado("Activo");
-                    respuesta =  paredDao.modificar (paredes);
+                    respuesta =  servpublicosDao.modificar (servPublicos);
                     request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarParedes.jsp");
+                    rd = request.getRequestDispatcher("listarServiciosPublicos.jsp");
                     
                 }
                  

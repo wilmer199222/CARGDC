@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package com.caracterizacion.controlador;
 
-import com.caracterizacion.dao.ParedesDaoImpl;
-import com.caracterizacion.modelo.Paredes;
+import com.caracterizacion.dao.AnimalesDaoImpl;
+import com.caracterizacion.modelo.Animales;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -21,32 +22,32 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Estudiante
  */
-@WebServlet(name = "ParedesSvl", urlPatterns = {"/paredessv"})
-public class ParedesSvl extends HttpServlet {
+@WebServlet(name = "AnimalesSvl", urlPatterns = {"/animalessv"})
+public class AnimalesSvl extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            ParedesDaoImpl paredDao =  new ParedesDaoImpl();
-            Paredes paredes = new Paredes();
+            AnimalesDaoImpl animalDao =  new AnimalesDaoImpl();
+            Animales animales = new Animales();
             
             String respuesta = null;
             RequestDispatcher rd = null;
             try {
                 if(request.getParameter("btnRegistrar")!=null){
-                    paredes.setIdParedes(Integer.parseInt(request.getParameter("idParedes")));
-                    paredes.setNombre(request.getParameter("nombre"));
-                    paredes.setEstado(request.getParameter("estado"));
+                    animales.setIdAnimal(Integer.parseInt(request.getParameter("idAnimal")));
+                    animales.setNombre(request.getParameter("nombre"));
+                    animales.setEstado(request.getParameter("estado"));
                     //paredes.setEstado("Activo");
-                    respuesta =  paredDao.insertar(paredes);
+                    respuesta =  animalDao.insertar(animales);
                     request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarParedes.jsp");
+                    rd = request.getRequestDispatcher("listarAnimales.jsp");
                  }else if(request.getParameter("btnEliminar")!=null){
-                    paredes.setIdParedes(Integer.parseInt(request.getParameter("idParedes")));
-                    paredDao.eliminar(paredes);
+                    animales.setIdAnimal(Integer.parseInt(request.getParameter("idAnimal")));
+                    animalDao.eliminar(animales);
                     //request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarParedes.jsp");
+                    rd = request.getRequestDispatcher("listarAnimales.jsp");
                     
                     
                     
@@ -56,16 +57,16 @@ public class ParedesSvl extends HttpServlet {
                     
                 }else if(request.getParameter("btnVerDetalle")!=null){
                     
-                      paredes = (Paredes) paredDao.buscarPorID(request.getParameter("idParedes"));
+                      animales = (Animales) animalDao.buscarPorID(request.getParameter("idAnimal"));
 
-                    request.setAttribute("paredes", paredes);
-                    rd = request.getRequestDispatcher("ver_paredes.jsp");
+                    request.setAttribute("animales", animales);
+                    rd = request.getRequestDispatcher("ver_animales.jsp");
                  }else if(request.getParameter("btnVerDetalle")!=null){
                     
-                    paredes = (Paredes) paredDao.buscarPorID(request.getParameter("idParedes"));
+                    animales = (Animales) animalDao.buscarPorID(request.getParameter("idAnimal"));
                     
-                    request.setAttribute("paredes", paredes);
-                    rd = request.getRequestDispatcher("ver_paredes.jsp");
+                    request.setAttribute("animales", animales);
+                    rd = request.getRequestDispatcher("ver_animales.jsp");
                     
                    
                     
@@ -75,22 +76,21 @@ public class ParedesSvl extends HttpServlet {
                     
                 }else if(request.getParameter("btnModificar")!=null){
                     
-                 paredes = (Paredes) paredDao.buscarPorID(request.getParameter("idParedes"));
+                 animales = (Animales) animalDao.buscarPorID(request.getParameter("idAnimal"));
                  
-                 request.setAttribute("paredes", paredes);    
-                 rd = request.getRequestDispatcher("modificar_paredes.jsp");
+                 request.setAttribute("animales", animales);    
+                 rd = request.getRequestDispatcher("modificar_animales.jsp");
                  
                  
                  
                 }else if (request.getParameter("btnActualizar")!=null) {
-                    
-                    paredes.setIdParedes(Integer.parseInt(request.getParameter("idParedes")));
-                    paredes.setNombre(request.getParameter("nombre"));
-                    paredes.setEstado(request.getParameter("estado"));
+                    animales.setIdAnimal(Integer.parseInt(request.getParameter("idAnimal")));
+                    animales.setNombre(request.getParameter("nombre"));
+                    animales.setEstado(request.getParameter("estado"));
                   //paredes.setEstado("Activo");
-                    respuesta =  paredDao.modificar (paredes);
+                    respuesta =  animalDao.modificar (animales);
                     request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarParedes.jsp");
+                    rd = request.getRequestDispatcher("listarAnimales.jsp");
                     
                 }
                  
