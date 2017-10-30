@@ -1,13 +1,10 @@
- /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package com.caracterizacion.controlador;
 
-import com.caracterizacion.dao.AnimalesDaoImpl;
-import com.caracterizacion.modelo.Animales;
+
+import com.caracterizacion.dao.RelacionesAfectivasDaoImpl;
+import com.caracterizacion.modelo.RelacionesAfectivas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -22,32 +19,32 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Estudiante
  */
-@WebServlet(name = "AnimalesSvl", urlPatterns = {"/animalessv"})
-public class AnimalesSvl extends HttpServlet {
+@WebServlet(name = "RelacionesAfectivasSvl", urlPatterns = {"/relacionesafectivassv"})
+public class RelacionesAfectivasSvl extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            AnimalesDaoImpl animalDao =  new AnimalesDaoImpl();
-            Animales animales = new Animales();
+            RelacionesAfectivasDaoImpl relacionesafectivasDao =  new RelacionesAfectivasDaoImpl();
+            RelacionesAfectivas relacionesafec= new RelacionesAfectivas();
             
             String respuesta = null;
             RequestDispatcher rd = null;
             try {
                 if(request.getParameter("btnRegistrar")!=null){
-                    animales.setIdAnimal(Integer.parseInt(request.getParameter("idAnimal")));
-                    animales.setNombre(request.getParameter("nombre"));
-                    animales.setEstado(request.getParameter("estado"));
+                    relacionesafec.setIdRelacionesAfectivas(Integer.parseInt(request.getParameter("idRelacionesAfectivas")));
+                    relacionesafec.setNombre(request.getParameter("nombre"));
+                    relacionesafec.setEstado(request.getParameter("estado"));
                     //paredes.setEstado("Activo");
-                    respuesta =  animalDao.insertar(animales);
+                    respuesta =  relacionesafectivasDao.insertar(relacionesafec);
                     request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarAnimales.jsp");
+                    rd = request.getRequestDispatcher("listarRelacionesAfectivas.jsp");
                  }else if(request.getParameter("btnEliminar")!=null){
-                    animales.setIdAnimal(Integer.parseInt(request.getParameter("idAnimal")));
-                    animalDao.eliminar(animales);
+                    relacionesafec.setIdRelacionesAfectivas(Integer.parseInt(request.getParameter("idRelacionesAfectivas")));
+                    relacionesafectivasDao.eliminar(relacionesafec);
                     //request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarAnimales.jsp");
+                    rd = request.getRequestDispatcher("listarRelacionesAfectivas.jsp");
                     
                     
                     
@@ -57,16 +54,16 @@ public class AnimalesSvl extends HttpServlet {
                     
                 }else if(request.getParameter("btnVerDetalle")!=null){
                     
-                      animales = (Animales) animalDao.buscarPorID(request.getParameter("idAnimal"));
+                      relacionesafec = (RelacionesAfectivas) relacionesafectivasDao.buscarPorID(request.getParameter("idRelacionesAfectivas"));
 
-                    request.setAttribute("animales", animales);
-                    rd = request.getRequestDispatcher("ver_animales.jsp");
+                    request.setAttribute("relacionesafec", relacionesafec);
+                    rd = request.getRequestDispatcher("ver_relacionesafectivas.jsp");
                  }else if(request.getParameter("btnVerDetalle")!=null){
                     
-                    animales = (Animales) animalDao.buscarPorID(request.getParameter("idAnimal"));
+                    relacionesafec = (RelacionesAfectivas) relacionesafectivasDao.buscarPorID(request.getParameter("idRelacionesAfectivas"));
                     
-                    request.setAttribute("animales", animales);
-                    rd = request.getRequestDispatcher("ver_animales.jsp");
+                    request.setAttribute("relacionesafec", relacionesafec);
+                    rd = request.getRequestDispatcher("ver_relacionesafectivas.jsp");
                     
                    
                     
@@ -76,21 +73,21 @@ public class AnimalesSvl extends HttpServlet {
                     
                 }else if(request.getParameter("btnModificar")!=null){
                     
-                 animales = (Animales) animalDao.buscarPorID(request.getParameter("idAnimal"));
+                relacionesafec = (RelacionesAfectivas) relacionesafectivasDao.buscarPorID(request.getParameter("idRelacionesAfectivas"));
                  
-                 request.setAttribute("animales", animales);    
-                 rd = request.getRequestDispatcher("modificar_animales.jsp");
+                 request.setAttribute("relacionesafec", relacionesafec);    
+                 rd = request.getRequestDispatcher("modificar_relacionesafectivas.jsp");
                  
                  
                  
                 }else if (request.getParameter("btnActualizar")!=null) {
-                    animales.setIdAnimal(Integer.parseInt(request.getParameter("idAnimal")));
-                    animales.setNombre(request.getParameter("nombre"));
-                    animales.setEstado(request.getParameter("estado"));
+                    relacionesafec.setIdRelacionesAfectivas(Integer.parseInt(request.getParameter("idRelacionesAfectivas")));
+                    relacionesafec.setNombre(request.getParameter("nombre"));
+                    relacionesafec.setEstado(request.getParameter("estado"));
                   //paredes.setEstado("Activo");
-                    respuesta =  animalDao.modificar (animales);
+                    respuesta =  relacionesafectivasDao.modificar (relacionesafec);
                     request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarAnimales.jsp");
+                    rd = request.getRequestDispatcher("listarRelacionesAfectivas.jsp");
                     
                 }
                  

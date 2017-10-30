@@ -1,10 +1,11 @@
-<%@page import="com.caracterizacion.modelo.ServPublicos"%>
-<%@page import="com.caracterizacion.dao.ServPublicosDaoImpl"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@page import="com.caracterizacion.modelo.TipoDocumento"%>
+<%@page import="com.caracterizacion.dao.DocumentoDaoImpl"%>
+<%@page import="com.caracterizacion.modelo.Pisos"%>
+<%@page import="com.caracterizacion.dao.PisosDaoImpl"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<!DOCTYPE html PUBLIC>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -28,16 +29,14 @@
 <link rel="stylesheet" type="text/css" href="plugins/bootstrap-timepicker/compiled/timepicker.css" />
 <link rel="stylesheet" type="text/css" href="plugins/bootstrap-colorpicker/css/colorpicker.css" />
 
-
 </head>
-     <%
-      ServPublicosDaoImpl dao = new ServPublicosDaoImpl();
-      List<ServPublicos> listServPublicos = new ArrayList();
-      
+    <%
+    DocumentoDaoImpl dao = new DocumentoDaoImpl();
+    List<TipoDocumento> listDocumento = new ArrayList();
+    
     %>
-    
-    
-<body style="background-color: #f1f1f1;">
+
+    <body style="background-color: #f1f1f1;">
 
       <div class="pull-left breadcrumb_admin clear_both">
         
@@ -50,7 +49,7 @@
           <div class="block-web">
             <div class="header">
               
-              <h3 class="content-header">Listar Servicios Publicos</h3>
+              <h3 class="content-header">Listar Tipo documento</h3>
             </div>
           <div class="container clear_both padding_fix"> 
       <div class="row">
@@ -59,14 +58,14 @@
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="panel-heading">
-              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_serviciospublicos.jsp'">Nuevo</button></div>
+              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_tipoDoc.jsp'">Nuevo</button></div>
                 
                 <form class="form-inline">
              
                   <label class="sr-only" for="inlineFormCustomSelect">Parametro</label>
                         <select class="form-control" id="inlineFormCustomSelect">
                           <option selected>- Seleccione -</option>
-                          <option value="1">CÃ³digo</option>
+                          <option value="1">Código</option>
                           <option value="2">Nombre</option>
                           <option value="3">Estado</option> 
                         </select>
@@ -79,7 +78,7 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>CÃ³digo</th>
+                  <th>Código</th>
                   <th>Nombre</th>
                   <th>Estado</th> 
                   <th>Operaciones</th>                   
@@ -87,44 +86,44 @@
                 </thead>
                 <tbody>
                    <%
-                       listServPublicos = dao.listar();
-                       for(ServPublicos s : listServPublicos){
-                       
-                                    %>
+                    listDocumento = dao.listar();
+                    for(TipoDocumento t : listDocumento){
+
+                        %>
                 <tr>
-                  <td><%= s.getIdServiciosPublicos()%></td>
-                  <td><%= s.getNombre() %></td>
-                  <td><%= s.getEstado() %></td>
+                  <td><%= t.getIdTipoDocumento()%></td>
+                  <td><%= t.getNombre() %></td>
+                  <td><%= t.getEstado() %></td>
                     <td>
                     <div class="row">
                         <div class="col-1 col-md-1">
                             
-                             <form action="animalessv" method="get">
+                             <form action="docuemntosvl" method="get">
                                 <a href="javascript:;" onclick="parentNode.submit();" name="btnVerDetalle">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 </a>
                              <input type="hidden" name="btnVerDetalle" value="ver"/>
-                             <input type="hidden" name="idAnimal" value='<%= s.getIdServiciosPublicos()%>'/>
+                             <input type="hidden" name="idTipoDocumento" value='<%= t.getIdTipoDocumento() %>'/>
                             </form> 
                         </div>
                         <div class="col-1 col-md-1">
                             
-                            <form action="animalessv" method="get">
+                            <form action="docuemntosvl" method="get">
                                 <a href="javascript:;" onclick="parentNode.submit();" name="btnEliminar">
                                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                 </a>
                                 <input type="hidden" name="btnEliminar" value="eliminar"/>
-                                <input type="hidden" name="idAnimal" value='<%= s.getIdServiciosPublicos()%>'/>
+                                <input type="hidden" name="idTipoDocumento" value='<%= t.getIdTipoDocumento()%>'/>
                             </form>                  
                         </div>
                         <div class="col-1 col-md-1">
                             
-                             <form action="animalessv" method="get">
+                             <form action="docuemntosvl" method="get">
                                 <a href="javascript:;" onclick="parentNode.submit();" name="btnModificar">
                                 <span class="glyphicon glyphicon-check"></span>
                                 </a>
                              <input type="hidden" name="btnModificar" value="modificar"/>
-                             <input type="hidden" name="idAnimal" value='<%= s.getIdServiciosPublicos()%>'/>
+                             <input type="hidden" name="idTipoDocumento" value='<%= t.getIdTipoDocumento()%>'/>
                             </form> 
                         </div>
                    </div>

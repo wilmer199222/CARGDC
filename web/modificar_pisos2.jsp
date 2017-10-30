@@ -1,6 +1,8 @@
-<%@page import="com.caracterizacion.dao.TipoVivDaoImpl"%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.caracterizacion.modelo.Pisos"%>
+<%@page import="com.caracterizacion.dao.PisosDaoImpl"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -25,13 +27,14 @@
 <link rel="stylesheet" type="text/css" href="plugins/bootstrap-timepicker/compiled/timepicker.css" />
 <link rel="stylesheet" type="text/css" href="plugins/bootstrap-colorpicker/css/colorpicker.css" />
 
-
 </head>
-     <% 
-            TipoVivDaoImpl dao = new TipoVivDaoImpl();
-            String codigo =  dao.generarCodigo();
-        %>
-  <body style="background-color: #f1f1f1;">
+<%
+    PisosDaoImpl dao = new PisosDaoImpl();
+    List<Pisos> listPisos = new ArrayList();
+    listPisos = dao.listar();
+
+    %>
+    <body style="background-color: #f1f1f1;">
 
       <div class="pull-left breadcrumb_admin clear_both">
         
@@ -44,59 +47,46 @@
           <div class="block-web">
             <div class="header">
               
-              <h3 class="content-header">Registrar Tipo Vivenda</h3>
+              <h3 class="content-header">Modificar Pisos</h3>
             </div>
-          <div class="container clear_both padding_fix"> 
+      
+      <div class="container clear_both padding_fix"> 
       <div class="row">
   <div class="col-md-3"></div>   
       <div class="row">
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="porlets-content">
-                <form action="tipovivsv" method="get">
-                <div class="form-group">
-                  <label>CÃ³digo</label>
-                  <input type="number" name="idTipo" id="idPiso" parsley-trigger="change" placeholder="CÃ³digo" class="form-control" >
-                </div><!--/form-group-->
-                <div class="form-group">
+                <%
+                Pisos piso = (Pisos) request.getAttribute("pisos");
+                %>  
+                
+                <form action="pisossv" method="get">
+                 <fieldset disabled><div class="form-group">
+                  <label>Código</label>
+                  <input type="number" name="codigo" id="idPiso" parsley-trigger="change" placeholder="Código" class="form-control" value='<%= piso.getIdPiso() %>'>
+                  </div></fieldset><!--/form-group-->
+                  <input type="hidden" name="idPiso" value='<%= piso.getIdPiso() %>' />
+                                 
+                  <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="nombre" id="nombre" parsley-trigger="change" placeholder="Nombre" class="form-control">
+                  <input type="text" name="nombre" id="nombre" parsley-trigger="change"  placeholder="Nombre" class="form-control" value='<%= piso.getNombre() %>'>
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="estado" id="estado" parsley-trigger="change" placeholder="Estado" class="form-control">
+                  <input type="text" name="estado" id="estado" parsley-trigger="change" placeholder="Estado" class="form-control" value='<%= piso.getEstado() %>'>
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
-                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" name="btnRegistrar" value="Registrar">Registrar</button></div>
+                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit" name="btnActualizar" value="Actualizar">Actualizar</button></div>     
                 
-                <button type="button" class="btn btn-primary" onclick="window.location.href='listarTipoViv.jsp'">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='listarPisos2.jsp'">Cancelar</button>         
                 </div>
               </form>
             </div><!--/porlets-content-->
           <!--/block-web--> 
         </div><!--/col-md-6-->
-       
-
-      </div>
-      <!--\\\\\\\ container  end \\\\\\-->
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      </div><!--\\\\\\\ container  end \\\\\\-->
+    </div>
 
 <script src="js/jquery-2.1.0.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -118,21 +108,13 @@
 <script src="plugins/morris/morris-script.js"></script> 
 
 
-
-
-
 <script src="plugins/demo-slider/demo-slider.js"></script>
 <script src="plugins/knob/jquery.knob.min.js"></script> 
-
-
-
 
 <script src="js/jPushMenu.js"></script> 
 <script src="js/side-chats.js"></script>
 <script src="js/jquery.slimscroll.min.js"></script>
 <script src="plugins/scroll/jquery.nanoscroller.js"></script>
-
-
 
 </body>
 </html>

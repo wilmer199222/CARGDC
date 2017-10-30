@@ -1,5 +1,5 @@
-<%@page import="com.caracterizacion.modelo.ServPublicos"%>
-<%@page import="com.caracterizacion.dao.ServPublicosDaoImpl"%>
+<%@page import="com.caracterizacion.modelo.RelacionesAfectivas"%>
+<%@page import="com.caracterizacion.dao.RelacionesAfectivasDaoImpl"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 
@@ -31,8 +31,8 @@
 
 </head>
      <%
-      ServPublicosDaoImpl dao = new ServPublicosDaoImpl();
-      List<ServPublicos> listServPublicos = new ArrayList();
+      RelacionesAfectivasDaoImpl dao = new RelacionesAfectivasDaoImpl();
+      List<RelacionesAfectivas> listRelacionesAfectivas = new ArrayList();
       
     %>
     
@@ -50,7 +50,7 @@
           <div class="block-web">
             <div class="header">
               
-              <h3 class="content-header">Listar Servicios Publicos</h3>
+              <h3 class="content-header">Listar Relaciones Afectivas</h3>
             </div>
           <div class="container clear_both padding_fix"> 
       <div class="row">
@@ -59,7 +59,7 @@
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="panel-heading">
-              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_serviciospublicos.jsp'">Nuevo</button></div>
+              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_relacionesafectivas.jsp'">Nuevo</button></div>
                 
                 <form class="form-inline">
              
@@ -87,44 +87,44 @@
                 </thead>
                 <tbody>
                    <%
-                       listServPublicos = dao.listar();
-                       for(ServPublicos s : listServPublicos){
-                       
-                                    %>
+                    listRelacionesAfectivas = dao.listar();
+                    for(RelacionesAfectivas a : listRelacionesAfectivas){
+
+                        %>
                 <tr>
-                  <td><%= s.getIdServiciosPublicos()%></td>
-                  <td><%= s.getNombre() %></td>
-                  <td><%= s.getEstado() %></td>
+                  <td><%= a.getIdRelacionesAfectivas()%></td>
+                  <td><%= a.getNombre() %></td>
+                  <td><%= a.getEstado() %></td>
                     <td>
                     <div class="row">
                         <div class="col-1 col-md-1">
                             
-                             <form action="animalessv" method="get">
+                             <form action="relacionesafectivassv" method="get">
                                 <a href="javascript:;" onclick="parentNode.submit();" name="btnVerDetalle">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 </a>
                              <input type="hidden" name="btnVerDetalle" value="ver"/>
-                             <input type="hidden" name="idAnimal" value='<%= s.getIdServiciosPublicos()%>'/>
+                             <input type="hidden" name="idRelacionesAfectivas" value='<%= a.getIdRelacionesAfectivas()%>'/>
                             </form> 
                         </div>
                         <div class="col-1 col-md-1">
                             
-                            <form action="animalessv" method="get">
+                            <form action="relacionesafectivassv" method="get">
                                 <a href="javascript:;" onclick="parentNode.submit();" name="btnEliminar">
                                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                 </a>
                                 <input type="hidden" name="btnEliminar" value="eliminar"/>
-                                <input type="hidden" name="idAnimal" value='<%= s.getIdServiciosPublicos()%>'/>
+                                <input type="hidden" name="idRelacionesAfectivas" value='<%= a.getIdRelacionesAfectivas()%>'/>
                             </form>                  
                         </div>
                         <div class="col-1 col-md-1">
                             
-                             <form action="animalessv" method="get">
+                             <form action="relacionesafectivassv" method="get">
                                 <a href="javascript:;" onclick="parentNode.submit();" name="btnModificar">
                                 <span class="glyphicon glyphicon-check"></span>
                                 </a>
                              <input type="hidden" name="btnModificar" value="modificar"/>
-                             <input type="hidden" name="idAnimal" value='<%= s.getIdServiciosPublicos()%>'/>
+                             <input type="hidden" name="idRelacionesAfectivas" value='<%= a.getIdRelacionesAfectivas()%>'/>
                             </form> 
                         </div>
                    </div>
