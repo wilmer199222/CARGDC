@@ -1,24 +1,30 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.caracterizacion.dao;
 
 import com.caracterizacion.db.ConectarDB;
-import com.caracterizacion.modelo.Animales;
+import com.caracterizacion.modelo.Tipofamiliar;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class AnimalesDaoImpl implements IDAO{
-     ConectarDB con = new ConectarDB();
+/**
+ *
+ * @author ESTUDIANTES
+ */
+public class TipofamiliarDaoImpl implements IDAO {
+    ConectarDB con = new ConectarDB();
     PreparedStatement psmt = null;
     ResultSet rs = null;
     String respuesta = null;
-    Animales animal;
-
-    public AnimalesDaoImpl(){
+    Tipofamiliar tipofamiliar;
+    
+     public TipofamiliarDaoImpl(){
       con = new ConectarDB();
         con.setDriver("com.mysql.jdbc.Driver");
         con.setUrl("jdbc:mysql://localhost:3306/gdccar");
@@ -27,16 +33,15 @@ public class AnimalesDaoImpl implements IDAO{
         con.setPassword("");
         
     }
-    
-                    
+
     @Override
     public String insertar(Object obj) throws SQLException {
-        Animales objAnimal =  (Animales) obj;
+          Tipofamiliar objtipofamiliar =  (Tipofamiliar) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO animales VALUES (?,?,?)");
-            psmt.setInt(1, objAnimal.getIdAnimal());
-            psmt.setString(2, objAnimal.getNombre());
-            psmt.setString(3, objAnimal.getEstado());
+            psmt = con.conectar().prepareStatement("INSERT INTO TipoFamiliar VALUES (?,?,?)");
+            psmt.setInt(1, objtipofamiliar.getIdTipoFamiliar());
+            psmt.setString(2, objtipofamiliar.getNombre());
+            psmt.setString(3, objtipofamiliar.getEstado());
 
             psmt.executeUpdate();
             respuesta = "El registro se realizo con exito";
@@ -52,16 +57,15 @@ public class AnimalesDaoImpl implements IDAO{
             
         }
         return respuesta;
-        
     }
 
     @Override
     public String eliminar(Object obj) throws SQLException {
-            Animales objAnimal = (Animales) obj;
+         Tipofamiliar objTipofamiliar = (Tipofamiliar) obj;
         try {
-            psmt = con.conectar().prepareStatement("UPDATE animales SET estado=? WHERE idAnimal=?");
+            psmt = con.conectar().prepareStatement("UPDATE TipoFamiliar  SET estado=? WHERE idTipoFamiliar=?");
             psmt.setString(1, "Inactivo");
-            psmt.setInt(2,(objAnimal.getIdAnimal()));
+            psmt.setInt(2,(objTipofamiliar.getIdTipoFamiliar()));
             psmt.executeUpdate();
             respuesta = "El registro se realizo con exito";
         } catch (SQLException e) {
@@ -75,17 +79,16 @@ public class AnimalesDaoImpl implements IDAO{
             
         }
         return respuesta;
-        }
-    
-    
-  @Override
-    public String modificar(Object obj)throws SQLException{
-        Animales objAnimales =(Animales) obj;
+    }
+
+    @Override
+    public String modificar(Object obj) throws SQLException {
+         Tipofamiliar objTipofamiliar = (Tipofamiliar) obj;
         try {
-            psmt = con.conectar().prepareStatement("UPDATE animales SET nombre=? AND estado=? WHERE idAnimal=?" );
-            psmt.setInt(1, objAnimales.getIdAnimal());
-            psmt.setString(2, objAnimales.getNombre());
-            psmt.setString(3, objAnimales.getEstado());
+            psmt = con.conectar().prepareStatement("UPDATE TipoFamiliar SET nombre=? AND estado=? WHERE idTipoFamiliar=?" );
+            psmt.setInt(1, objTipofamiliar.getIdTipoFamiliar());
+            psmt.setString(2, objTipofamiliar.getNombre());
+            psmt.setString(3, objTipofamiliar.getEstado());
             psmt.executeUpdate();
             respuesta = "El registro se actualizo con exito";
             }catch(Exception e){
@@ -100,18 +103,16 @@ public class AnimalesDaoImpl implements IDAO{
             return respuesta;
         
                 
-           
-        
     }
 
     @Override
-    public List<Animales> listar() throws SQLException {
-    List<Animales> listaAnimal = new ArrayList<>();
+    public List<Tipofamiliar> listar() throws SQLException {
+        List<Tipofamiliar> listaTipofamiliar = new ArrayList<>();
         try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM animales");
+            psmt = con.conectar().prepareStatement("SELECT * FROM TipoFamiliar");
             rs = psmt.executeQuery();
             while (rs.next()) {                
-                listaAnimal.add(Animales.load(rs));
+                listaTipofamiliar.add(tipofamiliar.load(rs));
             }
         } catch (Exception e) {
             System.out.println("Error en la consulta: " + e);
@@ -125,19 +126,18 @@ public class AnimalesDaoImpl implements IDAO{
             
             con.desconectar();
     }
-         return listaAnimal;
+         return listaTipofamiliar;
     }
 
     @Override
     public Object buscarPorID(String id) throws SQLException {
-        
-        try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM animales WHERE idAnimal=?");
+         try {
+            psmt = con.conectar().prepareStatement("SELECT * FROM TipoFamiliar WHERE idTipoFamiliar=?");
             psmt.setString(1, id);
             rs = psmt.executeQuery();
             
             while (rs.next()) {
-                  animal =  Animales.load(rs);
+                  tipofamiliar =  Tipofamiliar.load(rs);
             }
         } catch (Exception e) {
             System.out.println("Error en la consulta"+e.toString());
@@ -151,7 +151,7 @@ public class AnimalesDaoImpl implements IDAO{
             
             con.desconectar();
         }
-            return animal;
+            return tipofamiliar;
     }
 
     @Override
@@ -176,9 +176,9 @@ public class AnimalesDaoImpl implements IDAO{
 
     @Override
     public String generarCodigo() throws SQLException {
-        String codigo = null;
+         String codigo = null;
         try {
-            psmt=con.conectar().prepareStatement("SELECT COUNT(idAnimal) FROM animales");
+            psmt=con.conectar().prepareStatement("SELECT COUNT(idTipoFamiliar) FROM TipoFamiliar");
             rs=psmt.executeQuery();
             while(rs.next()){
                 //codigo = "P000" + rs.getString(1).length();

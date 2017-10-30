@@ -1,13 +1,13 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.caracterizacion.controlador;
 
-import com.caracterizacion.dao.AnimalesDaoImpl;
-import com.caracterizacion.modelo.Animales;
+
+import com.caracterizacion.dao.TipofamiliarDaoImpl;
+import com.caracterizacion.modelo.Tipofamiliar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -20,34 +20,33 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Estudiante
+ * @author ESTUDIANTES
  */
-@WebServlet(name = "AnimalesSvl", urlPatterns = {"/animalessv"})
-public class AnimalesSvl extends HttpServlet {
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+@WebServlet(name = "TipofamiliarSvl", urlPatterns = {"/tipofamiliarsv"})
+public class TipofamiliarSvl extends HttpServlet {
+     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            AnimalesDaoImpl animalDao =  new AnimalesDaoImpl();
-            Animales animales = new Animales();
+            TipofamiliarDaoImpl tipofamiliarDao =  new TipofamiliarDaoImpl();
+            Tipofamiliar tipofamiliar = new Tipofamiliar();
             
             String respuesta = null;
             RequestDispatcher rd = null;
             try {
                 if(request.getParameter("btnRegistrar")!=null){
-                    animales.setIdAnimal(Integer.parseInt(request.getParameter("idAnimal")));
-                    animales.setNombre(request.getParameter("nombre"));
-                    animales.setEstado(request.getParameter("estado"));
+                    tipofamiliar.setIdTipoFamiliar(Integer.parseInt(request.getParameter("idTipoFamiliar")));
+                    tipofamiliar.setNombre(request.getParameter("nombre"));
+                    tipofamiliar.setEstado(request.getParameter("estado"));
                     //paredes.setEstado("Activo");
-                    respuesta =  animalDao.insertar(animales);
+                    respuesta =  tipofamiliarDao.insertar(tipofamiliar);
                     request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarAnimales.jsp");
+                    rd = request.getRequestDispatcher("listarTipofamiliar.jsp");
                  }else if(request.getParameter("btnEliminar")!=null){
-                    animales.setIdAnimal(Integer.parseInt(request.getParameter("idAnimal")));
-                    animalDao.eliminar(animales);
+                    tipofamiliar.setIdTipoFamiliar(Integer.parseInt(request.getParameter("idTipoFamiliar")));
+                    tipofamiliarDao.eliminar(tipofamiliar);
                     //request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarAnimales.jsp");
+                    rd = request.getRequestDispatcher("listarTipoFamiliar.jsp");
                     
                     
                     
@@ -57,16 +56,16 @@ public class AnimalesSvl extends HttpServlet {
                     
                 }else if(request.getParameter("btnVerDetalle")!=null){
                     
-                      animales = (Animales) animalDao.buscarPorID(request.getParameter("idAnimal"));
+                     tipofamiliar = (Tipofamiliar) tipofamiliarDao.buscarPorID(request.getParameter("idTipoFamiliar"));
 
-                    request.setAttribute("animales", animales);
-                    rd = request.getRequestDispatcher("ver_animales.jsp");
+                    request.setAttribute("tipofamiliar", tipofamiliar);
+                    rd = request.getRequestDispatcher("ver_tipofamiliar.jsp");
                  }else if(request.getParameter("btnVerDetalle")!=null){
                     
-                    animales = (Animales) animalDao.buscarPorID(request.getParameter("idAnimal"));
+                    tipofamiliar = (Tipofamiliar) tipofamiliarDao.buscarPorID(request.getParameter("idTipoFamiliar"));
                     
-                    request.setAttribute("animales", animales);
-                    rd = request.getRequestDispatcher("ver_animales.jsp");
+                    request.setAttribute("tipofamiliar", tipofamiliar);
+                    rd = request.getRequestDispatcher("ver_tipofamiliar.jsp");
                     
                    
                     
@@ -76,21 +75,20 @@ public class AnimalesSvl extends HttpServlet {
                     
                 }else if(request.getParameter("btnModificar")!=null){
                     
-                 animales = (Animales) animalDao.buscarPorID(request.getParameter("idAnimal"));
-                 
-                 request.setAttribute("animales", animales);    
-                 rd = request.getRequestDispatcher("modificar_animales.jsp");
+                 tipofamiliar = (Tipofamiliar) tipofamiliarDao.buscarPorID(request.getParameter("idTipoFamiliar"));                 
+                 request.setAttribute("tipofamiliar", tipofamiliar);    
+                 rd = request.getRequestDispatcher("modificar_tipofamiliar.jsp");
                  
                  
                  
                 }else if (request.getParameter("btnActualizar")!=null) {
-                    animales.setIdAnimal(Integer.parseInt(request.getParameter("idAnimal")));
-                    animales.setNombre(request.getParameter("nombre"));
-                    animales.setEstado(request.getParameter("estado"));
+                    tipofamiliar.setIdTipoFamiliar(Integer.parseInt(request.getParameter("idTipoFamiliar")));
+                    tipofamiliar.setNombre(request.getParameter("nombre"));
+                    tipofamiliar.setEstado(request.getParameter("estado"));
                   //paredes.setEstado("Activo");
-                    respuesta =  animalDao.modificar (animales);
+                    respuesta =  tipofamiliarDao.modificar (tipofamiliar);
                     request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarAnimales.jsp");
+                    rd = request.getRequestDispatcher("listarTipofamiliar.jsp");
                     
                 }
                  
@@ -143,4 +141,6 @@ public class AnimalesSvl extends HttpServlet {
     }// </editor-fold>
 
         
+    
+    
 }

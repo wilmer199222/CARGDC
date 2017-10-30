@@ -1,4 +1,4 @@
-<%@page import="com.caracterizacion.dao.TipoVivDaoImpl"%>
+<%@page import="com.caracterizacion.dao.SocioAfectivaDaoImpl"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -27,11 +27,11 @@
 
 
 </head>
-     <% 
-            TipoVivDaoImpl dao = new TipoVivDaoImpl();
+    <% 
+            SocioAfectivaDaoImpl dao = new SocioAfectivaDaoImpl();
             String codigo =  dao.generarCodigo();
         %>
-  <body style="background-color: #f1f1f1;">
+ <body style="background-color: #f1f1f1;">
 
       <div class="pull-left breadcrumb_admin clear_both">
         
@@ -44,7 +44,7 @@
           <div class="block-web">
             <div class="header">
               
-              <h3 class="content-header">Registrar Tipo Vivenda</h3>
+              <h3 class="content-header">Registrar SocioAfectiva</h3>
             </div>
           <div class="container clear_both padding_fix"> 
       <div class="row">
@@ -53,10 +53,10 @@
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="porlets-content">
-                <form action="tipovivsv" method="get">
+                <form action="socioafectivasv" method="get">
                 <div class="form-group">
                   <label>Código</label>
-                  <input type="number" name="idTipo" id="idPiso" parsley-trigger="change" placeholder="Código" class="form-control" >
+                  <input type="number" name="idSocioAfectiva" id="idSocioAfectiva" parsley-trigger="change" placeholder="Código" class="form-control" >
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
@@ -69,7 +69,7 @@
                 </div><!--/checkbox-->
                 <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" name="btnRegistrar" value="Registrar">Registrar</button></div>
                 
-                <button type="button" class="btn btn-primary" onclick="window.location.href='listarTipoViv.jsp'">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='listarSocioAfectiva.jsp'">Cancelar</button>
                 </div>
               </form>
             </div><!--/porlets-content-->
