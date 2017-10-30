@@ -59,7 +59,7 @@
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="panel-heading">
-              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_serviciospublicos.jsp'">Nuevo</button></div>
+              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_animales.jsp'">Nuevo</button></div>
                 
                 <form class="form-inline">
              

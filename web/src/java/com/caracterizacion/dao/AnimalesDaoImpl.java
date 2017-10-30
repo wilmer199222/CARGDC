@@ -80,12 +80,12 @@ public class AnimalesDaoImpl implements IDAO{
     
   @Override
     public String modificar(Object obj)throws SQLException{
-        Animales objAnimales =(Animales) obj;
+        Animales objPared =(Animales) obj;
         try {
             psmt = con.conectar().prepareStatement("UPDATE animales SET nombre=? AND estado=? WHERE idAnimal=?" );
-            psmt.setInt(1, objAnimales.getIdAnimal());
-            psmt.setString(2, objAnimales.getNombre());
-            psmt.setString(3, objAnimales.getEstado());
+            psmt.setInt(1, objPared.getIdAnimal());
+            psmt.setString(2, objPared.getNombre());
+            psmt.setString(3, objPared.getEstado());
             psmt.executeUpdate();
             respuesta = "El registro se actualizo con exito";
             }catch(Exception e){
