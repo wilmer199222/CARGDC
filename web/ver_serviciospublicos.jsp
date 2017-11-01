@@ -1,3 +1,7 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="com.caracterizacion.modelo.Animales"%>
+<%@page import="com.caracterizacion.dao.AnimalesDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,7 +29,13 @@
 
 
 </head>
-  <body style="background-color: #f1f1f1;">
+      <%
+      AnimalesDaoImpl dao = new AnimalesDaoImpl();
+      List<Animales> listAnimales = new ArrayList();
+      listAnimales = dao.listar();
+      
+      %>
+ <body style="background-color: #f1f1f1;">
 
       <div class="pull-left breadcrumb_admin clear_both">
         
@@ -38,7 +48,7 @@
           <div class="block-web">
             <div class="header">
               
-              <h3 class="content-header">Ver Tipo Vivienda</h3>
+              <h3 class="content-header">Ver Animales</h3>
             </div>
          <div class="container clear_both padding_fix"> 
       <div class="row">
@@ -48,26 +58,26 @@
           <div class="block-web">          
             <div class="porlets-content">
                 <%
-                    Pisos piso = (Pisos) request.getAttribute("pisos");
+                    Animales animal = (Animales) request.getAttribute("animales");
                     %>
                 <!-- inici el formulario-->
-                <form action="pisossv" method="post">
+                <form action="animalessv" method="post">
                 <fieldset disabled><div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="idPiso" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= piso.getIdPiso() %>'>
+                  <input type="text" name="idPiso" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= animal.getIdAnimal()%>'>
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= piso.getNombre() %>'>
+                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= animal.getNombre() %>'>
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= piso.getEstado() %>'>
+                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= animal.getEstado() %>'>
                 </div><!--/form-group--></fieldset>
                 </div><!--/checkbox-->
                 
                 </div>
-            <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='listarPisos2.jsp'">Atras</button></div>
+            <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='listarAnimales.jsp'">Atras</button></div>
               </form>
             </div><!--/porlets-content-->
           <!--/block-web--> 

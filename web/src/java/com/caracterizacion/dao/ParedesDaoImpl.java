@@ -33,10 +33,10 @@ public class ParedesDaoImpl implements IDAO{
     public String insertar(Object obj) throws SQLException {
         Paredes objPared =  (Paredes) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO paredes VALUES (null,?,?)");
-//            psmt.setInt(1, objPared.getIdParedes());
-            psmt.setString(1, objPared.getNombre());
-            psmt.setString(2, objPared.getEstado());
+            psmt = con.conectar().prepareStatement("INSERT INTO paredes VALUES (?,?,?)");
+            psmt.setInt(1, objPared.getIdParedes());
+            psmt.setString(2, objPared.getNombre());
+            psmt.setString(3, objPared.getEstado());
 
             psmt.executeUpdate();
             respuesta = "El registro se realizo con exito";
@@ -184,7 +184,7 @@ public class ParedesDaoImpl implements IDAO{
                         codigo = "P0" + rs.getString(1);
                         break;
                     case 3:
-                        codigo = "P" + rs.getString(1);
+                        codigo = "P0" + rs.getString(1);
                         break;
                    default: break;
                      
