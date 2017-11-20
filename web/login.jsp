@@ -19,7 +19,7 @@
   
   <div class="login_page">
   <div class="login_content">
-  <div class="panel-heading border login_heading">Iniciar Cesión</div>	
+  <div class="panel-heading border login_heading">Iniciar Cesion</div>	
  <form role="form" class="form-horizontal">
       <div class="form-group">
         
@@ -30,7 +30,7 @@
       <div class="form-group">
         
         <div class="col-sm-10">
-          <input type="password" placeholder="Contraseña" id="inputPassword3" class="form-control">
+          <input type="password" placeholder="Contrasena" id="inputPassword3" class="form-control">
         </div>
       </div>
       <div class="form-group">

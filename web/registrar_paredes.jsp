@@ -39,11 +39,11 @@
         
   
       </div>
-<<<<<<< Upstream, based on origin/master
+
      
       <div class="container clear_both padding_fix"> 
           
-=======
+
       <div class="container clear_both padding_fix">
         <!--\\\\\\\ container  start \\\\\\-->
              <div class="row">
@@ -54,20 +54,20 @@
               <h3 class="content-header">Registrar Paredes</h3>
             </div>
           <div class="container clear_both padding_fix"> 
->>>>>>> cca5b17 integrando proyecto 
+
       <div class="row">
   <div class="col-md-3"></div>   
       <div class="row">
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="porlets-content">
-<<<<<<< Upstream, based on origin/master
+
               <form action="#" parsley-validate novalidate>
            
                
-=======
+
                 <form action="paredessv" method="get">
->>>>>>> cca5b17 integrando proyecto 
+
                 <div class="form-group">
                   <label>Código</label>
                   <input type="number" name="idParedes" id="idParedes" parsley-trigger="change" placeholder="Código" class="form-control" >
@@ -81,16 +81,11 @@
                   <input type="text" name="estado" id="estado" parsley-trigger="change" placeholder="Estado" class="form-control">
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
-<<<<<<< Upstream, based on origin/master
-                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>
+
+                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>       
                 
                 <button type="button" class="btn btn-primary" onclick="window.location.href='listarParedes.jsp'">Cancelar</button>
-           
-=======
-                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" name="btnRegistrar" value="Registrar">Registrar</button></div>
-                
-                <button type="button" class="btn btn-primary" onclick="window.location.href='listarParedes.jsp'">Cancelar</button>
->>>>>>> cca5b17 integrando proyecto 
+ 
                 </div>
               </form>
             </div><!--/porlets-content-->

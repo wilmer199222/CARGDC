@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  */
 public class ConectarDB {
     private String driver = "com.mysql.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost:3306/gdccar";
+    private String url = "jdbc:mysql://localhost:3306/cargdc";
     private String usuario = "root";
     private String password = "";
     

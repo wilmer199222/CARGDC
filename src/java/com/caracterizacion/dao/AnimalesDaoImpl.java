@@ -21,7 +21,7 @@ public class AnimalesDaoImpl implements IDAO{
     public AnimalesDaoImpl(){
       con = new ConectarDB();
         con.setDriver("com.mysql.jdbc.Driver");
-        con.setUrl("jdbc:mysql://localhost:3306/gdccar");
+        con.setUrl("jdbc:mysql://localhost:3306/cargdc");
         con.setUsuario("root");
         
         con.setPassword("");

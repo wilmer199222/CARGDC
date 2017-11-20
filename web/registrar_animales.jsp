@@ -28,7 +28,7 @@
 </head>
     <% 
             AnimalesDaoImpl dao = new AnimalesDaoImpl();
-            String codigo =  dao.generarCodigo();
+            
         %>
  <body style="background-color: #f1f1f1;">
 
@@ -79,17 +79,6 @@
       </div>
       <!--\\\\\\\ container  end \\\\\\-->
           </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
