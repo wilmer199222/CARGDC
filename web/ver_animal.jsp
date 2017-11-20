@@ -63,7 +63,7 @@
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="estado" id="estado" parsley-trigger="change" placeholder="Estado" class="form-control" value="Activo">
+                  <input type="text" name="estado" id="estado" parsley-trigger="change" placeholder="Estado" class="form-control">
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
                 <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" name="btnRegistrar" value="Registrar">Registrar</button></div>

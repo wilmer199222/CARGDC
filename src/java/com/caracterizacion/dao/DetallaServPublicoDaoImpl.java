@@ -127,12 +127,12 @@ public class DetallaServPublicoDaoImpl implements IDAO{
     }
     
     
-    public static void main(String[] args) throws SQLException {
-       DetallaServPublico objDeta = new DetallaServPublico(1,1,1);
-       DetallaServPublicoDaoImpl dao = new DetallaServPublicoDaoImpl();
-        System.out.println("resultado: "+dao.insertar(objDeta));
-        
-        
-    }
+//    public static void main(String[] args) throws SQLException {
+//       DetallaServPublico objDeta = new DetallaServPublico(1,1,1);
+//       DetallaServPublicoDaoImpl dao = new DetallaServPublicoDaoImpl();
+//        System.out.println("resultado: "+dao.insertar(objDeta));
+//        
+//        
+//    }
     
 }

@@ -104,12 +104,12 @@ DetallaSocAfectiva objDeta = (DetallaSocAfectiva) obj;
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public static void main(String[] args) throws SQLException {
-       DetallaSocAfectiva objDeta = new DetallaSocAfectiva(1,1,1);
-       DetallaSocAfectivaDaoImpl dao = new DetallaSocAfectivaDaoImpl();
-        System.out.println("resultado: "+dao.insertar(objDeta));
-        
-        
-    }
+//    public static void main(String[] args) throws SQLException {
+//       DetallaSocAfectiva objDeta = new DetallaSocAfectiva(1,1,1);
+//       DetallaSocAfectivaDaoImpl dao = new DetallaSocAfectivaDaoImpl();
+//        System.out.println("resultado: "+dao.insertar(objDeta));
+//        
+//        
+//    }
     
 }

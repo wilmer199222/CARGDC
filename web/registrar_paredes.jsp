@@ -62,7 +62,7 @@
           <div class="block-web">          
             <div class="porlets-content">
 
-              <form action="#" parsley-validate novalidate>
+              <form action="paredessv" parsley-validate novalidate>
            
                
 
@@ -82,7 +82,7 @@
                 </div><!--/form-group-->
                 </div><!--/checkbox-->
 
-                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit">Registrar</button></div>       
+                <div class="col-xs-6 col-sm-3"><button class="btn btn-primary" type="submit" name="btnRegistrar">Registrar</button></div>       
                 
                 <button type="button" class="btn btn-primary" onclick="window.location.href='listarParedes.jsp'">Cancelar</button>
  

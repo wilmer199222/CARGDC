@@ -35,7 +35,7 @@ public class ParedesSvl extends HttpServlet {
             RequestDispatcher rd = null;
             try {
                 if(request.getParameter("btnRegistrar")!=null){
-                    paredes.setIdParedes(Integer.parseInt(request.getParameter("idParedes")));
+//                    paredes.setIdParedes(Integer.parseInt(request.getParameter("idParedes")));
                     paredes.setNombre(request.getParameter("nombre"));
                     paredes.setEstado(request.getParameter("estado"));
                     //paredes.setEstado("Activo");

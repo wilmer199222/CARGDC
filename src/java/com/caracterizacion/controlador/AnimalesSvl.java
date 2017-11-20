@@ -36,7 +36,7 @@ public class AnimalesSvl extends HttpServlet {
             RequestDispatcher rd = null;
             try {
                 if(request.getParameter("btnRegistrar")!=null){
-                    animales.setIdAnimal(Integer.parseInt(request.getParameter("idAnimal")));
+//                    animales.setIdAnimal(Integer.parseInt(request.getParameter("idAnimal")));
                     animales.setNombre(request.getParameter("nombre"));
                     animales.setEstado(request.getParameter("estado"));
                     //paredes.setEstado("Activo");

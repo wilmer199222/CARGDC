@@ -119,12 +119,12 @@ public class DetallaRelacAfectivasDaoImpl implements IDAO{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public static void main(String[] args) throws SQLException {
-       DetallaRelacAfectivas objDeta = new DetallaRelacAfectivas(1,1,1);
-       DetallaRelacAfectivasDaoImpl dao = new DetallaRelacAfectivasDaoImpl();
-        System.out.println("resultado: "+dao.insertar(objDeta));
-        
-        
-    }
+//    public static void main(String[] args) throws SQLException {
+//       DetallaRelacAfectivas objDeta = new DetallaRelacAfectivas(1,1,1);
+//       DetallaRelacAfectivasDaoImpl dao = new DetallaRelacAfectivasDaoImpl();
+//        System.out.println("resultado: "+dao.insertar(objDeta));
+//        
+//        
+//    }
     
 }
