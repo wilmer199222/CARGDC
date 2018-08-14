@@ -37,10 +37,10 @@ public class CondicionSocialDaoImpl implements IDAO {
     public String insertar(Object obj) throws SQLException {
         CondicionSocial objCondicion = (CondicionSocial) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO condicionsocial VALUES (?,?,?)");
-            psmt.setInt(1, objCondicion.getIdCondiconSocial());
-            psmt.setString(2, objCondicion.getNombre());
-            psmt.setString(3, objCondicion.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO condicionsocial VALUES (null,?,?)");
+//            psmt.setInt(1, objCondicion.getIdCondiconSocial());
+            psmt.setString(1, objCondicion.getNombre());
+            psmt.setString(2, objCondicion.getEstado()); 
             
             psmt.executeUpdate();
        

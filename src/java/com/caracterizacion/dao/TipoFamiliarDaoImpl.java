@@ -39,8 +39,8 @@ public class TipoFamiliarDaoImpl implements IDAO{
     public String insertar(Object obj) throws SQLException {
          Tipofamiliar objTipoFamiliar =  (Tipofamiliar) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO TipoFamiliar VALUES (null,?,?)");
-            psmt.setInt(1, objTipoFamiliar.getIdTipoFamiliar());
+            psmt = con.conectar().prepareStatement("INSERT INTO tipofamiliar VALUES(null,?,?)");
+//            psmt.setInt(1, objTipoFamiliar.getIdTipoFamiliar());
             psmt.setString(1, objTipoFamiliar.getNombre());
             psmt.setString(2, objTipoFamiliar.getEstado());
 
@@ -65,7 +65,7 @@ public class TipoFamiliarDaoImpl implements IDAO{
     public String eliminar(Object obj) throws SQLException {
          Tipofamiliar objTipoFamiliar =  (Tipofamiliar) obj;
         try {
-            psmt = con.conectar().prepareStatement("UPDATE TipoFamiliar SET estado=? WHERE idTipoFamiliar=?");
+            psmt = con.conectar().prepareStatement("UPDATE tipofamiliar SET estado=? WHERE idTipoFamiliar=?");
             psmt.setString(1, "Inactivo");
             psmt.setInt(2,(objTipoFamiliar.getIdTipoFamiliar()));
             psmt.executeUpdate();
@@ -87,7 +87,7 @@ public class TipoFamiliarDaoImpl implements IDAO{
     public String modificar(Object obj) throws SQLException {
         Tipofamiliar objTipoFamiliar =  (Tipofamiliar) obj;
         try {
-            psmt = con.conectar().prepareStatement("UPDATE TipoFamiliar SET nombre=? AND estado=? WHERE idTipoFamilar=?" );
+            psmt = con.conectar().prepareStatement("UPDATE tipofamiliar SET nombre=? AND estado=? WHERE idTipoFamilar=?" );
             psmt.setInt(1, objTipoFamiliar.getIdTipoFamiliar());
             psmt.setString(2, objTipoFamiliar.getNombre());
             psmt.setString(3, objTipoFamiliar.getEstado());
@@ -110,7 +110,7 @@ public class TipoFamiliarDaoImpl implements IDAO{
      public List<Tipofamiliar> listar() throws SQLException {
         List<Tipofamiliar> listaTipofamiliar = new ArrayList<>();
         try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM TipoFamiliar");
+            psmt = con.conectar().prepareStatement("SELECT * FROM tipofamiliar WHERE estado='Activo'");
             rs = psmt.executeQuery();
             while (rs.next()) {                
                 listaTipofamiliar.add(Tipofamiliar.load(rs));
@@ -134,7 +134,7 @@ public class TipoFamiliarDaoImpl implements IDAO{
     @Override
     public Object buscarPorID(String id) throws SQLException {
         try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM TipoFamiliar WHERE idTipoFamilar=?");
+            psmt = con.conectar().prepareStatement("SELECT * FROM tipofamiliar WHERE idTipoFamilar=?");
             psmt.setString(1, id);
             rs = psmt.executeQuery();
             
@@ -180,7 +180,7 @@ public class TipoFamiliarDaoImpl implements IDAO{
     public String generarCodigo() throws SQLException {
   String codigo = null;
         try {
-            psmt=con.conectar().prepareStatement("SELECT COUNT(idTipoFamiliar) FROM TipoFamiliar");
+            psmt=con.conectar().prepareStatement("SELECT COUNT(idTipoFamiliar) FROM tipofamiliar");
             rs=psmt.executeQuery();
             while(rs.next()){
                 //codigo = "P000" + rs.getString(1).length();
@@ -208,5 +208,6 @@ public class TipoFamiliarDaoImpl implements IDAO{
         }
          return codigo;
     }
+    
     
 }

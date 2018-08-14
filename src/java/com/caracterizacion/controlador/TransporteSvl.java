@@ -39,7 +39,7 @@ public class TransporteSvl extends HttpServlet {
                 if(request.getParameter("btnRegistrar")!=null){
                     
                     
-                    trans.setIdTipoTransporte(Integer.parseInt(request.getParameter("idTipoTransporte")));
+//                    trans.setIdTipoTransporte(Integer.parseInt(request.getParameter("idTipoTransporte")));
                     trans.setNombre(request.getParameter("nombre"));
                     trans.setEstado(request.getParameter("estado"));
                     //pisos.setEstado("activo");

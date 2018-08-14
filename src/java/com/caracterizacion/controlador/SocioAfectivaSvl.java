@@ -37,7 +37,7 @@ public class SocioAfectivaSvl extends HttpServlet {
             RequestDispatcher rd = null;
             try {
                 if(request.getParameter("btnRegistrar")!=null){
-                    socioAfectiva.setIdSocioAfectiva(Integer.parseInt(request.getParameter("idSocioAfectiva")));
+//                    socioAfectiva.setIdSocioAfectiva(Integer.parseInt(request.getParameter("idSocioAfectiva")));
                     socioAfectiva.setNombre(request.getParameter("nombre"));
                     socioAfectiva.setEstado(request.getParameter("estado"));
                     //paredes.setEstado("Activo");

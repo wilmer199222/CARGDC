@@ -1,4 +1,6 @@
 
+<%@page import="com.caracterizacion.modelo.RegimenSalud"%>
+<%@page import="com.caracterizacion.dao.RegimenDaoImpl"%>
 <%@page import="com.caracterizacion.modelo.Pisos"%>
 <%@page import="com.caracterizacion.dao.PisosDaoImpl"%>
 <%@page import="java.util.List"%>
@@ -28,9 +30,9 @@
 <link rel="stylesheet" type="text/css" href="plugins/bootstrap-colorpicker/css/colorpicker.css" />
 </head>
  <%
-   PisosDaoImpl dao = new PisosDaoImpl();
-   List<Pisos> listPisos = new ArrayList();
-   listPisos = dao.listar();
+   RegimenDaoImpl dao = new RegimenDaoImpl();
+   List<RegimenSalud> listRegimenSalud = new ArrayList();
+   listRegimenSalud = dao.listar();
    
  %>
 
@@ -57,21 +59,21 @@
           <div class="block-web">          
             <div class="porlets-content">
                 <%
-                    Pisos piso = (Pisos) request.getAttribute("pisos");
+                    RegimenSalud regimenSalud = (RegimenSalud) request.getAttribute("regimenSalud");
                     %>
                 <!-- inici el formulario-->
                 <form action="pisossv" method="post">
                 <fieldset disabled><div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="idPiso" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= piso.getIdPiso() %>'>
+                  <input type="text" name="idPiso" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= regimenSalud.getIdregimenSalud()%>'>
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= piso.getNombre() %>'>
+                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= regimenSalud.getNombre() %>'>
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= piso.getEstado() %>'>
+                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= regimenSalud.getEstado() %>'>
                 </div><!--/form-group--></fieldset>
                 </div><!--/checkbox-->
                 

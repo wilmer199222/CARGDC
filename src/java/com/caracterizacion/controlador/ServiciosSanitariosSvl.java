@@ -38,7 +38,7 @@ public class ServiciosSanitariosSvl extends HttpServlet {
                 if(request.getParameter("btnRegistrar")!=null){
                     
                     
-                    sanitario.setIdServiciosSanitario(Integer.parseInt(request.getParameter("idServiciosSanitario")));
+//                    sanitario.setIdServiciosSanitario(Integer.parseInt(request.getParameter("idServiciosSanitario")));
                     sanitario.setNombre(request.getParameter("nombre"));
                     sanitario.setEstado(request.getParameter("estado"));
                     //pisos.setEstado("activo");

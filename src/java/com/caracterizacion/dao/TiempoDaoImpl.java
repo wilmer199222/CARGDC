@@ -39,10 +39,10 @@ public class TiempoDaoImpl implements IDAO {
         
        TiempoLibre objTiempo = (TiempoLibre) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO tiempolibre VALUES (?,?,?)");
-            psmt.setInt(1, objTiempo.getIdTiempoLibre());
-            psmt.setString(2, objTiempo.getNombre());
-            psmt.setString(3, objTiempo.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO tiempolibre VALUES (null,?,?)");
+//            psmt.setInt(1, objTiempo.getIdTiempoLibre());
+            psmt.setString(1, objTiempo.getNombre());
+            psmt.setString(2, objTiempo.getEstado()); 
             
             psmt.executeUpdate();
        
@@ -73,7 +73,7 @@ public class TiempoDaoImpl implements IDAO {
     public List<TiempoLibre> listar() throws SQLException {
           List<TiempoLibre> listaTiempo = new ArrayList<>();
           try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM tiempolibre");
+            psmt = con.conectar().prepareStatement("SELECT * FROM tiempolibre WHERE estado='Activo'");
             rs = psmt.executeQuery();
             while (rs.next()) {                
                 listaTiempo.add(TiempoLibre.load(rs));

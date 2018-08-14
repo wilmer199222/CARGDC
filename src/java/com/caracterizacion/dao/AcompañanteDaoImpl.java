@@ -34,10 +34,10 @@ public class AcompañanteDaoImpl implements IDAO {
     public String insertar(Object obj) throws SQLException {
        Acompañante objAcompañante = (Acompañante) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO acompañantes VALUES (?,?,?)");
-            psmt.setInt(1, objAcompañante.getIdAcompañante());
-            psmt.setString(2, objAcompañante.getNombre());
-            psmt.setString(3, objAcompañante.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO acompañante VALUES (null,?,?)");
+//            psmt.setInt(1, objAcompañante.getIdAcompañante());
+            psmt.setString(1, objAcompañante.getNombre());
+            psmt.setString(2, objAcompañante.getEstado()); 
             
             psmt.executeUpdate();
        
@@ -59,7 +59,7 @@ public class AcompañanteDaoImpl implements IDAO {
          Acompañante objAcompañante = (Acompañante) obj;
          
          try {
-            psmt = con.conectar().prepareStatement("UPDATE acompañantes SET estado=? WHERE idAcompañante=?");
+            psmt = con.conectar().prepareStatement("UPDATE acompañante SET estado=? WHERE idAcompañante=?");
             psmt.setString(1, "Inactivo");
             psmt.setInt(2, (objAcompañante.getIdAcompañante()));
             
@@ -85,7 +85,7 @@ public class AcompañanteDaoImpl implements IDAO {
     public List<Acompañante> listar() throws SQLException {
      List<Acompañante> listAcompañante = new ArrayList<>();
           try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM acompañantes");
+            psmt = con.conectar().prepareStatement("SELECT * FROM acompañante");
             rs = psmt.executeQuery();
             while (rs.next()) {                
                 listAcompañante.add(Acompañante.load(rs));
@@ -108,7 +108,7 @@ public class AcompañanteDaoImpl implements IDAO {
     @Override
     public Object buscarPorID(String id) throws SQLException {
             try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM acompañantes WHERE idAcompañante=?");
+            psmt = con.conectar().prepareStatement("SELECT * FROM acompañante WHERE idAcompañante=?");
             psmt.setString(1,id);
             rs = psmt.executeQuery();
             while (rs.next()) {                

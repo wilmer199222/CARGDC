@@ -37,7 +37,7 @@ public class TiempoSvl extends HttpServlet {
                 if(request.getParameter("btnRegistrar")!=null){
                     
                     
-                    tiempo.setIdTiempoLibre(Integer.parseInt(request.getParameter("idTiempoLibre")));
+//                    tiempo.setIdTiempoLibre(Integer.parseInt(request.getParameter("idTiempoLibre")));
                     tiempo.setNombre(request.getParameter("nombre"));
                     tiempo.setEstado(request.getParameter("estado"));
                     //pisos.setEstado("activo");

@@ -37,7 +37,7 @@ public class TechoSvl extends HttpServlet {
             try {
                 if(request.getParameter("btnRegistrar")!=null){
                     
-                    techo.setIdTecho(Integer.parseInt(request.getParameter("idTecho")));
+//                    techo.setIdTecho(Integer.parseInt(request.getParameter("idTecho")));
                     techo.setNombre(request.getParameter("nombre"));
                     techo.setEstado(request.getParameter("estado"));
                     //pisos.setEstado("activo");

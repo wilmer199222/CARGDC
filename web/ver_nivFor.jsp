@@ -28,7 +28,7 @@
 <link rel="stylesheet" type="text/css" href="plugins/bootstrap-colorpicker/css/colorpicker.css" />
 </head>
  <%
-   PisosDaoImpl dao = new PisosDaoImpl();
+   FormacionDaoImpl dao = new PisosDaoImpl();
    List<Pisos> listPisos = new ArrayList();
    listPisos = dao.listar();
    

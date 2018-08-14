@@ -38,10 +38,10 @@ public class PisosDaoImpl implements IDAO {
     public String insertar(Object obj) throws SQLException {
         Pisos objPiso = (Pisos) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO pisos VALUES (?,?,?)");
-            psmt.setInt(1, objPiso.getIdPiso());
-            psmt.setString(2, objPiso.getNombre());
-            psmt.setString(3, objPiso.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO pisos VALUES (null,?,?)");
+//            psmt.setInt(1, objPiso.getIdPiso());
+            psmt.setString(1, objPiso.getNombre());
+            psmt.setString(2, objPiso.getEstado()); 
             
             psmt.executeUpdate();
        

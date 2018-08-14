@@ -34,7 +34,7 @@ public class SocioAfectivaDaoImpl implements IDAO{
         SocioAfectiva objsocioafectivas =  (SocioAfectiva) obj;
         try {
             psmt = con.conectar().prepareStatement("INSERT INTO SocioAfectiva VALUES (?,?,?)");
-            psmt.setInt(1, objsocioafectivas.getIdSocioAfectiva());
+//            psmt.setInt(1, objsocioafectivas.getIdSocioAfectiva());
             psmt.setString(1, objsocioafectivas.getNombre());
             psmt.setString(2, objsocioafectivas.getEstado());
 

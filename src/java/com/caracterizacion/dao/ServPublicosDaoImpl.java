@@ -31,10 +31,10 @@ public class ServPublicosDaoImpl implements IDAO{
     public String insertar(Object obj) throws SQLException {
         ServPublicos objServPublicos = (ServPublicos) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO serviciospublicos VALUES (?,?,?)");
-            psmt.setInt(1, objServPublicos.getIdServiciosPublicos());
-            psmt.setString(2, objServPublicos.getNombre());
-            psmt.setString(3, objServPublicos.getEstado());
+            psmt = con.conectar().prepareStatement("INSERT INTO serviciospublicos VALUES (null,?,?)");
+//            psmt.setInt(1, objServPublicos.getIdServiciosPublicos());
+            psmt.setString(1, objServPublicos.getNombre());
+            psmt.setString(2, objServPublicos.getEstado());
             psmt.executeUpdate();
             respuesta = "El registro se realizo con exito";
         } catch (Exception e) {

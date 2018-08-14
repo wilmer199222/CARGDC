@@ -39,10 +39,10 @@ public class FormacionDaoImpl implements IDAO {
     public String insertar(Object obj) throws SQLException {
      NivelFormacion objFormacion = (NivelFormacion) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO nivelformacion VALUES (?,?,?)");
-            psmt.setInt(1, objFormacion.getIdNivelFormacion());
-            psmt.setString(2, objFormacion.getNombre());
-            psmt.setString(3, objFormacion.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO nivelformacion VALUES (null,?,?)");
+//            psmt.setInt(1, objFormacion.getIdNivelFormacion());
+            psmt.setString(1, objFormacion.getNombre());
+            psmt.setString(2, objFormacion.getEstado()); 
             
             psmt.executeUpdate();
        

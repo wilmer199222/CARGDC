@@ -1,3 +1,5 @@
+<%@page import="com.caracterizacion.modelo.RelacionesAfectivas"%>
+<%@page import="com.caracterizacion.dao.RelacionesAfectivasDaoImpl"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="com.caracterizacion.modelo.Animales"%>
@@ -30,9 +32,9 @@
 
 </head>
       <%
-      AnimalesDaoImpl dao = new AnimalesDaoImpl();
-      List<Animales> listAnimales = new ArrayList();
-      listAnimales = dao.listar();
+      RelacionesAfectivasDaoImpl dao = new RelacionesAfectivasDaoImpl();
+      List<RelacionesAfectivas> listRelacionesAfectivas = new ArrayList();
+      listRelacionesAfectivas = dao.listar();
       
       %>
  <body style="background-color: #f1f1f1;">
@@ -58,21 +60,21 @@
           <div class="block-web">          
             <div class="porlets-content">
                 <%
-                    Animales animal = (Animales) request.getAttribute("animales");
+                    RelacionesAfectivas relacionesAfectivas = (RelacionesAfectivas) request.getAttribute("relacionesAfectivas");
                     %>
                 <!-- inici el formulario-->
                 <form action="animalessv" method="post">
                 <fieldset disabled><div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="idAnimal" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= animal.getIdAnimal()%>'>
+                  <input type="text" name="idAnimal" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= relacionesAfectivas.getIdRelacionesAfectivas()%>'>
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= animal.getNombre() %>'>
+                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= relacionesAfectivas.getNombre() %>'>
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= animal.getEstado() %>'>
+                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= relacionesAfectivas.getEstado() %>'>
                 </div><!--/form-group--></fieldset>
                 </div><!--/checkbox-->
                 

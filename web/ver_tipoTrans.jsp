@@ -1,5 +1,8 @@
 
+<%@page import="com.caracterizacion.dao.TransporteDaoImpl"%>
+<%@page import="com.caracterizacion.modelo.TipoTransporte"%>
 <%@page import="com.caracterizacion.modelo.Pisos"%>
+<%@page import="com.caracterizacion.dao.PisosDaoImpl"%>
 <%@page import="com.caracterizacion.dao.PisosDaoImpl"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
@@ -28,9 +31,9 @@
 <link rel="stylesheet" type="text/css" href="plugins/bootstrap-colorpicker/css/colorpicker.css" />
 </head>
  <%
-   PisosDaoImpl dao = new PisosDaoImpl();
-   List<Pisos> listPisos = new ArrayList();
-   listPisos = dao.listar();
+   TransporteDaoImpl dao = new TransporteDaoImpl();
+   List<TipoTransporte> listTipoTransportes = new ArrayList();
+   listTipoTransportes = dao.listar();
    
  %>
 
@@ -57,21 +60,21 @@
           <div class="block-web">          
             <div class="porlets-content">
                 <%
-                    Pisos piso = (Pisos) request.getAttribute("pisos");
+                    TipoTransporte tipoTransporte = (TipoTransporte) request.getAttribute("tipoTransporte");
                     %>
                 <!-- inici el formulario-->
                 <form action="pisossv" method="post">
                 <fieldset disabled><div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="idPiso" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= piso.getIdPiso() %>'>
+                  <input type="text" name="idPiso" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= tipoTransporte.getIdTipoTransporte()%>'>
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= piso.getNombre() %>'>
+                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= tipoTransporte.getNombre() %>'>
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= piso.getEstado() %>'>
+                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= tipoTransporte.getEstado() %>'>
                 </div><!--/form-group--></fieldset>
                 </div><!--/checkbox-->
                 

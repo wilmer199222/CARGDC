@@ -1,3 +1,9 @@
+<%@page import="com.caracterizacion.modelo.TipoVivienda"%>
+<%@page import="com.caracterizacion.dao.TipoViviendaDaoImpl"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+
+<%@page import="com.caracterizacion.modelo.TipoViv"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,6 +31,13 @@
 
 
 </head>
+    
+    <%
+   TipoViviendaDaoImpl dao = new TipoViviendaDaoImpl();
+   List<TipoVivienda> listTipoViviendas = new ArrayList();
+   listTipoViviendas  = dao.listar();
+   
+ %>
   <body style="background-color: #f1f1f1;">
 
       <div class="pull-left breadcrumb_admin clear_both">
@@ -48,21 +61,21 @@
           <div class="block-web">          
             <div class="porlets-content">
                 <%
-                    Pisos piso = (Pisos) request.getAttribute("pisos");
+                    TipoVivienda tipoViv = (TipoVivienda) request.getAttribute("tipoViv");
                     %>
                 <!-- inici el formulario-->
                 <form action="pisossv" method="post">
                 <fieldset disabled><div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="idPiso" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= piso.getIdPiso() %>'>
+                  <input type="text" name="idPiso" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= tipoViv.getIdTipo()%>'>
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= piso.getNombre() %>'>
+                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= tipoViv.getNombre() %>'>
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= piso.getEstado() %>'>
+                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= tipoViv.getEstado() %>'>
                 </div><!--/form-group--></fieldset>
                 </div><!--/checkbox-->
                 

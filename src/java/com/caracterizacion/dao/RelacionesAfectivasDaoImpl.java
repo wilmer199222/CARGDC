@@ -99,7 +99,7 @@ public class RelacionesAfectivasDaoImpl implements IDAO{
     }
 
     @Override
-    public List<?> listar() throws SQLException {
+    public List<RelacionesAfectivas> listar() throws SQLException {
           List<RelacionesAfectivas> listaRelacionesAfectivas = new ArrayList<>();
         try {
             psmt = con.conectar().prepareStatement("SELECT * FROM RelacionesAfectivas");

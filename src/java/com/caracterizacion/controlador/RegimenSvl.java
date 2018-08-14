@@ -6,7 +6,7 @@
 package com.caracterizacion.controlador;
 
 import com.caracterizacion.dao.RegimenDaoImpl;
-import com.caracterizacion.modelo.Pisos;
+
 import com.caracterizacion.modelo.RegimenSalud;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -38,7 +38,7 @@ public class RegimenSvl extends HttpServlet {
                 if(request.getParameter("btnRegistrar")!=null){
                     
                     
-                    regimen.setIdregimenSalud(Integer.parseInt(request.getParameter("idregimenSalud")));
+//                    regimen.setIdregimenSalud(Integer.parseInt(request.getParameter("idregimenSalud")));
                     regimen.setNombre(request.getParameter("nombre"));
                     regimen.setEstado(request.getParameter("estado"));
                     //pisos.setEstado("activo");

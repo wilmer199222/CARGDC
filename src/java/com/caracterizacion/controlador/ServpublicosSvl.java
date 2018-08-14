@@ -36,7 +36,7 @@ public class ServpublicosSvl extends HttpServlet {
             RequestDispatcher rd = null;
             try {
                 if(request.getParameter("btnRegistrar")!=null){
-                    servPublicos.setIdServiciosPublicos(Integer.parseInt(request.getParameter("idServiciosPublicos")));
+//                    servPublicos.setIdServiciosPublicos(Integer.parseInt(request.getParameter("idServiciosPublicos")));
                     servPublicos.setNombre(request.getParameter("nombre"));
                     servPublicos.setEstado(request.getParameter("estado"));
                     //paredes.setEstado("Activo");

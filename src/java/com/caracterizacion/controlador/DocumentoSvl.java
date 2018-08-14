@@ -37,7 +37,7 @@ public class DocumentoSvl extends HttpServlet {
                 if(request.getParameter("btnRegistrar")!=null){
                     
                     
-                    documento.setIdTipoDocumento(Integer.parseInt(request.getParameter("idTipoDocumento")));
+//                    documento.setIdTipoDocumento(Integer.parseInt(request.getParameter("idTipoDocumento")));
                     documento.setNombre(request.getParameter("nombre"));
                     documento.setEstado(request.getParameter("estado"));
                     //pisos.setEstado("activo");

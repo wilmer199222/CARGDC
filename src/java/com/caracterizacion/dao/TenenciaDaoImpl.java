@@ -39,10 +39,10 @@ public class TenenciaDaoImpl implements IDAO{
     public String insertar(Object obj) throws SQLException {
           TenenciaVivienda objTenencia = (TenenciaVivienda) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO tenenciavivienda VALUES (?,?,?)");
-            psmt.setInt(1, objTenencia.getIdTenencia());
-            psmt.setString(2, objTenencia.getNombre());
-            psmt.setString(3, objTenencia.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO tenenciavivienda VALUES (null,?,?)");
+//            psmt.setInt(1, objTenencia.getIdTenencia());
+            psmt.setString(1, objTenencia.getNombre());
+            psmt.setString(2, objTenencia.getEstado()); 
             
             psmt.executeUpdate();
        

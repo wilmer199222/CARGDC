@@ -1,5 +1,5 @@
 
-<%@page import="com.caracterizacion.dao.TipofamiliarDaoImpl"%>
+<%@page import="com.caracterizacion.dao.TipoFamiliarDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28,7 +28,7 @@
 
 </head>
     <% 
-            TipofamiliarDaoImpl dao = new TipofamiliarDaoImpl();
+            TipoFamiliarDaoImpl dao = new TipoFamiliarDaoImpl();
             String codigo =  dao.generarCodigo();
         %>
  <body style="background-color: #f1f1f1;">

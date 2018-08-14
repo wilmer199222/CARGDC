@@ -98,13 +98,13 @@
             
            <li> <a href="#"> <i class="fa fa-th-large"></i>Caracterizacion <span class="plus"><i class="fa fa-arrow-down"></i></span></a>
             <ul>
-              <li> <a href="listarRelAfe.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Relaciones Afectivas</b> </a> </li>
-              <li> <a href="listarSocEfe.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Socio Afectiva</b> </a> </li>
+              <li> <a href="listarRelacionesAfectivas.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Relaciones Afectivas</b> </a> </li>
+              <li> <a href="listarSocioAfectiva.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Socio Afectiva</b> </a> </li>
               <li> <a href="listarConSoc.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Condicion Social</b> </a> </li>
               <li> <a href="listarAcompañante.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Acompañante</b> </a> </li>
               <li> <a href="listarTipoTrans.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Transporte</b> </a> </li>
               <li> <a href="listarTieLib.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tiempo Libre</b> </a> </li>
-              <li> <a href="listarTipoFam.jsp" target="formulario2"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Familiar</b> </a> </li>
+              <li> <a href="listarTipoFam.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Familiar</b> </a> </li>
             </ul>
           </li>
          
@@ -117,27 +117,11 @@
               <li> <a href="listarAnimales.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Animales</b> </a> </li>
               <li> <a href="listarTipoViv.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tipo Vivienda</b> </a> </li>
               <li> <a href="listarTenencia.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Tenencia Vivienda</b> </a> </li>
-              <li> <a href="listarSerPublicos.jsp" target="formulario2> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Servicios Publicos</b> </a> </li>
+              <li> <a href="listarServiciosPublicos.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Servicios Publicos</b> </a> </li>
             </ul>
           </li>
             
-            
-          <!--**************************************Prueba para Ul************************************* -->        
-           <li> <a href="#"> <i class="fa fa-align-left"></i> Aspecto Vivienda<span class="plus"><i class="fa fa-arrow-down"></i></span></a>
-            <ul>
-               <a href="listarParedes.jsp"> <i class="fa fa-user"></i> <b>Paredes</b> </a> 
-               <a href="listarPisos2.jsp" target="formulario">  <i class="fa fa-circle"></i> <b>Pisos</b> </a> 
-               <a href="listarTechos.jsp" target="formulario">  <i class="fa fa-circle"></i> <b>Techos</b> </a> 
-               <a href="listarSerSan.jsp" target="formulario">  <i class="fa fa-circle"></i> <b>Servicios Sanitarios</b> </a>
-               <a href="listarAnimales.jsp">  <i class="fa fa-circle"></i> <b>Animales</b> </a> 
-              <a href="listarTipoViv.jsp"> <i class="fa fa-circle"></i> <b>Tipo Vivienda</b> </a> 
-              <a href="listarTenencia.jsp" target="formulario"> <i class="fa fa-circle"></i> <b>Tenencia Vivienda</b> </a> 
-              <a href="listarSerPublicos.jsp">  <i class="fa fa-circle"></i> <b>Servicios Publicos</b> </a> 
-            </ul>
-          </li>  
-          <!--**************************************Prueba para Ul************************************* -->
 
-         
           <li> <a href="#"> <i class="fa fa-medkit"></i> Salud <span class="plus"><i class="fa fa-arrow-down"></i></span></a>
             <ul>
                 <li> <a href="listarRegSal.jsp" target="formulario"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Regimen Salud</b> </a> </li>

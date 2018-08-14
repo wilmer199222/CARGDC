@@ -39,10 +39,10 @@ public class DetallaServPublicoDaoImpl implements IDAO{
     public String insertar(Object obj) throws SQLException {
     DetallaServPublico objDeta = (DetallaServPublico) obj;
          try {
-            psmt = con.conectar().prepareStatement("INSERT INTO detalla_servpublic VALUES (?,?,?)");
-            psmt.setInt(1, objDeta.getIddetallaServPublic());
-            psmt.setInt(2, objDeta.getIdCaracterizacion());
-            psmt.setInt(3, objDeta.getIdServiciosPublicos()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO detalla_servpublic VALUES (null,?,?)");
+//            psmt.setInt(1, objDeta.getIddetallaServPublic());
+            psmt.setInt(1, objDeta.getIdCaracterizacion());
+            psmt.setInt(2, objDeta.getIdServiciosPublicos()); 
             
             psmt.executeUpdate();
        

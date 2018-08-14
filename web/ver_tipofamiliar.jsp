@@ -1,7 +1,8 @@
+<%@page import="com.caracterizacion.modelo.Tipofamiliar"%>
+<%@page import="com.caracterizacion.dao.TipoFamiliarDaoImpl"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="com.caracterizacion.modelo.Animales"%>
-<%@page import="com.caracterizacion.dao.AnimalesDaoImpl"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,9 +31,9 @@
 
 </head>
       <%
-      AnimalesDaoImpl dao = new AnimalesDaoImpl();
-      List<Animales> listAnimales = new ArrayList();
-      listAnimales = dao.listar();
+      TipoFamiliarDaoImpl dao = new TipoFamiliarDaoImpl();
+      List<Tipofamiliar> listTipoFamiliar = new ArrayList();
+      listTipoFamiliar = dao.listar();
       
       %>
  <body style="background-color: #f1f1f1;">
@@ -58,21 +59,21 @@
           <div class="block-web">          
             <div class="porlets-content">
                 <%
-                    Animales animal = (Animales) request.getAttribute("animales");
+                    Tipofamiliar tipofamiliar = (Tipofamiliar) request.getAttribute("tipoFamiliar");
                     %>
                 <!-- inici el formulario-->
                 <form action="animalessv" method="post">
                 <fieldset disabled><div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="idAnimal" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= animal.getIdAnimal()%>'>
+                  <input type="text" name="idAnimal" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= tipofamiliar.getIdTipoFamiliar()%>'>
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= animal.getNombre() %>'>
+                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= tipofamiliar.getNombre() %>'>
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= animal.getEstado() %>'>
+                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= tipofamiliar.getEstado() %>'>
                 </div><!--/form-group--></fieldset>
                 </div><!--/checkbox-->
                 

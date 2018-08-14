@@ -1,3 +1,5 @@
+<%@page import="com.caracterizacion.modelo.ServPublicos"%>
+<%@page import="com.caracterizacion.dao.ServPublicosDaoImpl"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="com.caracterizacion.modelo.Animales"%>
@@ -30,9 +32,9 @@
 
 </head>
       <%
-      AnimalesDaoImpl dao = new AnimalesDaoImpl();
-      List<Animales> listAnimales = new ArrayList();
-      listAnimales = dao.listar();
+      ServPublicosDaoImpl dao = new ServPublicosDaoImpl();
+      List<ServPublicos> listServPublicos = new ArrayList();
+      listServPublicos = dao.listar();
       
       %>
  <body style="background-color: #f1f1f1;">
@@ -58,21 +60,21 @@
           <div class="block-web">          
             <div class="porlets-content">
                 <%
-                    Animales animal = (Animales) request.getAttribute("animales");
+                    ServPublicos servPublicos = (ServPublicos) request.getAttribute("servPublicos");
                     %>
                 <!-- inici el formulario-->
                 <form action="animalessv" method="post">
                 <fieldset disabled><div class="form-group">
                   <label>Código</label>
-                  <input type="text" name="idPiso" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= animal.getIdAnimal()%>'>
+                  <input type="text" name="idPiso" placeholder="Código" parsley-trigger="change" class="form-control" value='<%= servPublicos.getIdServiciosPublicos()%>'>
                 </div><!--/form-group-->
                 <div class="form-group">
                   <label>Nombre</label>
-                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= animal.getNombre() %>'>
+                  <input type="text" name="Nombre" placeholder="Nombre" parsley-trigger="change" class="form-control" value='<%= servPublicos.getNombre() %>'>
                 </div><!--/form-group-->  
                   <div class="form-group">
                   <label>Estado</label>
-                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= animal.getEstado() %>'>
+                  <input type="text" name="Estado"  placeholder="Estado" parsley-trigger="change" class="form-control" value='<%= servPublicos.getEstado() %>'>
                 </div><!--/form-group--></fieldset>
                 </div><!--/checkbox-->
                 

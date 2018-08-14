@@ -38,10 +38,10 @@ public class ServiciosSanitariosDaoImpl implements IDAO {
     public String insertar(Object obj) throws SQLException {
          ServiciosSanitarios objSerSan = (ServiciosSanitarios) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO serviciossanitarios VALUES (?,?,?)");
-            psmt.setInt(1, objSerSan.getIdServiciosSanitario());
-            psmt.setString(2, objSerSan.getNombre());
-            psmt.setString(3, objSerSan.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO serviciossanitarios VALUES (null,?,?)");
+//            psmt.setInt(1, objSerSan.getIdServiciosSanitario());
+            psmt.setString(1, objSerSan.getNombre());
+            psmt.setString(2, objSerSan.getEstado()); 
             
             psmt.executeUpdate();
        

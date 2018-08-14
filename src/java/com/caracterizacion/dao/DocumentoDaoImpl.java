@@ -39,10 +39,10 @@ public class DocumentoDaoImpl implements IDAO {
     public String insertar(Object obj) throws SQLException {
     TipoDocumento objDocumento = (TipoDocumento) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO tipodocumento VALUES (?,?,?)");
-            psmt.setInt(1, objDocumento.getIdTipoDocumento());
-            psmt.setString(2, objDocumento.getNombre());
-            psmt.setString(3, objDocumento.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO tipodocumento VALUES (null,?,?)");
+//            psmt.setInt(1, objDocumento.getIdTipoDocumento());
+            psmt.setString(1, objDocumento.getNombre());
+            psmt.setString(2, objDocumento.getEstado()); 
             
             psmt.executeUpdate();
        

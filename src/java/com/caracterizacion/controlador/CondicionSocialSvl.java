@@ -37,7 +37,7 @@ public class CondicionSocialSvl extends HttpServlet {
                 if(request.getParameter("btnRegistrar")!=null){
                     
                     
-                    condicion.setIdCondiconSocial(Integer.parseInt(request.getParameter("idCondiconSocial")));
+//                    condicion.setIdCondiconSocial(Integer.parseInt(request.getParameter("idCondiconSocial")));
                     condicion.setNombre(request.getParameter("nombre"));
                     condicion.setEstado(request.getParameter("estado"));
                     //pisos.setEstado("activo");

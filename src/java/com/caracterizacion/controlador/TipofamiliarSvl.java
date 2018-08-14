@@ -35,7 +35,7 @@ public class TipofamiliarSvl extends HttpServlet {
             RequestDispatcher rd = null;
             try {
                 if(request.getParameter("btnRegistrar")!=null){
-                    tipofamiliar.setIdTipoFamiliar(Integer.parseInt(request.getParameter("idTipoFamiliar")));
+//                    tipofamiliar.setIdTipoFamiliar(Integer.parseInt(request.getParameter("idTipoFamiliar")));
                     tipofamiliar.setNombre(request.getParameter("nombre"));
                     tipofamiliar.setEstado(request.getParameter("estado"));
                     //paredes.setEstado("Activo");

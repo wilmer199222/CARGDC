@@ -58,7 +58,7 @@
         <div class="col-md-6">           
           <div class="block-web">          
             <div class="panel-heading">
-              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_Pisos2.jsp'">Nuevo</button></div>
+              <div class="col-xs-6 col-sm-3"><button type="button" class="btn btn-primary" onclick="window.location.href='registrar_acompañante.jsp'">Nuevo</button></div>
                 
                 <form class="form-inline">
              

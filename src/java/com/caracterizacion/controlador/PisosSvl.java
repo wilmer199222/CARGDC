@@ -36,14 +36,14 @@ public class PisosSvl extends HttpServlet {
             try {
                 if(request.getParameter("btnRegistrar")!=null){
                     
-                    pisos.setIdPiso(Integer.parseInt(request.getParameter("idPiso")));
+//                    pisos.setIdPiso(Integer.parseInt(request.getParameter("idPiso")));
                     pisos.setNombre(request.getParameter("nombre"));
                     pisos.setEstado(request.getParameter("estado"));
                     //pisos.setEstado("activo");
                     
                     respuesta =  pisosDao.insertar(pisos);
                     request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarPisos.jsp");
+                    rd = request.getRequestDispatcher("listarPisos2.jsp");
                     
                 }else if(request.getParameter("btnEliminar")!=null){
                     
@@ -51,21 +51,21 @@ public class PisosSvl extends HttpServlet {
                     pisosDao.eliminar(pisos);
                     
                     request.setAttribute("pisos", pisos);
-                    rd = request.getRequestDispatcher("listarPisos.jsp");
+                    rd = request.getRequestDispatcher("listarPisos2.jsp");
                     
                 }else if(request.getParameter("btnVerDetalle")!=null){
                     
                     pisos = (Pisos) pisosDao.buscarPorID(request.getParameter("idPiso"));
 
                     request.setAttribute("pisos", pisos);
-                    rd = request.getRequestDispatcher("ver_pisos.jsp");
+                    rd = request.getRequestDispatcher("ver_pisos2.jsp");
                     
                 }else if (request.getParameter("btnModificar")!=null) {
                     
                     pisos = (Pisos) pisosDao.buscarPorID(request.getParameter("idPiso"));
 
                     request.setAttribute("pisos", pisos);
-                    rd = request.getRequestDispatcher("modificar_pisos.jsp");
+                    rd = request.getRequestDispatcher("modificar_pisos2.jsp");
                     
                 }else if (request.getParameter("btnActualizar")!=null) {
                     
@@ -77,7 +77,7 @@ public class PisosSvl extends HttpServlet {
                     respuesta = pisosDao.modificar(pisos);
                     
                     request.setAttribute("respuesta", respuesta);
-                    rd = request.getRequestDispatcher("listarPisos.jsp");
+                    rd = request.getRequestDispatcher("listarPisos2.jsp");
                     
                 }
                  

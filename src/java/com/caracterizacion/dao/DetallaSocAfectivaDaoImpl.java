@@ -39,10 +39,10 @@ public class DetallaSocAfectivaDaoImpl implements IDAO{
     public String insertar(Object obj) throws SQLException {
 DetallaSocAfectiva objDeta = (DetallaSocAfectiva) obj;
          try {
-            psmt = con.conectar().prepareStatement("INSERT INTO detalla_socafectiva VALUES (?,?,?)");
-            psmt.setInt(1, objDeta.getIdDetallaSocAfectiva());
-            psmt.setInt(2, objDeta.getIdCar());
-            psmt.setInt(3, objDeta.getIdSocioAfectiva()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO detalla_socafectiva VALUES (null,?,?)");
+//            psmt.setInt(1, objDeta.getIdDetallaSocAfectiva());
+            psmt.setInt(1, objDeta.getIdCar());
+            psmt.setInt(2, objDeta.getIdSocioAfectiva()); 
             
             psmt.executeUpdate();
        

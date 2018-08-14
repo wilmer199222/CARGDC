@@ -22,7 +22,7 @@ public class RegimenDaoImpl implements IDAO {
     PreparedStatement psmt = null;
     ResultSet rs = null;
     String respuesta = null;
-    RegimenSalud regimen;
+    RegimenSalud regimenSalud;
     
     public RegimenDaoImpl() {
         con = new ConectarDB();
@@ -37,10 +37,10 @@ public class RegimenDaoImpl implements IDAO {
     public String insertar(Object obj) throws SQLException {
       RegimenSalud objRegimen = (RegimenSalud) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO regimensalud VALUES (?,?,?)");
-            psmt.setInt(1, objRegimen.getIdregimenSalud());
-            psmt.setString(2, objRegimen.getNombre());
-            psmt.setString(3, objRegimen.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO regimensalud VALUES (null,?,?)");
+//            psmt.setInt(1, objRegimen.getIdregimenSalud());
+            psmt.setString(1, objRegimen.getNombre());
+            psmt.setString(2, objRegimen.getEstado()); 
             
             psmt.executeUpdate();
        
@@ -93,7 +93,27 @@ public class RegimenDaoImpl implements IDAO {
     }
     @Override
     public Object buscarPorID(String id) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            psmt = con.conectar().prepareStatement("SELECT * FROM salud WHERE idSalud=?");
+            psmt.setString(1, id);
+            rs = psmt.executeQuery();
+            
+            while (rs.next()) {
+                  regimenSalud =  RegimenSalud.load(rs);
+            }
+        } catch (Exception e) {
+            System.out.println("Error en la consulta"+e.toString());
+        }finally{
+            if(psmt!=null){
+                psmt.close();
+            }
+            if(rs!=null){
+                rs.close();
+            }
+            
+            con.desconectar();
+        }
+            return regimenSalud;
     }
 
     @Override

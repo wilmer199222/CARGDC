@@ -38,10 +38,10 @@ public class TransporteDaoImpl implements IDAO {
     public String insertar(Object obj) throws SQLException {
      TipoTransporte objTransporte = (TipoTransporte) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO tipotransporte VALUES (?,?,?)");
-            psmt.setInt(1, objTransporte.getIdTipoTransporte());
-            psmt.setString(2, objTransporte.getNombre());
-            psmt.setString(3, objTransporte.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO tipotransporte VALUES (null,?,?)");
+//            psmt.setInt(1, objTransporte.getIdTipoTransporte());
+            psmt.setString(1, objTransporte.getNombre());
+            psmt.setString(2, objTransporte.getEstado()); 
             
             psmt.executeUpdate();
        

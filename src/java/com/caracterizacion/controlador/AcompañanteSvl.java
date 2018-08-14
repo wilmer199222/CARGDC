@@ -36,7 +36,7 @@ public class AcompañanteSvl extends HttpServlet {
             try {
                 if(request.getParameter("btnRegistrar")!=null){
                                    
-                    acompañante.setIdAcompañante(Integer.parseInt(request.getParameter("idAcompañante")));
+//                    acompañante.setIdAcompañante(Integer.parseInt(request.getParameter("idAcompañante")));
                     acompañante.setNombre(request.getParameter("nombre"));
                     acompañante.setEstado(request.getParameter("estado"));
                     //pisos.setEstado("activo");                   

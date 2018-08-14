@@ -1,5 +1,5 @@
 <%@page import="com.caracterizacion.modelo.Tipofamiliar"%>
-<%@page import="com.caracterizacion.dao.TipofamiliarDaoImpl"%>
+<%@page import="com.caracterizacion.dao.TipoFamiliarDaoImpl"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 
@@ -31,7 +31,7 @@
 
 </head>
      <%
-      TipofamiliarDaoImpl dao = new TipofamiliarDaoImpl();
+      TipoFamiliarDaoImpl dao = new TipoFamiliarDaoImpl();
       List<Tipofamiliar> listTipofamiliar = new ArrayList();
       
     %>

@@ -33,7 +33,7 @@ public class RelacionesAfectivasSvl extends HttpServlet {
             RequestDispatcher rd = null;
             try {
                 if(request.getParameter("btnRegistrar")!=null){
-                    relacionesafec.setIdRelacionesAfectivas(Integer.parseInt(request.getParameter("idRelacionesAfectivas")));
+//                    relacionesafec.setIdRelacionesAfectivas(Integer.parseInt(request.getParameter("idRelacionesAfectivas")));
                     relacionesafec.setNombre(request.getParameter("nombre"));
                     relacionesafec.setEstado(request.getParameter("estado"));
                     //paredes.setEstado("Activo");

@@ -5,9 +5,9 @@
  */
 package com.caracterizacion.controlador;
 
-import com.caracterizacion.dao.ParedesDaoImpl;
-import com.caracterizacion.dao.TipoVivDaoImpl;
-import com.caracterizacion.modelo.TipoViv;
+
+import com.caracterizacion.dao.TipoViviendaDaoImpl;
+import com.caracterizacion.modelo.TipoVivienda;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -29,14 +29,14 @@ public class TipoVivSvl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            TipoVivDaoImpl tipoVivDao =  new TipoVivDaoImpl();
-            TipoViv tipoViv = new TipoViv();
+            TipoViviendaDaoImpl tipoVivDao =  new TipoViviendaDaoImpl();
+            TipoVivienda tipoViv = new TipoVivienda();
             
             String respuesta = null;
             RequestDispatcher rd = null;
             try {
                 if(request.getParameter("btnRegistrar")!=null){
-                    tipoViv.setIdTipo(Integer.parseInt(request.getParameter("idTipo")));
+//                    tipoViv.setIdTipo(Integer.parseInt(request.getParameter("idTipo")));
                     tipoViv.setNombre(request.getParameter("nombre"));
                     tipoViv.setEstado(request.getParameter("estado"));
                     //tipoViv.setEstado("Activo");
@@ -57,13 +57,13 @@ public class TipoVivSvl extends HttpServlet {
                     
                 }else if(request.getParameter("btnVerDetalle")!=null){
                     
-                      tipoViv = (TipoViv) tipoVivDao.buscarPorID(request.getParameter("idTipo"));
+                      tipoViv = (TipoVivienda) tipoVivDao.buscarPorID(request.getParameter("idTipo"));
 
                     request.setAttribute("tipoViv", tipoViv);
                     rd = request.getRequestDispatcher("ver_tipoViv.jsp");
                  }else if(request.getParameter("btnVerDetalle")!=null){
                     
-                    tipoViv = (TipoViv) tipoVivDao.buscarPorID(request.getParameter("idTipo"));
+                    tipoViv = (TipoVivienda) tipoVivDao.buscarPorID(request.getParameter("idTipo"));
                     
                     request.setAttribute("tipoViv", tipoViv);
                     rd = request.getRequestDispatcher("ver_tipoViv.jsp");
@@ -76,7 +76,7 @@ public class TipoVivSvl extends HttpServlet {
                     
                 }else if(request.getParameter("btnModificar")!=null){
                     
-                 tipoViv = (TipoViv) tipoVivDao.buscarPorID(request.getParameter("idTipo"));
+                 tipoViv = (TipoVivienda) tipoVivDao.buscarPorID(request.getParameter("idTipo"));
                  
                  request.setAttribute("tipoViv", tipoViv);    
                  rd = request.getRequestDispatcher("modificar_tipoViv.jsp");

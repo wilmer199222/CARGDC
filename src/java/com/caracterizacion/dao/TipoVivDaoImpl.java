@@ -33,9 +33,9 @@ public class TipoVivDaoImpl implements IDAO{
         TipoViv objTipoViv =  (TipoViv) obj;
         try {
             psmt = con.conectar().prepareStatement("INSERT INTO tipovivienda VALUES (?,?,?)");
-            psmt.setInt(1,   objTipoViv.getIdTipo());
-            psmt.setString(2, objTipoViv.getNombre());
-            psmt.setString(3, objTipoViv.getEstado());
+//            psmt.setInt(1,   objTipoViv.getIdTipo());
+            psmt.setString(1, objTipoViv.getNombre());
+            psmt.setString(2, objTipoViv.getEstado());
 
             psmt.executeUpdate();
             respuesta = "El registro se realizo con exito";

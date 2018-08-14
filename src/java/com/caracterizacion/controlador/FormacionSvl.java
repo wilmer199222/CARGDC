@@ -39,7 +39,7 @@ public class FormacionSvl extends HttpServlet {
                 if(request.getParameter("btnRegistrar")!=null){
                     
                     
-                    formacion.setIdNivelFormacion(Integer.parseInt(request.getParameter("idNivelFormacion")));
+//                    formacion.setIdNivelFormacion(Integer.parseInt(request.getParameter("idNivelFormacion")));
                     formacion.setNombre(request.getParameter("nombre"));
                     formacion.setEstado(request.getParameter("estado"));
                     //pisos.setEstado("activo");

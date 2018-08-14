@@ -17,6 +17,7 @@ public class Animales {
     private int idAnimal;
     private String nombre;
     private String estado;
+    
 
     public Animales() {
     }

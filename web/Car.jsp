@@ -1,3 +1,7 @@
+<%@page import="com.caracterizacion.modelo.Tipofamiliar"%>
+<%@page import="com.caracterizacion.dao.TipoFamiliarDaoImpl"%>
+<%@page import="com.caracterizacion.dao.TransporteDaoImpl"%>
+<%@page import="com.caracterizacion.modelo.TipoTransporte"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
@@ -37,6 +41,27 @@
  </script>
 
 </head>
+    
+     <%
+      TransporteDaoImpl dao = new TransporteDaoImpl();
+      List<TipoTransporte> listTipoTransportes = new ArrayList();
+       listTipoTransportes = dao.listar();
+       
+       TipoFamiliarDaoImpl daoimpl = new TipoFamiliarDaoImpl();
+       List<Tipofamiliar> listTipofamiliar = new ArrayList();
+       listTipofamiliar = daoimpl.listar();
+
+      
+      
+   %>
+   
+   <%
+                TipoTransporte trans = (TipoTransporte) request.getAttribute("TipoTransporte");
+                Tipofamiliar  tipoFam = (Tipofamiliar) request.getAttribute("Tipofamiliar");
+                //String id = String.valueOf(prod.getIdCategoria());
+                //String valor = String.valueOf(trans.getIdTipoTransporte());
+                %>
+   
     <body style="background-color: #f1f1f1;">
 
       <div class="pull-left breadcrumb_admin clear_both">
@@ -65,7 +90,7 @@
             </div>
               <br>
             <div class="porlets-content">
-              <form action="#" parsley-validate novalidate>
+              <form action="personaSvl" parsley-validate novalidate>
                 <div class="form-group">
                   <label>Nombre Del Acudiente</label>
                   <input type="text" name="nombre" parsley-trigger="change" required placeholder="Ingrese Nombre" class="form-control">
@@ -103,8 +128,8 @@
                 </div><!--/form-group-->
                 
                 <div class="form-group">
-                  <label>Numero De Cedula</label>
-                  <input type="number" name="numeroCed" required placeholder="Ingrese numero de cedula" class="form-control">
+                  <label>Numero De Documento</label>
+                  <input type="number" name="numeroDoc" required placeholder="Ingrese numero de cedula" class="form-control">
                 </div><!--/form-group-->
                 
                 <div class="form-group">
@@ -119,7 +144,7 @@
                 
                 <div class="form-group">
                   <label>Dirección de la vivienda</label>
-                  <input type="text" name="dirrecion" parsley-trigger="change" required placeholder="Ingrese dirección" class="form-control">
+                  <input type="text" name="direccion" parsley-trigger="change" required placeholder="Ingrese dirección" class="form-control">
                 </div><!--/form-group-->
                 
                 <div class="form-group">
@@ -142,7 +167,7 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label">Fecha</label>
                   <div class="col-sm-6">
-                      <input type="date" class="form-control parsley-validated" required="" placeholder="DD-MM-AAAA">
+                      <input type="date" name="fecha1" class="form-control parsley-validated" required="" placeholder="DD-MM-AAAA">
                   </div>
                 </div><!--/form-group--> 
                 <div class="form-group">
@@ -202,7 +227,7 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label">Fecha de nacimiento</label>
                   <div class="col-sm-8">
-                      <input type="date" name="fecha" class="form-control parsley-validated" required="" parsley-maxlength="6" placeholder="fecha nacimiento">
+                      <input type="date" name="fecha2" class="form-control parsley-validated" required="" parsley-maxlength="6" placeholder="fecha nacimiento">
                   </div>
                 </div><!--/form-group--> 
                 
@@ -237,7 +262,7 @@
             </div>
                       
                        <div class="col-md-12">
-                      <form class="form">
+                      <form class="form" >
                           <hr>
                               <div class="header">
                                 <h4 class="center">SALUD DEL NIÑO</h4>
@@ -247,7 +272,7 @@
                  <div class="col-md-1"></div>
              
             <div class="col-md-10">
-              <form class="form-horizontal group-border-dashed" action="#" parsley-validate="" novalidate="">
+              <form class="form-horizontal group-border-dashed" action="personaSvl" parsley-validate="" novalidate="">
                 
                 <div class="form-group">
                   <label class="col-sm-4  control-label">Regimen De Salud:</label>
@@ -384,7 +409,7 @@
                  <div class="col-md-1"></div>
              
             <div class="col-md-10">
-              <form class="form-horizontal group-border-dashed" action="#" parsley-validate="" novalidate="">
+              <form class="form-horizontal group-border-dashed" action="persona.jsp" parsley-validate="" novalidate="">
             
                 <div class="form-group">
                   <label class="col-sm-4 control-label">Tipo de familia:</label>
@@ -457,107 +482,10 @@
                   </div>
                 </div><!--/form-group--> 
                 
-                <div class="col-md-12">
-          <div class="block-web">
-            <div class="header">
-              <div class="actions"> <a class="minimize" href="#"><i class="fa fa-chevron-down"></i></a> <a class="refresh" href="#"><i class="fa fa-repeat"></i></a> <a class="close-down" href="#"><i class="fa fa-times"></i></a> </div>
-              <h3 class="content-header">Editable Table</h3>
-            </div>
-         <div class="porlets-content">
-          <div class="adv-table editable-table ">
-                          <div class="clearfix">
-                              <div class="btn-group">
-                                  <button id="editable-sample_new" class="btn btn-primary">
-                                      Add New <i class="fa fa-plus"></i>
-                                  </button>
-                              </div>
-                          </div>
-                          <div class="margin-top-10"></div>
-                          <div id="editable-sample_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row"><div class="col-lg-6"><div id="editable-sample_length" class="dataTables_length"><label><select size="1" name="editable-sample_length" aria-controls="editable-sample" class="form-control xsmall"><option value="5">5</option><option value="15">15</option><option value="20">20</option><option value="-1">All</option></select> records per page</label></div></div><div class="col-lg-6"><div class="dataTables_filter" id="editable-sample_filter"><label>Search: <input type="text" aria-controls="editable-sample" class="form-control medium"></label></div></div></div><table class="table table-striped table-hover table-bordered dataTable" id="editable-sample" aria-describedby="editable-sample_info">
-                              <thead>
-                              <tr role="row"><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Username" style="width: 169px;">Username</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="editable-sample" rowspan="1" colspan="1" aria-label="Full Name: activate to sort column ascending" style="width: 264px;">Full Name</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="editable-sample" rowspan="1" colspan="1" aria-label="Points: activate to sort column ascending" style="width: 116px;">Points</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="editable-sample" rowspan="1" colspan="1" aria-label="Notes: activate to sort column ascending" style="width: 167px;">Notes</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="editable-sample" rowspan="1" colspan="1" aria-label="Edit: activate to sort column ascending" style="width: 81px;">Edit</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="editable-sample" rowspan="1" colspan="1" aria-label="Delete: activate to sort column ascending" style="width: 117px;">Delete</th></tr>
-                              </thead>
-                              
-                          <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd">
-                                  <td class="  sorting_1">Admin</td>
-                                  <td class=" ">Tom Cooper</td>
-                                  <td class=" ">216</td>
-                                  <td class="center ">new user</td>
-                                  <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr><tr class="even">
-                                  <td class="  sorting_1">Admin</td>
-                                  <td class=" "> Shakib Al Hasan</td>
-                                  <td class=" ">432</td>
-                                  <td class="center ">super user</td>
-                                  <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr><tr class="odd">
-                                  <td class="  sorting_1">Admin</td>
-                                  <td class=" ">WebPro</td>
-                                  <td class=" ">856</td>
-                                  <td class="center ">elite user</td>
-                                  <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr><tr class="even">
-                                  <td class="  sorting_1">Admin</td>
-                                  <td class=" "> WebPro</td>
-                                  <td class=" ">675</td>
-                                  <td class="center ">new user</td>
-                                  <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr><tr class="odd">
-                                  <td class="  sorting_1">Admin</td>
-                                  <td class=" ">Alex Hales</td>
-                                  <td class=" ">423</td>
-                                  <td class="center ">new user</td>
-                                  <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr><tr class="even">
-                                  <td class="  sorting_1">Admin</td>
-                                  <td class=" ">Alex Hales</td>
-                                  <td class=" ">642</td>
-                                  <td class="center ">new user</td>
-                                  <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr><tr class="odd">
-                                  <td class="  sorting_1">Admin</td>
-                                  <td class=" "> Aaron Finch</td>
-                                  <td class=" ">157</td>
-                                  <td class="center ">super user</td>
-                                  <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr><tr class="even">
-                                  <td class="  sorting_1">Admin</td>
-                                  <td class=" ">Virat Kohli</td>
-                                  <td class=" ">468</td>
-                                  <td class="center ">elite user</td>
-                                  <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr><tr class="odd">
-                                  <td class="  sorting_1">Admin</td>
-                                  <td class=" "> WebPro</td>
-                                  <td class=" ">953</td>
-                                  <td class="center ">new user</td>
-                                  <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr><tr class="even">
-                                  <td class="  sorting_1">Admin</td>
-                                  <td class=" ">Glenn Maxwell</td>
-                                  <td class=" ">546</td>
-                                  <td class="center ">new user</td>
-                                  <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-                                  <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-                              </tr></tbody></table><div class="row"><div class="col-lg-6"><div class="dataTables_info" id="editable-sample_info">Showing 1 to 10 of 12 entries</div></div><div class="col-lg-6"><div class="dataTables_paginate paging_bootstrap pagination"><ul><li class="prev disabled"><a href="#">← Prev</a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li class="next"><a href="#">Next → </a></li></ul></div></div></div></div>
-                      </div>
- 
-            </div><!--/porlets-content-->  
-          </div><!--/block-web--> 
-        </div>
                 <hr>
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-primary">Registrar</button>
+                      <button type="submit" name="btnRegistrar1" class="btn btn-primary" value="Registrar">Registrar</button>
                     <button class="btn btn-default">Cancelar</button>
                   </div>
                 </div><!--/form-group-->         
@@ -1028,16 +956,29 @@
                  <div class="col-md-1"></div>
              
             <div class="col-md-10">
-              <form class="form-horizontal group-border-dashed" action="#" parsley-validate="" novalidate="">
+                
+              
+              <form class="form-horizontal group-border-dashed" action="Prueba.jsp" parsley-validate="" novalidate="">
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Desplazamiento del niño:</label>
                   <select class="col-sm-4" name="desplazamiento">
-                      <option>--Seleccione--</option>
+                      <option>Seleccione</option>
+                      <%
+                               //
+                               
+                             for(TipoTransporte tipoTrans : listTipoTransportes){
+                                 %><option value="<%= tipoTrans.getIdTipoTransporte()%>"><%= tipoTrans.getNombre()%></option><%
+                             }
+                           
+                           %>
+                      
+                      
+                      <!--<option>Seleccione</option>
                       <option>Ruta</option>
                       <option>Bus</option>
                       <option>Bicicleta</option>
                       <option>Caminando</option>
-                      <option>Otro</option> 
+                      <option>Otro</option>-->
                   </select>
                   
                   <label class="col-sm-1 control-label">Cual:</label>
@@ -1048,14 +989,23 @@
                 <hr>
                    <div class="form-group">
                   <label class="col-sm-2 control-label">Quien lo lleva  a la escuela:</label>
-                  <select class="col-sm-4" name="desplazamiento">
-                      <option>--Seleccione--</option>
-                      <option>Papa</option>
+                  <select class="col-sm-4" name="escuela">
+                      <option>Seleccione</option>
+                     <%
+                               //
+                               
+                             for(Tipofamiliar tipoFamil : listTipofamiliar){
+                                 %><option value="<%= tipoFamil.getIdTipoFamiliar()%>"><%= tipoFamil.getNombre()%></option><%
+                             }
+                           
+                           %>                           
+                      
+                      <!--<option>Papa</option>
                       <option>Mama</option>
                       <option>Hermanos</option>
                       <option>Tio(a)</option>
                       <option>Abuelo(a)</option>
-                      <option>Otro</option>
+                      <option>Otro</option>-->
                       
                   </select>
                   

@@ -35,10 +35,10 @@ public class TechoDaoImpl implements IDAO {
     public String insertar(Object obj) throws SQLException {
          Techo objTecho = (Techo) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO techo VALUES (?,?,?)");
-            psmt.setInt(1, objTecho.getIdTecho());
-            psmt.setString(2, objTecho.getNombre());
-            psmt.setString(3, objTecho.getEstado()); 
+            psmt = con.conectar().prepareStatement("INSERT INTO techo VALUES (null,?,?)");
+//            psmt.setInt(1, objTecho.getIdTecho());
+            psmt.setString(1, objTecho.getNombre());
+            psmt.setString(2, objTecho.getEstado()); 
             
             psmt.executeUpdate();
        

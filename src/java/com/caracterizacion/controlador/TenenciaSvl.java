@@ -37,7 +37,7 @@ public class TenenciaSvl extends HttpServlet {
                 if(request.getParameter("btnRegistrar")!=null){
                     
                     
-                    tenencia.setIdTenencia(Integer.parseInt(request.getParameter("idTenencia")));
+//                    tenencia.setIdTenencia(Integer.parseInt(request.getParameter("idTenencia")));
                     tenencia.setNombre(request.getParameter("nombre"));
                     tenencia.setEstado(request.getParameter("estado"));
                     //pisos.setEstado("activo");
